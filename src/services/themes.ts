@@ -15,5 +15,3 @@ export const dalleTheme: Theme = {
     success: "#4CAF50",    // Green
     danger: "#F44336",     // Red
 }
-
-export default [defaultTheme, dalleTheme]

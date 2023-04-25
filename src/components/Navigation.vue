@@ -10,6 +10,8 @@
       </nav>
       <div class="socials">
         <p>Social Media</p>
+        <!-- <button @click="changeTheme(themes[1])"></button> -->
+        <button @click="changeTheme(themes.dalleTheme)"></button>
       </div>
     </div>
   </div>
@@ -18,6 +20,8 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
+import { changeTheme } from "../services/themeService";
+import * as themes from "../services/themes";
 
 export default defineComponent({
   name: "NavigationComponent",
@@ -37,6 +41,8 @@ export default defineComponent({
     return {
       isSmallNav,
       myName,
+      changeTheme,
+      themes
     };
   },
 });
@@ -45,7 +51,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 .container {
-  background: var("--primary");
   display: block;
   position: absolute;
   left: 0;
@@ -69,6 +74,7 @@ export default defineComponent({
 }
 
 .navbox {
+  background: var(--primary);
   display: grid;
   grid-template:
   "a a a" 33%

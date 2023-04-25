@@ -8,8 +8,10 @@ export interface Theme {
     danger: string;
 }
 
-export const changeColors = (theme: Theme) => {
+export const changeTheme = (theme: Theme) => {
     const root = document.documentElement;
+    console.log(root);
+    console.log(themes);
     root.style.setProperty("--primary", theme.primary);
     root.style.setProperty("--secondary", theme.secondary);
     root.style.setProperty("--accent", theme.accent);
