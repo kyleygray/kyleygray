@@ -1,19 +1,22 @@
 <template>
   <div class="container">
     <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true }">
-      <div class="myname">
-        <h1>{{ myName }}</h1>
-      </div>
+      <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">about</router-link>
+        <router-link to="/process">process</router-link>
+        <router-link to="/work">work</router-link>
+        <router-link to="/contact">contact</router-link>
       </nav>
+      <div class="socials">
+        <p>Social Media</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, computed } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 export default defineComponent({
@@ -40,14 +43,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-// .container {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: repeat(4, 1fr);
-//   grid-gap: 5px;
-//   height: 100vh;
-// }
+
 .container {
+  background: var("--primary");
   display: block;
   position: absolute;
   left: 0;
@@ -65,16 +63,66 @@ export default defineComponent({
   & > .small-nav {
     height: 100vh;
     width: 25vw;
+    transform: translate(0%, 0%);
+    border-radius: 0em;
   }
 }
+
 .navbox {
-  display: flex;
+  display: grid;
+  grid-template:
+  "a a a" 33%
+  ". b ." 33%
+  ". c ." 33%;
   border: 1px solid black;
   max-width: 50vw;
+  height: 50vh;
+  transform: translate(0%, 0%);
   padding: 0.5em;
   transition: all 0.5s ease;
+  transition-property: transform, height, width;
+  transition-delay: 1ms;
 }
 
+nav {
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+      background-color: red;
+    }
+  }
+
+  display: block;
+  grid-column: 2;
+  grid-row: 2 / 3;
+  align-self: center;
+
+  & > * {
+    margin: 10px 0px;
+    border: 1px solid black;
+    border-radius: 1em;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
+.my-name {
+  grid-row: 1;
+  grid-column: 1 / 4;
+  align-self: end;
+  text-decoration: none;
+  color: inherit;
+}
+
+.socials {
+  grid-row: 3;
+  grid-column: 2 / 3;
+  align-self: start;
+}
 // .small-nav {
 //   border-radius: 0em;
 //   height: 100vh;
