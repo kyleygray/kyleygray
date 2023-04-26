@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <h1>About Page</h1>
+    <h1>Contact Page</h1>
   </div>
 </template>
 
@@ -13,6 +13,6 @@ export default class HomeView extends Vue {}
 
 <style lang="scss" scoped>
   .page-container {
-    background: yellow;
+    background: red;
   }
 </style>

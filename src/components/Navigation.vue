@@ -10,8 +10,6 @@
       </nav>
       <div class="socials">
         <p>Social Media</p>
-        <!-- <button @click="changeTheme(themes[1])"></button> -->
-        <button @click="changeTheme(themes.dalleTheme)"></button>
       </div>
     </div>
   </div>
@@ -97,7 +95,7 @@ nav {
 
     &.router-link-exact-active {
       color: #42b983;
-      background-color: red;
+      // background-color: red;
     }
   }
 
@@ -129,17 +127,4 @@ nav {
   grid-column: 2 / 3;
   align-self: start;
 }
-// .small-nav {
-//   border-radius: 0em;
-//   height: 100vh;
-//   grid-column: 1 / 1;
-//   grid-row: 1 / 4;
-// }
-
-// .big-nav {
-//   border-radius: 2em;
-//   height: 50vh;
-//   grid-column: 2 / 4;
-//   grid-row: 2 / 4;
-// }
 </style>
