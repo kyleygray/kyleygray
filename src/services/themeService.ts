@@ -6,6 +6,7 @@ export interface Theme {
     accent: string;
     success: string;
     danger: string;
+    background: string;
 }
 
 export const changeTheme = (theme: Theme) => {
@@ -17,4 +18,5 @@ export const changeTheme = (theme: Theme) => {
     root.style.setProperty("--accent", theme.accent);
     root.style.setProperty("--success", theme.success);
     root.style.setProperty("--danger", theme.danger);
+    root.style.setProperty("--background", theme.background);
 };

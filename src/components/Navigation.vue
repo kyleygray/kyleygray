@@ -8,8 +8,9 @@
         <router-link to="/work">work</router-link>
         <router-link to="/contact">contact</router-link>
       </nav>
-      <div class="socials">
-        <p>Social Media</p>
+      <div class="controls">
+        <button @click="methods.setTheme(themes.defaultTheme)"></button>
+        <button @click="methods.setTheme(themes.dalleTheme)"></button>
       </div>
     </div>
   </div>
@@ -18,12 +19,15 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import { changeTheme } from "../services/themeService";
-import * as themes from "../services/themes";
+
+import useStore from "../services/store";
+import useThemes from "../services/themes";
 
 export default defineComponent({
   name: "NavigationComponent",
   setup() {
+    const { state, methods } = useStore();
+    const themes = useThemes();
     const route = useRoute();
     const isSmallNav = ref(true);
     const myName = ref("Kyley Gray");
@@ -39,8 +43,9 @@ export default defineComponent({
     return {
       isSmallNav,
       myName,
-      changeTheme,
-      themes
+      themes,
+      state,
+      methods,
     };
   },
 });
@@ -68,6 +73,8 @@ export default defineComponent({
     width: 25vw;
     transform: translate(0%, 0%);
     border-radius: 0em;
+    border: 0;
+    border-right: 2px dashed var(--primary);
   }
 }
 
@@ -78,14 +85,13 @@ export default defineComponent({
   "a a a" 33%
   ". b ." 33%
   ". c ." 33%;
-  border: 1px solid black;
+  border: 2px dashed var(--primary);
   max-width: 50vw;
   height: 50vh;
   transform: translate(0%, 0%);
   padding: 0.5em;
-  transition: all 0.5s ease;
   transition-property: transform, height, width;
-  transition-delay: 1ms;
+  transition-duration: 0.5s;
 }
 
 nav {
@@ -105,7 +111,7 @@ nav {
 
   & > * {
     margin: 10px 0px;
-    border: 1px solid black;
+    border: 1px solid var(--primary);
     border-radius: 1em;
     display: block;
     text-decoration: none;
@@ -121,9 +127,10 @@ nav {
   color: inherit;
 }
 
-.socials {
+.controls {
+  display: flex;
   grid-row: 3;
-  grid-column: 2 / 3;
+  grid-column: 1 / 4;
   align-self: start;
 }
 </style>

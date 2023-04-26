@@ -5,23 +5,6 @@
       <component :is="Component" />
     </transition>
   </router-view>
-  <!-- <div id="ComponentView">
-    <transition name="page" mode="out-in">
-      <HomeView v-if="activeComponent === 'home'" />
-    </transition>
-    <transition name="page" mode="out-in">
-      <AboutView v-if="activeComponent === 'about'" />
-    </transition>
-    <transition name="page" mode="out-in">
-      <ProcessView v-if="activeComponent === 'process'" />
-    </transition>
-    <transition name="page" mode="out-in">
-      <WorkView v-if="activeComponent === 'work'" />
-    </transition>
-    <transition name="page" mode="out-in">
-      <ContactView v-if="activeComponent === 'contact'" />
-    </transition>
-  </div> -->
 </template>
 
 <script lang="ts">
@@ -33,6 +16,7 @@ import WorkView from "./views/WorkView.vue";
 import ContactView from "./views/ContactView.vue";
 
 import EventBus from "./services/eventBus";
+import useStore from "./services/store";
 
 export default defineComponent({
   components: {
@@ -44,17 +28,20 @@ export default defineComponent({
   },
   
   setup() {
-    const activeComponent = ref("home");
+    const { state, methods } = useStore();
+    const activeComponent = ref(state.activeComponent);
     const activeTransition = ref("page");
 
     EventBus.on("navigate", (componentName: string) => {
-      activeComponent.value = componentName;
+      methods.setActiveComponent(componentName);
       activeTransition.value = componentName === "home" ? "slide" : "page";
     });
 
     return {
       activeComponent,
-      activeTransition
+      activeTransition,
+      state,
+      methods
     }
   },
 
