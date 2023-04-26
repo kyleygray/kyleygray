@@ -5,6 +5,8 @@ import ProcessView from "../views/ProcessView.vue"
 import WorkView from "../views/WorkView.vue"
 import ContactView from "../views/ContactView.vue"
 
+import EventBus from "../services/eventBus";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -37,5 +39,10 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
+router.beforeEach((to, _, next) => {
+  EventBus.emit("navigate", to.name?.toString() || "Error");
+  next();
+})
 
 export default router;

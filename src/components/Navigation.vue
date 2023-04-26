@@ -72,7 +72,7 @@ export default defineComponent({
 }
 
 .navbox {
-  background: var(--primary);
+  background: var(--secondary);
   display: grid;
   grid-template:
   "a a a" 33%
@@ -90,12 +90,11 @@ export default defineComponent({
 
 nav {
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    // font-weight: bold;
+    color: var(--primary);
 
     &.router-link-exact-active {
-      color: #42b983;
-      // background-color: red;
+      color: var(--accent);
     }
   }
 

@@ -12,7 +12,7 @@ export default class HomeView extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.page-container {
-    background: blue;
+  .page-container {
+    
   }
 </style>

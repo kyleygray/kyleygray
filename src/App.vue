@@ -1,11 +1,65 @@
 <template>
   <NavigationComponent />
   <router-view v-slot="{ Component }">
-    <!-- <transition name="page"> -->
+    <transition :name="activeTransition">
       <component :is="Component" />
-    <!-- </transition> -->
+    </transition>
   </router-view>
+  <!-- <div id="ComponentView">
+    <transition name="page" mode="out-in">
+      <HomeView v-if="activeComponent === 'home'" />
+    </transition>
+    <transition name="page" mode="out-in">
+      <AboutView v-if="activeComponent === 'about'" />
+    </transition>
+    <transition name="page" mode="out-in">
+      <ProcessView v-if="activeComponent === 'process'" />
+    </transition>
+    <transition name="page" mode="out-in">
+      <WorkView v-if="activeComponent === 'work'" />
+    </transition>
+    <transition name="page" mode="out-in">
+      <ContactView v-if="activeComponent === 'contact'" />
+    </transition>
+  </div> -->
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import NavigationComponent from "@/components/Navigation.vue";
+import AboutView from "./views/AboutView.vue";
+import ProcessView from "./views/ProcessView.vue";
+import WorkView from "./views/WorkView.vue";
+import ContactView from "./views/ContactView.vue";
+
+import EventBus from "./services/eventBus";
+
+export default defineComponent({
+  components: {
+    NavigationComponent,
+    AboutView,
+    ProcessView,
+    WorkView,
+    ContactView
+  },
+  
+  setup() {
+    const activeComponent = ref("home");
+    const activeTransition = ref("page");
+
+    EventBus.on("navigate", (componentName: string) => {
+      activeComponent.value = componentName;
+      activeTransition.value = componentName === "home" ? "slide" : "page";
+    });
+
+    return {
+      activeComponent,
+      activeTransition
+    }
+  },
+
+});
+</script>
 
 <style lang="scss">
 html,
@@ -24,41 +78,48 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--primary);
 }
 
 .page-container {
+  position: absolute;
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
-  background: var(--primary);
+  background: var(--secondary);
   overflow-x: hidden;
-  // opacity: 1;
 }
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
-.page-leave-to,
 .page-enter-from {
-  opacity: 0;
+  transform: translateX(100%);
+  background: var(--secondary);
 }
-
 .page-enter-to,
 .page-leave-from {
-  opacity: 1;
+  transform: translateX(0%);
+  background: var(--secondary);
+}
+.page-leave-to {
+  transform: translate(0%);
+  background: var(--primary);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-leave-to,
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-enter-to,
+.slide-leave-from {
+  transform: translateX(0%);
 }
 
 </style>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import NavigationComponent from "@/components/Navigation.vue";
-
-export default defineComponent({
-  components: {
-    NavigationComponent,
-  },
-});
-</script>
