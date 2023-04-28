@@ -3,7 +3,7 @@ import { Theme } from "./themeService";
 const defaultTheme: Theme = {
     primary: "#000000",
     secondary: "#FFFFFF",
-    accent: "#888888",
+    accent: "#EEEEEE",
     success: "#00FF00",
     danger: "#FF0000",
     background: "#FFFFFF",

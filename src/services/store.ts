@@ -16,6 +16,7 @@ const methods = {
     },
     toggleAnimations() {
         state.animations.value = !state.animations.value;
+        console.log(state.animations.value);
     },
     toggleContrast() {
         state.contrast.value = !state.animations.value;

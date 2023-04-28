@@ -49,10 +49,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
 html,
 body {
   margin: 0;
   width: 100%;
+  background-color: var(--background);
+  transition: background-color 0.5s ease;
 }
 
 * {
