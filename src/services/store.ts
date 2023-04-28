@@ -4,7 +4,7 @@ import useThemes from "./themes";
 
 const state = {
     theme: ref(useThemes().defaultTheme),
-    animations: ref(true),
+    accessible: ref(false),
     contrast: ref(false),
     activeComponent: ref("home"),
 };
@@ -14,12 +14,12 @@ const methods = {
         state.theme.value = theme;
         changeTheme(state.theme.value);
     },
-    toggleAnimations() {
-        state.animations.value = !state.animations.value;
-        console.log(state.animations.value);
+    toggleAccessibility() {
+        state.accessible.value = !state.accessible.value;
+        console.log(state.accessible.value);
     },
     toggleContrast() {
-        state.contrast.value = !state.animations.value;
+        state.contrast.value = !state.accessible.value;
     },
     setActiveComponent(component: string) {
         state.activeComponent.value = component;

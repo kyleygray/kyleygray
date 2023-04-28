@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true, 'accessible': state.animations}">
+    <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true, 'accessible': state.accessible}">
       <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -11,7 +11,7 @@
       <div class="controls">
         <button @click="methods.setTheme(themes.defaultTheme)"></button>
         <button @click="methods.setTheme(themes.dalleTheme)"></button>
-        <button @click="methods.toggleAnimations()"></button>
+        <button @click="methods.toggleAccessibility()"></button>
       </div>
     </div>
   </div>
