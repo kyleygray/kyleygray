@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true, 'accessible': state.accessible}">
+    <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true}">
       <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -9,9 +9,9 @@
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">
-        <button @click="methods.setTheme(themes.defaultTheme)"></button>
-        <button @click="methods.setTheme(themes.dalleTheme)"></button>
-        <button @click="methods.toggleAccessibility()"></button>
+        <button @click="methods.setTheme(themes.defaultTheme)">default</button>
+        <button @click="methods.setTheme(themes.invertedTheme)">inverted</button>
+        <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" />
       </div>
     </div>
   </div>
@@ -21,11 +21,16 @@
 import { defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
+import ToggleButton from "@/components/ToggleButton.vue";
+
 import useStore from "../services/store";
 import useThemes from "../services/themes";
 
 export default defineComponent({
   name: "NavigationComponent",
+  components: {
+    ToggleButton
+  },
   setup() {
     const { state, methods } = useStore();
     const themes = useThemes();
@@ -117,6 +122,7 @@ nav {
   align-self: end;
   text-decoration: none;
   color: inherit;
+  transition: color 0.5s ease;
 }
 
 .controls {
@@ -124,6 +130,11 @@ nav {
   grid-row: 3;
   grid-column: 1 / 4;
   align-self: start;
+
+  button {
+    display: block;
+    height: 30px;
+  }
 }
 
 .big-nav {
@@ -139,19 +150,10 @@ nav {
   transform: translate(0%, 0%);
   border-radius: 0em;
   border: 0;
-  border-right: 1px dotted var(--accent);
+  // border-right: 1px dotted var(--accent);
 
   & > nav {
     margin: 0 20%;
-  }
-}
-
-.accessible {
-  transition: all 0s !important;
-  transition-duration: 0s !important;
-  * {
-    transition: all 0s !important;
-    transition-duration: 0s !important; 
   }
 }
 

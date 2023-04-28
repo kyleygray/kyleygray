@@ -13,32 +13,33 @@ import EventBus from "@/services/eventBus";
 import useStore from "@/services/store";
 
 export default defineComponent({
-  setup() {
-    const { state, methods } = useStore();
-    const activeComponent = ref(state.activeComponent);
-    const activeTransition = ref("page");
+    name: "PageHandler",
+    setup() {
+        const { state, methods } = useStore();
+        const activeComponent = ref(state.activeComponent);
+        const activeTransition = ref("page");
 
-    activeTransition.value = computed(() => {
-        if (state.accessible) {
-            return "none";
-        }
-        if (state.activeComponent === "home") {
-            return "slide"
-        }
-        return "page";
-      });
+        activeTransition.value = computed(() => {
+            if (state.animationsOff) {
+                return "";
+            }
+            if (state.activeComponent === "home") {
+                return "slide"
+            }
+            return "page";
+            });
 
-    EventBus.on("navigate", (componentName: string) => {
-      methods.setActiveComponent(componentName);
-    });
+        EventBus.on("navigate", (componentName: string) => {
+            methods.setActiveComponent(componentName);
+        });
 
-    return {
-      activeComponent,
-      activeTransition,
-      state,
-      methods
-    };
-  }
+        return {
+            activeComponent,
+            activeTransition,
+            state,
+            methods
+        };
+    }
 });
 </script>
 
@@ -52,7 +53,8 @@ export default defineComponent({
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
-  background: var(--secondary);
+  background-color: var(--secondary);
+  transition: background-color 0.5s ease;
   overflow-x: hidden;
 }
 
@@ -62,16 +64,16 @@ export default defineComponent({
 }
 .page-enter-from {
   transform: translateX(100%);
-  background: var(--secondary);
+  background-color: var(--secondary);
 }
 .page-enter-to,
 .page-leave-from {
   transform: translateX(0%);
-  background: var(--secondary);
+  background-color: var(--secondary);
 }
 .page-leave-to {
   transform: translate(0%);
-  background: var(--primary);
+  background-color: var(--primary);
 }
 
 .slide-enter-active,

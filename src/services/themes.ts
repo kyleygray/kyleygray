@@ -9,18 +9,18 @@ const defaultTheme: Theme = {
     background: "#FFFFFF",
 }
 
-const dalleTheme: Theme = {
-    primary: "#1A237E",    // Indigo
-    secondary: "#FFC107",  // Amber
-    accent: "#9C27B0",     // Purple
-    success: "#4CAF50",    // Green
-    danger: "#F44336",     // Red
-    background: "#FFC107",
+const invertedTheme: Theme = {
+    primary: "#FFFFFF",    
+    secondary: "#000000",  
+    accent: "#222222",     
+    success: "#00FF00",    
+    danger: "#FF0000",     
+    background: "#000000",
 }
 
 export default function useThemes() {
     return {
         defaultTheme,
-        dalleTheme,
+        invertedTheme,
     }
 }
