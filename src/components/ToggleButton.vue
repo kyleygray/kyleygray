@@ -28,10 +28,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   div {
     display: block;
-    background: red;
+    background: green;
     border: 1px solid black;
     width: 60px;
     height: 30px;
@@ -39,7 +39,7 @@ export default defineComponent({
 
     }
     &.toggleOff {
-
+      background: red;
     }
   }
 </style>

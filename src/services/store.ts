@@ -16,7 +16,6 @@ const methods = {
     },
     toggleAccessibility() {
         state.animationsOff.value = !state.animationsOff.value;
-        console.log(state.animationsOff.value);
     },
     toggleContrast() {
         state.contrast.value = !state.animationsOff.value;
