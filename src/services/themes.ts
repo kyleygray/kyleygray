@@ -1,4 +1,11 @@
-import { Theme } from "./themeService";
+export interface Theme {
+    primary: string;
+    secondary: string;
+    accent: string;
+    success: string;
+    danger: string;
+    background: string;
+}
 
 const defaultTheme: Theme = {
     primary: "#000000",

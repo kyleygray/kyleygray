@@ -9,8 +9,8 @@
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">
-        <button @click="methods.setTheme(themes.defaultTheme)">default</button>
-        <button @click="methods.setTheme(themes.invertedTheme)">inverted</button>
+        <ThemeButton :theme="themes.defaultTheme" name="Default" />
+        <ThemeButton :theme="themes.invertedTheme" name="Inverted" />
         <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" />
       </div>
     </div>
@@ -22,6 +22,7 @@ import { defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import ToggleButton from "@/components/ToggleButton.vue";
+import ThemeButton from "@/components/ThemeButton.vue";
 
 import useStore from "../services/store";
 import useThemes from "../services/themes";
@@ -29,7 +30,8 @@ import useThemes from "../services/themes";
 export default defineComponent({
   name: "NavigationComponent",
   components: {
-    ToggleButton
+    ToggleButton,
+    ThemeButton
   },
   setup() {
     const { state, methods } = useStore();

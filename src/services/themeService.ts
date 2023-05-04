@@ -1,15 +1,6 @@
 import * as themes from './themes';
 
-export interface Theme {
-    primary: string;
-    secondary: string;
-    accent: string;
-    success: string;
-    danger: string;
-    background: string;
-}
-
-export const changeTheme = (theme: Theme) => {
+const changeTheme = (theme: themes.Theme) => {
     const root = document.documentElement;
     console.log(root);
     console.log(themes);
@@ -20,3 +11,9 @@ export const changeTheme = (theme: Theme) => {
     root.style.setProperty("--danger", theme.danger);
     root.style.setProperty("--background", theme.background);
 };
+
+export default function useThemeService() {
+    return {
+        changeTheme
+    }
+}

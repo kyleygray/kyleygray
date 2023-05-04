@@ -1,18 +1,18 @@
 import { ref, readonly } from "vue";
-import { Theme, changeTheme } from "./themeService";
-import useThemes from "./themes";
+import useThemeService from "./themeService";
+import * as themes from "./themes";
 
 const state = {
-    theme: ref(useThemes().defaultTheme),
+    theme: ref(themes.default().defaultTheme),
     animationsOff: ref(false),
     contrast: ref(false),
     activeComponent: ref("home"),
 };
 
 const methods = {
-    setTheme(theme: Theme) {
+    setTheme(theme: themes.Theme) {
         state.theme.value = theme;
-        changeTheme(state.theme.value);
+        useThemeService().changeTheme(state.theme.value);
     },
     toggleAccessibility() {
         state.animationsOff.value = !state.animationsOff.value;

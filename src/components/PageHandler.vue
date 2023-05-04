@@ -53,7 +53,7 @@ export default defineComponent({
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
-  background-color: var(--secondary);
+  background-color: var(--accent);
   transition: background-color 0.5s ease;
   overflow-x: hidden;
 }
@@ -64,16 +64,16 @@ export default defineComponent({
 }
 .page-enter-from {
   transform: translateX(100%);
-  background-color: var(--secondary);
+  background-color: var(--accent);
 }
 .page-enter-to,
 .page-leave-from {
   transform: translateX(0%);
-  background-color: var(--secondary);
+  background-color: var(--accent);
 }
 .page-leave-to {
   transform: translate(0%);
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 .slide-enter-active,
