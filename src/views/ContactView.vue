@@ -1,18 +1,28 @@
 <template>
   <div class="page-container">
-    <h1>Contact Page</h1>
+    <Markdown :source="content" />
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { defineComponent } from 'vue';
+import Markdown from 'vue3-markdown-it';
 
-@Options({})
-export default class HomeView extends Vue {}
+export default defineComponent({
+  components: {
+    Markdown
+  },
+  setup () {
+    const content = '# Contact View';
+    return {
+      content
+    }
+  }
+});
 </script>
 
 <style lang="scss" scoped>
   .page-container {
-    
+   
   }
 </style>

@@ -1,16 +1,21 @@
 <template>
   <div class="page-container">
-    <h1>About Page</h1>
+    <Markdown :source="content" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Markdown from 'vue3-markdown-it';
 
 export default defineComponent({
+  components: {
+    Markdown
+  },
   setup () {
+    const content = '# About Page';
     return {
-      
+      content
     }
   }
 });
