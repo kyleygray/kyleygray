@@ -9,9 +9,13 @@
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">
-        <ThemeButton :theme="themes.defaultTheme" name="Default" />
-        <ThemeButton :theme="themes.invertedTheme" name="Inverted" />
-        <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
+        <div class="themes">
+          <ThemeButton :theme="themes.defaultTheme" />
+          <ThemeButton :theme="themes.invertedTheme" />
+        </div>
+        <div class="accessibility">
+          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
+        </div>
       </div>
     </div>
   </div>
@@ -128,16 +132,34 @@ nav {
 }
 
 .controls {
-  display: flex;
+  margin-top: 50px;
+  display: grid;
   grid-row: 3;
   grid-column: 1 / 4;
   align-self: start;
-  flex-wrap: wrap;
 
-  button {
-    display: block;
-    height: 30px;
+  .label {
+    margin: 5px;
   }
+
+  .themes {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin: 5px 0px;
+  }
+
+  .accessibility {
+    margin: 5px 0px;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
 }
 
 .big-nav {

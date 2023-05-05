@@ -63,7 +63,7 @@ export default defineComponent({
     width: 60px;
     height: 30px;
     background-color: var(--accent);
-    transition: background-color 0.5s ease !important;
+    transition: background-color 0.5s ease;
 
     span {
       transform: translateX(0px);
@@ -74,7 +74,7 @@ export default defineComponent({
       margin: 2px;
       border-radius: 20px;
       border: 1px solid var(--primary);
-      transition: transform 0.5s ease !important;
+      transition: transform 0.5s ease;
       background-color: var(--secondary);
     }
 
