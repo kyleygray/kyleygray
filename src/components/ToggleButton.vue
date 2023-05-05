@@ -1,5 +1,10 @@
 <template>
-  <div @click="props.onClick" :class="toggle"></div>
+<div class="wrapper">
+  <div class="label">{{props.label}}</div>
+  <div class="switch" @click="props.onClick" :class="toggle">
+    <span></span>
+  </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -15,6 +20,9 @@ export default defineComponent({
     toggleActive: {
       type: Boolean,
       default: false
+    },
+    label: {
+      type: String
     }
   },
   setup(props) {
@@ -29,17 +37,69 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  div {
+  .wrapper {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      margin: 10px 5px;
+    }
+  }
+
+  .label {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .switch {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
     display: block;
-    background: green;
-    border: 1px solid black;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
     width: 60px;
     height: 30px;
-    &.toggleOn {
+    background-color: var(--accent);
+    transition: background-color 0.5s ease !important;
 
+    span {
+      transform: translateX(0px);
+      position: absolute;
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin: 2px;
+      border-radius: 20px;
+      border: 1px solid var(--primary);
+      transition: transform 0.5s ease !important;
+      background-color: var(--secondary);
+    }
+
+    &.toggleOn {
+      span {
+        transform: translateX(30px);
+      }
+      &::before{
+        position: absolute;
+        margin: 3px;
+        left: 7px;
+        content: 'off';
+      }
     }
     &.toggleOff {
-      background: red;
+      span {
+        transform: translateX(0px);
+      }
+      &::before{
+        position: absolute;
+        margin: 3px;
+        right: 7px;
+        content: 'on';
+      }
     }
   }
 </style>
+

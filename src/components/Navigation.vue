@@ -11,7 +11,7 @@
       <div class="controls">
         <ThemeButton :theme="themes.defaultTheme" name="Default" />
         <ThemeButton :theme="themes.invertedTheme" name="Inverted" />
-        <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" />
+        <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
       </div>
     </div>
   </div>
@@ -132,6 +132,7 @@ nav {
   grid-row: 3;
   grid-column: 1 / 4;
   align-self: start;
+  flex-wrap: wrap;
 
   button {
     display: block;
