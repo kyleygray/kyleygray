@@ -1,7 +1,7 @@
 <template>
   <router-view :class="{'mobile-view': isMobile}" v-slot="{ Component }">
     <transition :name="activeTransition.value">
-        <component :is="Component" />
+        <component class="base-view" :is="Component" />
     </transition>
   </router-view>
 </template>
@@ -49,15 +49,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .base-view {
-
-}
-
-.mobile-view.page-container {
-  width: 100%;
-  margin: 0;
-}
-
-.page-container {
   position: absolute;
   height: 100vh;
   width: calc(100% - 25vw);
@@ -65,6 +56,12 @@ export default defineComponent({
   background-color: var(--accent);
   transition: background-color 0.5s ease;
   overflow-x: hidden;
+
+  &.mobile-view {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .page-enter-active,

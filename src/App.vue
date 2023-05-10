@@ -76,6 +76,7 @@ body {
   margin: 0;
   width: 100%;
   background-color: var(--background);
+  overflow-x: hidden;
 }
 
 * {
