@@ -1,5 +1,5 @@
 <template>
-  <router-view :class="{'mobile-view': isMobile}" v-slot="{ Component }">
+  <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
         <component class="base-view" :is="Component" />
     </transition>
@@ -7,12 +7,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, inject } from "vue";
+import { defineComponent, computed, ref } from "vue";
 
 import EventBus from "@/services/eventBus";
 import useStore from "@/services/store";
-
-//TODO: you need to make sure the page reacts properly to the isMobile trigger.
 
 export default defineComponent({
     name: "PageHandler",
@@ -20,7 +18,6 @@ export default defineComponent({
         const { state, methods } = useStore();
         const activeComponent = ref(state.activeComponent);
         const activeTransition = ref("page");
-        const { isMobile } = inject("useWidth");
 
         activeTransition.value = computed(() => {
             if (state.animationsOff) {
@@ -40,8 +37,7 @@ export default defineComponent({
             activeComponent,
             activeTransition,
             state,
-            methods,
-            isMobile
+            methods
         };
     }
 });
@@ -49,6 +45,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .base-view {
+
+}
+
+.page-container {
   position: absolute;
   height: 100vh;
   width: calc(100% - 25vw);
