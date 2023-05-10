@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, ref, provide } from "vue";
+import { defineComponent, watch, ref, provide, computed, onMounted, onBeforeUnmount } from "vue";
 import NavigationComponent from "@/components/Navigation.vue";
 import PageHandler from "@/components/PageHandler.vue";
 import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue"
@@ -22,6 +22,30 @@ export default defineComponent({
   
   setup() {
     const { state, methods } = useStore();
+    const viewWidth = ref(window.innerWidth);
+    const MOBILE_WIDTH = "768"
+    const isMobile = computed(() => {
+      return (viewWidth.value < MOBILE_WIDTH);
+    });
+    const mobileHelper = () => {
+      return {
+        viewWidth,
+        MOBILE_WIDTH,
+        isMobile
+      }
+    }
+    provide("mobileHelper", mobileHelper());
+    const handleResize = () => {
+      viewWidth.value = window.innerWidth;
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', handleResize);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', handleResize);
+    })
 
     watch(
       () => state.animationsOff,

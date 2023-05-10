@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div :class="{ 'small-nav': (!isHome && !isMobile), 'tiny-nav': (!isHome && isMobile), 'big-nav': isHome, navbox: true}">
+  <div v-show="!isMobile" class="container">
+    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, navbox: true}">
       <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -19,10 +19,17 @@
       </div>
     </div>
   </div>
+  <div v-show="isMobile" class="container">
+    <div class="navbox-mobile">
+      <nav>
+        nav
+      </nav>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
+import { defineComponent, ref, watch, inject } from "vue";
 
 import ToggleButton from "@/components/ToggleButton.vue";
 import ThemeButton from "@/components/ThemeButton.vue";
@@ -40,6 +47,7 @@ export default defineComponent({
     const { state, methods } = useStore();
     const themes = useThemes();
     const isHome = ref(true);
+    const { isMobile } = inject("mobileHelper");
     const myName = ref("Kyley Gray");
 
     watch(
@@ -56,6 +64,7 @@ export default defineComponent({
       themes,
       state,
       methods,
+      isMobile
     };
   },
 });
@@ -181,8 +190,8 @@ nav {
 }
 
 .tiny-nav {
-  height: 100vh;
-  width: 25vw;
+  height: 20vh;
+  width: 100vw;
   transform: translate(0%, 0%);
   border-radius: 0em;
   border: 0;
