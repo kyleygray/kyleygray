@@ -1,4 +1,4 @@
-import { ref, readonly } from "vue";
+import { ref, readonly, Ref } from "vue";
 import useThemeService from "./themeService";
 import * as themes from "./themes";
 
@@ -22,6 +22,9 @@ const methods = {
     },
     setActiveComponent(component: string) {
         state.activeComponent.value = component;
+    },
+    getAnimationState(): boolean {
+        return state.animationsOff.value;
     }
 }
 

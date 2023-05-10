@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch } from "vue";
+import { defineComponent, watch, ref, provide } from "vue";
 import NavigationComponent from "@/components/Navigation.vue";
 import PageHandler from "@/components/PageHandler.vue";
 import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue"
@@ -33,7 +33,7 @@ export default defineComponent({
           root.classList.remove("animations-off");
         }
       },
-      { immediate: true }
+      {immediate: true},
     );
 
     return {

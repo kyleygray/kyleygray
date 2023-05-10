@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div :class="{ 'small-nav': isSmallNav, 'big-nav': !isSmallNav, navbox: true}">
+    <div :class="{ 'small-nav': (!isHome && !isMobile), 'tiny-nav': (!isHome && isMobile), 'big-nav': isHome, navbox: true}">
       <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
-import { useRoute } from "vue-router";
 
 import ToggleButton from "@/components/ToggleButton.vue";
 import ThemeButton from "@/components/ThemeButton.vue";
@@ -40,20 +39,19 @@ export default defineComponent({
   setup() {
     const { state, methods } = useStore();
     const themes = useThemes();
-    const route = useRoute();
-    const isSmallNav = ref(true);
+    const isHome = ref(true);
     const myName = ref("Kyley Gray");
 
     watch(
-      () => route.path,
-      (path) => {
-        isSmallNav.value = path === "/" ? false : true;
+      () => state.activeComponent,
+      (activeComponent) => {
+        isHome.value = activeComponent === "home";
       },
-      { immediate: true }
-    );
+      {immediate: true},
+    )
 
     return {
-      isSmallNav,
+      isHome,
       myName,
       themes,
       state,
@@ -175,6 +173,20 @@ nav {
   transform: translate(0%, 0%);
   border-radius: 0em;
   border: 0;
+  // border-right: 1px dotted var(--accent);
+
+  & > nav {
+    margin: 0 20%;
+  }
+}
+
+.tiny-nav {
+  height: 100vh;
+  width: 25vw;
+  transform: translate(0%, 0%);
+  border-radius: 0em;
+  border: 0;
+  background: var(--accent);
   // border-right: 1px dotted var(--accent);
 
   & > nav {
