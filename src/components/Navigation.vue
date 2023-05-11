@@ -1,6 +1,6 @@
 <template>
   <div v-show="!isMobile" class="container">
-    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, navbox: true}">
+    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, 'navbox': true}">
       <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
       <nav>
         <router-link to="/about">about</router-link>

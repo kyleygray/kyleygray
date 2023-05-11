@@ -1,13 +1,13 @@
 <template>
   <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
-        <component class="base-view" :is="Component" />
+        <component :class="{ 'page-container': true, 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home' }" :is="Component" />
     </transition>
   </router-view>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from "vue";
+import { defineComponent, computed, ref, inject } from "vue";
 
 import EventBus from "@/services/eventBus";
 import useStore from "@/services/store";
@@ -16,8 +16,8 @@ export default defineComponent({
     name: "PageHandler",
     setup() {
         const { state, methods } = useStore();
-        const activeComponent = ref(state.activeComponent);
         const activeTransition = ref("page");
+        const { isMobile } = inject("mobileHelper");
 
         activeTransition.value = computed(() => {
             if (state.animationsOff) {
@@ -34,33 +34,33 @@ export default defineComponent({
         });
 
         return {
-            activeComponent,
             activeTransition,
             state,
-            methods
+            methods,
+            isMobile
         };
     }
 });
 </script>
 
 <style lang="scss" scoped>
-.base-view {
-
-}
-
 .page-container {
   position: absolute;
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
   background-color: var(--accent);
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5 ease, transform 0.5s ease;
   overflow-x: hidden;
 
   &.mobile-view {
     position: absolute;
     width: 100%;
     margin: 0;
+  }
+
+  &.home-view {
+    transform: translateX(100%);
   }
 }
 

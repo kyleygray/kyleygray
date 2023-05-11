@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="view-container"></div>
 </template>
 
 <script lang="ts">
@@ -15,8 +15,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-div {
-  width: 100%;
-  height: 0;
+.view-container {
+  
 }
 </style>

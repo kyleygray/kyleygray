@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="view-container">
     <Markdown :source="content" />
   </div>
 </template>
@@ -22,7 +22,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  .page-container {
+  .view-container {
    
   }
 </style>
