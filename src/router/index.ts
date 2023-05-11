@@ -7,6 +7,8 @@ import ContactView from "../views/ContactView.vue"
 
 import EventBus from "../services/eventBus";
 
+import useStore from "../services/store";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -41,7 +43,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
-  EventBus.emit("navigate", to.name?.toString() || "Error");
+  useStore().methods.setActiveComponent(to.name?.toString() || 'error');
   next();
 })
 

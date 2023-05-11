@@ -1,15 +1,13 @@
 <template>
   <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
-        <component :class="{ 'page-container': true, 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home' }" :is="Component" />
+        <component :class="{ 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home' }" :is="Component" />
     </transition>
   </router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, ref, inject } from "vue";
-
-import EventBus from "@/services/eventBus";
 import useStore from "@/services/store";
 
 export default defineComponent({
@@ -29,10 +27,6 @@ export default defineComponent({
             return "page";
             });
 
-        EventBus.on("navigate", (componentName: string) => {
-            methods.setActiveComponent(componentName);
-        });
-
         return {
             activeTransition,
             state,
@@ -44,13 +38,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.page-container {
+.view-container {
   position: absolute;
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
   background-color: var(--accent);
-  transition: background-color 0.5 ease, transform 0.5s ease;
+  transition-property: background-color, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
   overflow-x: hidden;
 
   &.mobile-view {
