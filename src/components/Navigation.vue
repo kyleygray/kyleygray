@@ -22,10 +22,25 @@
     </div>
   </div>
   <div v-show="isMobile" class="container">
-    <div class="navbox-mobile">
+    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, 'navbox-mobile': true}">
+      <router-link class="my-K" to="/">
+        <img ref="theK" :class="{ 'the-k': true, 'inverted': inverted }" src="@/assets/kline.png" alt="K">
+      </router-link>
       <nav>
-        nav
+        <router-link to="/about">about</router-link>
+        <router-link to="/process">process</router-link>
+        <router-link to="/work">work</router-link>
+        <router-link to="/contact">contact</router-link>
       </nav>
+      <div class="controls">
+        <div class="themes">
+          <ThemeButton @click="toggleInversion(themes.defaultTheme)" :theme="themes.defaultTheme" />
+          <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
+        </div>
+        <div class="accessibility">
+          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -111,7 +126,7 @@ export default defineComponent({
 
 .navbox {
   min-height: 400px;
-  background: var(--secondary);
+  background-color: var(--secondary);
   display: grid;
   grid-template:
   "a a a" 20%
@@ -125,6 +140,7 @@ export default defineComponent({
   transition-property: transform, height, width, margin, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+  
 }
 
 nav {
@@ -230,6 +246,27 @@ nav {
   & > nav {
     margin: 0 20%;
   }
+}
+
+.navbox-mobile {
+  min-height: 400px;
+  background-color: var(--secondary);
+  display: grid;
+  grid-template:
+  "a a a" 20%
+  "b b b" 40%
+  "c c c" 40%;
+  // border: 1px solid var(--primary);
+  max-width: 50vw;
+  height: 50vh;
+  transform: translate(0%, 0%);
+  padding: 0.5em;
+  transition-property: transform, height, width, margin, background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  background-color: #fffccf;
+
+  
 }
 
 </style>
