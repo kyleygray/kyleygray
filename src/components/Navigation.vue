@@ -117,7 +117,7 @@ export default defineComponent({
 
 .container {
   display: block;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   height: 0vh;
@@ -234,39 +234,17 @@ nav {
   }
 }
 
-.tiny-nav {
-  height: 20vh;
-  width: 100vw;
-  transform: translate(0%, 0%);
-  border-radius: 0em;
-  border: 0;
-  background: var(--accent);
-  // border-right: 1px dotted var(--accent);
-
-  & > nav {
-    margin: 0 20%;
-  }
-}
-
 .navbox-mobile {
-  min-height: 400px;
-  background-color: var(--secondary);
-  display: grid;
-  grid-template:
-  "a a a" 20%
-  "b b b" 40%
-  "c c c" 40%;
-  // border: 1px solid var(--primary);
-  max-width: 50vw;
-  height: 50vh;
-  transform: translate(0%, 0%);
-  padding: 0.5em;
-  transition-property: transform, height, width, margin, background-color;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  background-color: #fffccf;
-
   
+
+  &.big-nav {
+  
+  }
+
+  &.small-nav {
+  
+  }
+
 }
 
 </style>
