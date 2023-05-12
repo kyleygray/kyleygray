@@ -82,6 +82,9 @@ export default defineComponent({
 .slide-leave-active {
   transition: all 0.5s ease;
 }
+.slide-enter-from {
+  transform: translateX(0%);
+}
 .slide-leave-to,
 .slide-enter-from {
   transform: translateX(100%);

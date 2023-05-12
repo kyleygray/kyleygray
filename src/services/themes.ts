@@ -6,6 +6,7 @@ export interface Theme {
     success: string;
     danger: string;
     background: string;
+    inverted: boolean;
 }
 
 const defaultTheme: Theme = {
@@ -16,6 +17,7 @@ const defaultTheme: Theme = {
     success: "#00FF00",
     danger: "#FF0000",
     background: "#FFFFFF",
+    inverted: false
 }
 
 const invertedTheme: Theme = {
@@ -26,6 +28,7 @@ const invertedTheme: Theme = {
     success: "#00FF00",    
     danger: "#FF0000",     
     background: "#000000",
+    inverted: true
 }
 
 export default function useThemes() {

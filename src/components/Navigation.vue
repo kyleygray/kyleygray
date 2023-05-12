@@ -1,7 +1,9 @@
 <template>
   <div v-show="!isMobile" class="container">
     <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, 'navbox': true}">
-      <router-link class="my-name" to="/"><h1>{{ myName }}</h1></router-link>
+      <router-link class="my-K" to="/">
+        <img ref="theK" :class="{ 'the-k': true, 'inverted': inverted }" src="@/assets/kline.png" alt="K">
+      </router-link>
       <nav>
         <router-link to="/about">about</router-link>
         <router-link to="/process">process</router-link>
@@ -10,8 +12,8 @@
       </nav>
       <div class="controls">
         <div class="themes">
-          <ThemeButton :theme="themes.defaultTheme" />
-          <ThemeButton :theme="themes.invertedTheme" />
+          <ThemeButton @click="toggleInversion(themes.defaultTheme)" :theme="themes.defaultTheme" />
+          <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
           <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
@@ -29,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, inject } from "vue";
+import { defineComponent, ref, watch, inject, computed, onMounted } from "vue";
 
 import ToggleButton from "@/components/ToggleButton.vue";
 import ThemeButton from "@/components/ThemeButton.vue";
@@ -48,7 +50,10 @@ export default defineComponent({
     const themes = useThemes();
     const isHome = ref(true);
     const { isMobile } = inject("mobileHelper");
-    const myName = ref("Kyley Gray");
+    const myName = ref("KG");
+    const theK = ref(null);
+
+    const inverted = ref(false);
 
     watch(
       () => state.activeComponent,
@@ -58,19 +63,42 @@ export default defineComponent({
       {immediate: true},
     )
 
+    // onMounted(() => {
+    //   theK.value.classList.add("inverted");
+    // })
+
+    //TODO make this reactive to the theme
+
+    function toggleInversion(theme: themes.Theme) {
+      console.log(theme.inverted);
+      inverted.value = theme.inverted;
+    }
+
     return {
       isHome,
       myName,
       themes,
       state,
       methods,
-      isMobile
+      isMobile,
+      theK,
+      toggleInversion,
+      inverted
     };
   },
 });
 </script>
 
 <style lang="scss" scoped>
+
+.the-k {
+  height: 60px;
+  filter: invert(0);
+  transition: filter 0.5s ease;
+}
+.the-k.inverted {
+  filter: invert(1);
+}
 
 .container {
   display: block;
@@ -82,6 +110,7 @@ export default defineComponent({
 }
 
 .navbox {
+  min-height: 400px;
   background: var(--secondary);
   display: grid;
   grid-template:
@@ -129,10 +158,10 @@ nav {
   }
 }
 
-.my-name {
+.my-K {
   grid-row: 1;
   grid-column: 1 / 4;
-  align-self: end;
+  align-self: center;
   text-decoration: none;
   color: inherit;
   transition: color 0.5s ease;
