@@ -1,7 +1,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
-        <component :class="{ 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home' }" :is="Component" />
+        <component :class="{ 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home', 'page-view': state.activeComponent !== 'home' }" :is="Component" />
     </transition>
   </router-view>
 </template>
@@ -22,7 +22,13 @@ export default defineComponent({
                 return "";
             }
             if (state.activeComponent === "home") {
-                return "slide"
+              if (isMobile.value) {
+                return "upslide";
+              }
+                return "slide";
+            }
+            if (isMobile.value) {
+              return "uppage";
             }
             return "page";
             });
@@ -44,55 +50,94 @@ export default defineComponent({
   width: calc(100% - 25vw);
   margin-left: 25vw;
   background-color: var(--accent);
-  transition-property: background-color, transform;
+  transition-property: background-color, transform, opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   overflow-x: hidden;
+  opacity: 1;
+    
+  &.home-view {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
 
   &.mobile-view {
-    position: absolute;
     width: 100%;
     margin: 0;
     height: 80vh;
+
+    transform: translate(0%, -100%);
   }
 
-  &.home-view {
-    transform: translateX(100%);
+  &.page-view {
+    transform: translate(0%, 0%);
   }
 }
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.7s ease;
+  transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
 }
 .page-enter-from {
-  transform: translateX(100%);
+  transform: translate(100%, 0%) !important;
   background-color: var(--accent);
 }
 .page-enter-to,
 .page-leave-from {
-  transform: translateX(0%);
+  transform: translate(0%, 0%) !important;
   background-color: var(--accent);
 }
 .page-leave-to {
-  transform: translate(0%);
+  transform: translate(0%, 0%) !important;
+  background-color: var(--secondary);
+}
+
+.uppage-enter-active,
+.uppage-leave-active {
+  transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+}
+.uppage-enter-from {
+  transform: translate(0%, -100%) !important;
+  background-color: var(--accent);
+}
+.uppage-enter-to,
+.uppage-leave-from {
+  transform: translate(0%, 0%) !important;
+  background-color: var(--accent);
+}
+.uppage-leave-to {
+  transform: translate(0%, 0%) !important;
   background-color: var(--secondary);
 }
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
 }
 .slide-enter-from {
-  transform: translateX(0%);
-}
-.slide-leave-to,
-.slide-enter-from {
-  transform: translateX(100%);
+  transform: translate(0%, 0%);
 }
 .slide-enter-to,
 .slide-leave-from {
-  transform: translateX(0%);
+  transform: translate(100%, 0%);
+}
+.slide-leave-to {
+  transform: translate(0%, 0%);
+}
+
+.upslide-enter-active,
+.upslide-leave-active {
+  transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+}
+.upslide-enter-from {
+  transform: translate(0%, 0%);
+}
+.upslide-enter-to,
+.upslide-leave-from {
+  transform: translate(0%, -100%);
+}
+.upslide-leave-to {
+  transform: translate(0%, 0%);
 }
 
 </style>

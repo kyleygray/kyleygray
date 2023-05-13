@@ -78,14 +78,8 @@ export default defineComponent({
       {immediate: true},
     )
 
-    // onMounted(() => {
-    //   theK.value.classList.add("inverted");
-    // })
-
-    //TODO make this reactive to the theme
-
+    // eslint-disable-next-line no-undef
     function toggleInversion(theme: themes.Theme) {
-      console.log(theme.inverted);
       inverted.value = theme.inverted;
     }
 
@@ -241,10 +235,29 @@ export default defineComponent({
   grid-template-columns: 20% 60% 20%;
   padding: 0px 20px;
   height: 20vh;
+  transition-property: transform, background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 
   &.big-nav-mobile {
     width: 100vw;
     transform: translateY(200%);
+
+    .my-K {
+      transform: translate(200%, -125%);
+      width: 100%;
+
+      .the-k {
+        // height: auto;
+        width: 100px;
+        max-width: 100px;
+      }
+    }
+
+    .controls {
+      transform: translate(-200%, 150%);
+    }
+
   }
 
   &.small-nav-mobile {
@@ -261,6 +274,8 @@ export default defineComponent({
     color: inherit;
     transition: color 0.5s ease;
     align-self: center;
+    transform: translate(0%, 0%);
+    transition: transform 0.5s ease;
 
     .the-k {
       height: auto;
@@ -312,6 +327,8 @@ export default defineComponent({
 
   .controls {
     align-self: center;
+    transform: translate(0%, 0%);
+    transition: transform 0.5s ease;
 
     .label {
       
