@@ -117,7 +117,7 @@ export default defineComponent({
   display: grid;
   grid-template:
   "a a a" 20%
-  "b b b" 40%
+  "b b b" 50%
   "c c c" 40%;
   // border: 1px solid var(--primary);
   max-width: 50vw;
@@ -139,6 +139,9 @@ export default defineComponent({
 
   nav {
     a {
+      text-align: center;
+      height: 40px;
+      padding-top: 8px;
       color: var(--primary);
       transition: color 0.5s ease, background-color 0.5s ease;
 
@@ -169,6 +172,7 @@ export default defineComponent({
   }
 
   .my-K {
+    text-align: center;
     grid-row: 1;
     grid-column: 1 / 4;
     align-self: center;
@@ -244,6 +248,7 @@ export default defineComponent({
     transform: translateY(200%);
 
     .my-K {
+      text-align: center;
       transform: translate(200%, -125%);
       width: 100%;
 
@@ -295,15 +300,17 @@ export default defineComponent({
     align-self: center;
     display: flex;
     flex-wrap: wrap;
+    min-width: 150px;
     a {
+      text-align: center;
       width: 42.5%;
-      height: calc(25vh / 5);
+      height: 50px;
       margin-left: 2.5%;
       margin-right: 2.5%;
       margin-top: 5px;
       color: var(--primary);
       transition: color 0.5s ease, background-color 0.5s ease;
-      padding-top: 6px;
+      padding-top: 10px;
       font-size: 1.1em;
       &.router-link-exact-active {
         background-color: var(--accent);

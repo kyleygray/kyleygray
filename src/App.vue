@@ -77,6 +77,9 @@ body {
   width: 100%;
   background-color: var(--background);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricprecision;
 }
 
 * {
@@ -85,10 +88,8 @@ body {
 
 #app {
   display: grid;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Anonymous Pro', monospace;
+  // text-align: center;
   color: var(--primary);
   background-color: var(--background);
   transition: background-color 0.5s ease, color 0.5s ease;
@@ -96,6 +97,10 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik', serif;
 }
 
 .animations-off {

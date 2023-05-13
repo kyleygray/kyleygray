@@ -62,6 +62,7 @@ export default defineComponent({
     border-radius: 20px;
     width: 60px;
     height: 30px;
+    min-width: 60px;
     background-color: var(--accent);
     transition: background-color 0.5s ease;
 
@@ -79,10 +80,14 @@ export default defineComponent({
     }
 
     &.toggleOn {
+      text-align: center;
+      font-size: 0.8em;
       span {
         transform: translateX(30px);
       }
       &::before{
+        padding-top: 3px;
+        text-align: center;
         position: absolute;
         margin: 3px;
         left: 7px;
@@ -94,6 +99,8 @@ export default defineComponent({
         transform: translateX(0px);
       }
       &::before{
+        padding-top: 2px;
+        text-align: center;
         position: absolute;
         margin: 3px;
         right: 7px;

@@ -53,6 +53,7 @@ export default defineComponent({
       display: flex;
       width: 100%;
       height: 100%;
+      min-width: 40px;
       align-items: center;
       justify-content: center;
       font-weight: bold;
@@ -61,6 +62,7 @@ export default defineComponent({
 
     &.toggleOn {
       &::before {
+        text-align: center;
         content: '▼';
         font-size: 0.8em;
         position: absolute;

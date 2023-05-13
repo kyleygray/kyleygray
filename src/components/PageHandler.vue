@@ -49,7 +49,7 @@ export default defineComponent({
   height: 100vh;
   width: calc(100% - 25vw);
   margin-left: 25vw;
-  background-color: var(--accent);
+  background-color: var(--secondary);
   transition-property: background-color, transform, opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -80,16 +80,16 @@ export default defineComponent({
 }
 .page-enter-from {
   transform: translate(100%, 0%) !important;
-  background-color: var(--accent);
+  background-color: var(--secondary);
 }
 .page-enter-to,
 .page-leave-from {
   transform: translate(0%, 0%) !important;
-  background-color: var(--accent);
+  background-color: var(--secondary);
 }
 .page-leave-to {
   transform: translate(0%, 0%) !important;
-  background-color: var(--secondary);
+  background-color: var(--accent);
 }
 
 .uppage-enter-active,
@@ -98,16 +98,16 @@ export default defineComponent({
 }
 .uppage-enter-from {
   transform: translate(0%, -100%) !important;
-  background-color: var(--accent);
+  background-color: var(--secondary);
 }
 .uppage-enter-to,
 .uppage-leave-from {
   transform: translate(0%, 0%) !important;
-  background-color: var(--accent);
+  background-color: var(--secondary);
 }
 .uppage-leave-to {
   transform: translate(0%, 0%) !important;
-  background-color: var(--secondary);
+  background-color: var(--accent);
 }
 
 .slide-enter-active,
