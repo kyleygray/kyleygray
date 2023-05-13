@@ -45,7 +45,7 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       window.removeEventListener('resize', handleResize);
-    })
+    });
 
     watch(
       () => state.animationsOff,

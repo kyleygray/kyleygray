@@ -1,6 +1,6 @@
 <template>
 <div class="wrapper">
-  <div class="label">{{props.label}}</div>
+  <div v-show="props.label" class="label">{{props.label}}</div>
   <div class="switch" @click="props.onClick" :class="toggle">
     <span></span>
   </div>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'ToggleButton',
@@ -30,7 +30,7 @@ export default defineComponent({
 
     return {
       toggle,
-      props
+      props,
     }
   }
 });

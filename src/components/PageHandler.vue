@@ -53,6 +53,7 @@ export default defineComponent({
     position: absolute;
     width: 100%;
     margin: 0;
+    height: 80vh;
   }
 
   &.home-view {
