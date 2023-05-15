@@ -16,7 +16,7 @@
           <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
-          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="animations" />
+          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="⌇" size="2rem"/>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
           <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
-          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" />
+          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="⌇" size="2rem" />
         </div>
       </div>
     </div>
@@ -181,11 +181,12 @@ export default defineComponent({
   }
 
   .controls {
-    margin-top: 50px;
+    // margin-top: 50px;
     display: grid;
     grid-row: 3;
     grid-column: 1 / 4;
     align-self: start;
+    transition: transform 0.5s ease;
 
     .label {
       margin: 5px;
@@ -201,12 +202,10 @@ export default defineComponent({
     }
 
     .accessibility {
-      margin: 5px 0px;
       grid-row: 2;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
     }
 
   }
@@ -214,11 +213,15 @@ export default defineComponent({
   &.big-nav {
     height: 50vh;
     width: 50vw;
-    transform: translate(50%, 50%);
+    transform: translate(50%, 20vh);
     border-radius: 1em;
 
     .the-k {
       transform: translateY(-50%);
+    }
+
+    .controls {
+      transform: translateY(50px);
     }
   }
 
@@ -245,14 +248,14 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 20% 60% 20%;
   padding: 0px 20px;
-  height: 20vh;
+  height: 150px;
   transition-property: transform, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
 
   &.big-nav-mobile {
     width: 100vw;
-    transform: translateY(200%);
+    transform: translateY(calc(50vh - 100px));
 
     .my-K {
       text-align: center;
@@ -274,7 +277,7 @@ export default defineComponent({
 
   &.small-nav-mobile {
     width: 100vw;
-    transform: translateY(400%);
+    transform: translateY(calc(100vh - 150px));
 
     & > nav {
       
@@ -344,17 +347,13 @@ export default defineComponent({
     transform: translate(0%, 0%);
     transition: transform 0.5s ease;
 
-    .label {
-      
-    }
-
     .themes {
       display: flex;
       justify-content: center;
     }
 
     .accessibility {
-     
+      
     }
 
   }

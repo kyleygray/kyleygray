@@ -65,7 +65,7 @@ export default defineComponent({
   &.mobile-view {
     width: 100%;
     margin: 0;
-    height: 80vh;
+    height: calc(100vh - 150px);
 
     transform: translate(0%, -100%);
   }

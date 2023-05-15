@@ -1,6 +1,6 @@
 <template>
 <div class="wrapper">
-  <div v-show="props.label" class="label">{{props.label}}</div>
+  <div v-show="props.label" class="label" :style="{fontSize: props.size}">{{props.label}}</div>
   <div class="switch" @click="props.onClick" :class="toggle">
     <span></span>
   </div>
@@ -22,6 +22,9 @@ export default defineComponent({
       default: false
     },
     label: {
+      type: String
+    },
+    size: {
       type: String
     }
   },
@@ -49,8 +52,8 @@ export default defineComponent({
   }
 
   .label {
-    width: fit-content;
-    height: fit-content;
+    // width: fit-content;
+    // height: fit-content;
   }
 
   .switch {
