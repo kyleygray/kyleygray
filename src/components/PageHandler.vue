@@ -55,6 +55,7 @@ export default defineComponent({
   transition-timing-function: ease;
   overflow-x: hidden;
   opacity: 1;
+  padding: 20px;
     
   &.home-view {
     transform: translate(100%, 0%);

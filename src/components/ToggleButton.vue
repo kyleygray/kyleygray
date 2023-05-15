@@ -89,7 +89,7 @@ export default defineComponent({
         padding-top: 3px;
         text-align: center;
         position: absolute;
-        margin: 3px;
+        margin: 0px;
         left: 7px;
         content: 'off';
       }
@@ -99,10 +99,9 @@ export default defineComponent({
         transform: translateX(0px);
       }
       &::before{
-        padding-top: 2px;
         text-align: center;
         position: absolute;
-        margin: 3px;
+        margin: 0px;
         right: 7px;
         content: 'on';
       }

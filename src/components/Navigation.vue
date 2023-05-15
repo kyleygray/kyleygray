@@ -104,11 +104,11 @@ export default defineComponent({
 
 .container {
   display: block;
-  position: relative;
+  position: absolute;
   left: 0;
   top: 0;
-  height: 0vh;
-  width: 0vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 .navbox {
@@ -129,9 +129,9 @@ export default defineComponent({
   transition-timing-function: ease;
 
   .the-k {
-    height: 60px;
+    height: 100px;
     filter: invert(0);
-    transition: filter 0.5s ease;
+    transition: filter 0.5s ease, transform 0.5s ease;
   }
   .the-k.inverted {
     filter: invert(1);
@@ -172,13 +172,12 @@ export default defineComponent({
   }
 
   .my-K {
-    text-align: center;
     grid-row: 1;
     grid-column: 1 / 4;
     align-self: center;
+    justify-self: center;
     text-decoration: none;
     color: inherit;
-    transition: color 0.5s ease;
   }
 
   .controls {
@@ -217,6 +216,10 @@ export default defineComponent({
     width: 50vw;
     transform: translate(50%, 50%);
     border-radius: 1em;
+
+    .the-k {
+      transform: translateY(-50%);
+    }
   }
 
   &.small-nav {
@@ -229,6 +232,10 @@ export default defineComponent({
 
     & > nav {
       margin: 0 20%;
+    }
+
+    .the-k {
+      transform: translateY(0%);
     }
   }
   
