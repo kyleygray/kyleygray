@@ -24,7 +24,7 @@ export default defineComponent({
     },
     type: {
         type: String,
-        required: true
+        default: "fadein"
     },
     speed: {
         type: String,

@@ -26,7 +26,7 @@ export default defineComponent({
         const animatedElement = ref(null);
         const full = ref(window.innerHeight);
         const currentStep = ref(0);
-        const animatedParent = inject('animatedParent');
+        const viewParent = inject('viewParent');
 
         const animationStyles = ref(`${props.name}-${currentStep.value}`);
 
@@ -62,13 +62,13 @@ export default defineComponent({
                 {immediate: true},
             );
             
-            animatedParent.value.addEventListener('scroll', updateStep);
+            viewParent.value.addEventListener('scroll', updateStep);
             window.addEventListener('resize', updateHeight);
         });
 
         onUnmounted(() => {
-            if (animatedParent.value) {
-                animatedParent.value.removeEventListener('scroll', updateStep);
+            if (viewParent.value) {
+                viewParent.value.removeEventListener('scroll', updateStep);
             }
             window.removeEventListener('resize', updateHeight);
         });

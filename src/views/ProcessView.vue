@@ -24,7 +24,7 @@ export default defineComponent({
   },
   setup () {
     const viewParent = ref(null);
-    provide('animatedParent', viewParent)
+    provide('viewParent', viewParent)
     
     return {
       viewParent

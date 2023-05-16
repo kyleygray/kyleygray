@@ -1,21 +1,22 @@
 <template>
   <div class="view-container">
-    <Markdown :source="content" />
+    <div class="text-xl">
+      Work View
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Markdown from 'vue3-markdown-it';
 
 export default defineComponent({
   components: {
-    Markdown
+
   },
   setup () {
-    const content = '# Work Page';
+    
     return {
-      content
+      
     }
   }
 });

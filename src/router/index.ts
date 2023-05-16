@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
-import ProcessView from "../views/ProcessView.vue"
-import WorkView from "../views/WorkView.vue"
-import ContactView from "../views/ContactView.vue"
+import ProcessView from "../views/ProcessView.vue";
+import WorkView from "../views/WorkView.vue";
+import ContactView from "../views/ContactView.vue";
 
 import EventBus from "../services/eventBus";
 
@@ -21,13 +21,13 @@ const routes: Array<RouteRecordRaw> = [
     component: AboutView,
   },
   {
-    path: "/process",
-    name: "process",
+    path: "/skills",
+    name: "skills",
     component: ProcessView,
   },
   {
-    path: "/work",
-    name: "work",
+    path: "/experience",
+    name: "experience",
     component: WorkView,
   },
   {
@@ -43,8 +43,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
-  useStore().methods.setActiveComponent(to.name?.toString() || 'error');
+  useStore().methods.setActiveComponent(to.name?.toString() || "error");
   next();
-})
+});
 
 export default router;
