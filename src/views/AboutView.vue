@@ -4,10 +4,11 @@
     <div class="w-full object-cover relative">
       <div class="mytitlecontainer absolute top-20 left-10 z-1">
         <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative"><TextFX text="Kyley Gray" type="fadein" speed="20" /><button ref="rainbowbtn" class="absolute right-2 top-2 rainbow-btn" @click="makeRainbow()"></button></h1>
-        <!-- <h1 class="mytitle text-4xl font-bold p-2"><TextFX text="Kyley Gray" type="fadein" speed="20" /></h1> -->
+        <!-- <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative">Kyley Gray</h1> -->
         <h2 class="mydesc text-2xl font-normal p-2"><TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" /></h2>
+        <!-- <h2 class="mydesc text-2xl font-normal p-2">Multimedia Design &amp; Development</h2> -->
       </div>
-      <img class="h-96 rounded-lg w-full object-cover" src="@/assets/backyard.jpg" alt="cover image">
+      <img class="h-96 w-full object-cover rounded-t-lg" src="@/assets/backyard.jpg" alt="cover image">
     </div> 
     
     <article class="p1">
@@ -15,10 +16,11 @@
       text="
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, esse.
       " /></h2> -->
-      <p class="text-xl my-5 font-semibold"><TextFX type="fadein"
+      <!-- <p class="text-xl my-5 font-semibold"><TextFX type="fadein"
       text="
       Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.
-      " speed="10" /></p>
+      " speed="10" /></p> -->
+      <p class="text-xl p-3 mb-5 mt-0 font-semibold rounded-b-lg">Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.</p>
     </article>
 
     <AnimatedFX name="fade1" :steps="[40]">
@@ -70,7 +72,7 @@ export default defineComponent({
   .view-container {
     // padding: 1.5em;
     .mytitlecontainer {
-      border-radius: 0.5rem;
+      // border-radius: 0.5rem;
 
       & * {
         // transition: background-color 0.5s ease;
@@ -146,27 +148,10 @@ export default defineComponent({
   }
 
   .p1 {
-      span {
-        margin: -1px -1px;
-        padding: 2px 1px;
-        color: var(--secondary);
-        background-color: var(--primary);
-        animation: wave 10s ease infinite;
-      }  
+    p {
+      line-height: 1.1em;
+      color: var(--secondary);
+      background-color: var(--primary);     
     }
-
-    @keyframes wave {
-      0% {
-        padding: 2px 1px;
-        margin: -1px -1px;
-      }
-      50% {
-        padding: 4px 0.8px;
-        margin: -2px -0.8px;
-      }
-      100% {
-        padding: 2px 1px;
-        margin: -1px -1px;
-      }
-    }
+  }
 </style>
