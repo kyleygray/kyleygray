@@ -1,7 +1,7 @@
 <template>
     <!-- <transition name="fadein"> -->
         <div class="fx">
-            <span v-for="(letter, index) in text" :key="index" :class="anitype" 
+            <span v-for="(letter, index) in text" :key="index" :class="anitype" :data-letter="letter"
             :style="{ 
                 transitionDelay: (index / (parseInt(props.speed) * (props.text.length/20))) + 's',
                 transitionDuration: 5 / parseInt(props.speed) + 's' 
@@ -24,7 +24,7 @@ export default defineComponent({
     },
     type: {
         type: String,
-        default: "fadein"
+        required: true
     },
     speed: {
         type: String,
@@ -32,12 +32,12 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const anitype = ref("reset");
+    const anitype = ref(`${props.type}-reset`);
 
     onMounted(() => {
         setTimeout(() => {
             anitype.value = props.type;
-        }, 0);
+        }, 100);
     });
 
     return {
@@ -50,17 +50,41 @@ export default defineComponent({
 
 <style lang="scss" scoped>
     .fx {
+        position: relative;
         span {
             transition-property: all;
             transition-timing-function: ease;
         }
     }
-    .reset {
+    .fadein-reset {
         opacity: 0;
     }
     .fadein {
         transition-duration: 0.3s;
         opacity: 1;
+    }
+    .fallin-reset {
+        opacity: 0;
+        &::after {
+            content: attr(data-letter);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-15px);
+        }
+    }
+    .fallin {
+        transition-duration: 0.3s;
+        opacity: 1;
+        position: relative;
+        &::after {
+            content: attr(data-letter);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.5s ease;
+            transform: translateY(-4px);
+        }
     }
 
     // .fx {

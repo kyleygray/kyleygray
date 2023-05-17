@@ -103,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Rubik', serif;
 }
 
+main {
+  padding: 0;
+}
+
 .animations-off {
   transition: all 0s !important;
   transition-duration: 0s !important;
