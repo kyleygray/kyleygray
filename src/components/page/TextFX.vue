@@ -4,7 +4,8 @@
             <span v-for="(letter, index) in text" :key="index" :class="anitype" :data-letter="letter"
             :style="{ 
                 transitionDelay: (index / (parseInt(props.speed) * (props.text.length/20))) + 's',
-                transitionDuration: 5 / parseInt(props.speed) + 's' 
+                transitionDuration: 5 / parseInt(props.speed) + 's',
+                animationDelay: -(props.text.length - index / (parseInt(props.speed) * (props.text.length/40))) + 's',
             }">
                 {{letter}}
             </span>
@@ -37,7 +38,7 @@ export default defineComponent({
     onMounted(() => {
         setTimeout(() => {
             anitype.value = props.type;
-        }, 100);
+        }, 0);
     });
 
     return {
@@ -48,7 +49,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .fx {
         position: relative;
         span {

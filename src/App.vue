@@ -110,9 +110,11 @@ main {
 .animations-off {
   transition: all 0s !important;
   transition-duration: 0s !important;
+  animation: unset;
   * {
     transition: all 0s !important;
     transition-duration: 0s !important; 
+    animation: unset !important;
   }
 }
 
