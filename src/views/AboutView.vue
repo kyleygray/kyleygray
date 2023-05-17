@@ -20,17 +20,18 @@
       text="
       Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.
       " speed="10" /></p> -->
-      <p class="text-xl p-3 mb-5 mt-0 font-semibold rounded-b-lg">Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.</p>
+      <p class="caption text-xl p-3 mb-5 mt-0 font-semibold rounded-b-lg">Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.</p>
+      <p class="text-lg my-5">Scroll down to read more.</p>
     </article>
 
     <AnimatedFX name="fade1" :steps="[40]">
-      <p class="text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
+      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
     <AnimatedFX name="fade1" :steps="[35]">
-      <p class="text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
+      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
     <AnimatedFX name="fade1" :steps="[30]">
-      <p class="text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
+      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
   </main>
 </template>
@@ -148,7 +149,7 @@ export default defineComponent({
   }
 
   .p1 {
-    p {
+    p.caption {
       line-height: 1.1em;
       color: var(--secondary);
       background-color: var(--primary);     

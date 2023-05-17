@@ -23,9 +23,12 @@ export default defineComponent({
   setup() {
     const { state, methods } = useStore();
     const viewWidth = ref(window.innerWidth);
-    const MOBILE_WIDTH = "768"
+    const MOBILE_WIDTH = "768";
+    const isMobileDevice = computed(() => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    });
     const isMobile = computed(() => {
-      return (viewWidth.value < MOBILE_WIDTH);
+      return (isMobileDevice.value || (viewWidth.value < MOBILE_WIDTH));
     });
     const mobileHelper = () => {
       return {
