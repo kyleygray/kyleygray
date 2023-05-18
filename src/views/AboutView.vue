@@ -24,15 +24,15 @@
       <p class="text-lg my-5">Scroll down to read more.</p>
     </article>
 
-    <AnimatedFX name="fade1" :steps="[40]">
+    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </AnimatedFX>
-    <AnimatedFX name="fade1" :steps="[30]">
+    </ScrollFX>
+    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </AnimatedFX>
-    <AnimatedFX name="fade1" :steps="[20]">
+    </ScrollFX>
+    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </AnimatedFX>
+    </ScrollFX>
   </main>
 </template>
 
@@ -40,11 +40,12 @@
 import { defineComponent, provide, ref } from 'vue';
 import TextFX from "@/components/page/TextFX.vue";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
+import ScrollFX from "@/components/page/ScrollFX.vue";
 
 export default defineComponent({
   components: {
     TextFX,
-    AnimatedFX
+    ScrollFX
   },
   methods: {
     makeRainbow() {

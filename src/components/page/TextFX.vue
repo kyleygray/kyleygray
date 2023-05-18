@@ -88,32 +88,4 @@ export default defineComponent({
         }
     }
 
-    // .fx {
-    //     span {
-    //         opacity: 1;
-    //     }
-    // }
-    // .fadein-enter-active,
-    // .fadein-leave-active {
-    //     & > * {
-    //         transition: opacity 0.5s ease;
-    //     }
-    // }
-    // .fadein-enter-from {
-    //     & > * {
-    //         opacity: 0;
-    //     }
-    // }
-    // .fadein-enter-to,
-    // .fadein-leave-from {
-    //     & > * {
-    //         opacity: 1;
-    //     }
-    // }
-    // .fadein-leave-to {
-    //     & > * {
-    //         opacity: 0;
-    //     }
-    // }
-
 </style>

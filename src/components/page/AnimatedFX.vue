@@ -7,50 +7,49 @@
 <script lang="ts">
 import { ref, onMounted, onUnmounted, defineComponent, inject, watch } from 'vue';
 import useStore from '@/services/store.ts';
+import { throttle } from 'lodash';
 
 export default defineComponent({
     name: 'AnimatedFX',
     props: {
+        provider: {
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true
         },
         steps: {
-            type: Array,
-            required: true
-        }
+            type: Array
+        },
     },
     setup(props) {
         const { state } = useStore();
         const aniOff = ref(false);
         const animatedElement = ref(null);
-        const full = ref(window.innerHeight);
-        const currentStep = ref(0);
-        const viewParent = inject('viewParent');
+        const viewParent = inject(props.provider);
+        const percentageScrolled = ref(0);
 
-        const animationStyles = ref(`${props.name}-${currentStep.value}`);
+        const animationStyles = ref(`${props.name}-default`);
 
-        const updateStep = () => {
-            if (!aniOff.value) {
+        const updateStep = throttle(() => {
+            if (!aniOff.value && animatedElement.value) {
                 const rect = animatedElement.value.getBoundingClientRect();
                 const yPosition = rect.top;
-                const percentageScrolled = ((window.innerHeight - yPosition) / window.innerHeight) * 100;
-                currentStep.value = 0;
+                percentageScrolled.value = ((window.innerHeight - yPosition) / window.innerHeight) * 100;
+                let currentStep = 0;
     
                 props.steps.forEach((element, index) => {
-                    if (percentageScrolled >= parseInt(element)) {
-                        currentStep.value = index + 1;
+                    if (percentageScrolled.value >= parseInt(element)) {
+                        currentStep = index + 1;
                     }
                 });
-                animationStyles.value = `${props.name}-${currentStep.value}`;
+                animationStyles.value = `${props.name}-${currentStep}`;
             } else {
                 animationStyles.value = `${props.name}-default`;
             }
-        };
-
-        const updateHeight = () => {
-            full.value = window.innerHeight;
-        }
+        }, 200); // Throttle scroll event handling to 200ms
 
         onMounted(() => {
             watch(
@@ -62,15 +61,17 @@ export default defineComponent({
                 {immediate: true},
             );
             
-            viewParent.value.addEventListener('scroll', updateStep);
-            window.addEventListener('resize', updateHeight);
+            if(viewParent.value){
+                viewParent.value.addEventListener('scroll', updateStep);
+            }
+            window.addEventListener('resize', updateStep);
         });
 
         onUnmounted(() => {
             if (viewParent.value) {
                 viewParent.value.removeEventListener('scroll', updateStep);
             }
-            window.removeEventListener('resize', updateHeight);
+            window.removeEventListener('resize', updateStep);
         });
 
         return {
