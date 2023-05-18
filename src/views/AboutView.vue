@@ -8,7 +8,7 @@
         <h2 class="mydesc text-2xl font-normal p-2"><TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" /></h2>
         <!-- <h2 class="mydesc text-2xl font-normal p-2">Multimedia Design &amp; Development</h2> -->
       </div>
-      <img class="h-96 w-full object-cover rounded-t-lg" src="@/assets/backyard.jpg" alt="cover image">
+      <img class="h-96 w-full object-cover rounded-t-lg" src="@/assets/backyardchaos.jpg" alt="cover image">
     </div> 
     
     <article class="p1">
@@ -27,10 +27,10 @@
     <AnimatedFX name="fade1" :steps="[40]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
-    <AnimatedFX name="fade1" :steps="[35]">
+    <AnimatedFX name="fade1" :steps="[30]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
-    <AnimatedFX name="fade1" :steps="[30]">
+    <AnimatedFX name="fade1" :steps="[20]">
       <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
     </AnimatedFX>
   </main>
