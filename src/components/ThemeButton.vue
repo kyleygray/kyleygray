@@ -22,7 +22,7 @@ export default defineComponent({
     const toggle = computed(() => (props.theme.name === useStore().state.theme.name ? "toggleOn" : "toggleOff"));
     const buttonTheme = computed(() => {
       return {
-        background: `linear-gradient(45deg, ${props.theme.secondary}, ${props.theme.accent})`,
+        background: `linear-gradient(45deg, ${props.theme.secondary}, ${props.theme.background})`,
         color: props.theme.primary
       }
     })

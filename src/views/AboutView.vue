@@ -2,37 +2,21 @@
   <main class="view-container p-0" ref="viewParent">
 
     <div class="w-full object-cover relative">
-      <div class="mytitlecontainer absolute top-20 left-10 z-1">
+      <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative"><TextFX text="Kyley Gray" type="fadein" speed="20" /><button ref="rainbowbtn" class="absolute right-2 top-2 rainbow-btn" @click="makeRainbow()"></button></h1>
-        <!-- <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative">Kyley Gray</h1> -->
         <h2 class="mydesc text-2xl font-normal p-2"><TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" /></h2>
-        <!-- <h2 class="mydesc text-2xl font-normal p-2">Multimedia Design &amp; Development</h2> -->
       </div>
-      <img class="h-96 w-full object-cover rounded-t-lg" src="@/assets/backyardchaos.jpg" alt="cover image">
+      <img class="mybackyard w-full object-cover rounded-t-lg" src="@/assets/backyardbw.svg" alt="cover image">
     </div> 
     
     <article class="p1">
-      <!-- <h2 class="my-2 text-xl font-bold"><TextFX type="fadein"
+      <p class="caption text-xl p-5 mb-5 font-semibold mt-0 rounded-b-lg"><TextFX type="fadein"
       text="
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, esse.
-      " /></h2> -->
-      <!-- <p class="text-xl my-5 font-semibold"><TextFX type="fadein"
-      text="
-      Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.
-      " speed="10" /></p> -->
-      <p class="caption text-xl p-3 mb-5 mt-0 font-semibold rounded-b-lg">Kyley is a cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.</p>
-      <p class="text-lg my-5">Scroll down to read more.</p>
+      Kyley is a professional cryptid located in Seattle, Washington. They have been creating websites, designing visual art, producing electronic music, and exploring the mind and the universe since 2004.
+      " speed="10" /></p>
     </article>
 
-    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
-      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </ScrollFX>
-    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
-      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </ScrollFX>
-    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="[20, 40]">
-      <p class="text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quisquam odio quia esse ducimus quibusdam tempora? Similique enim voluptatem, quam asperiores, officiis placeat illo vero, velit distinctio impedit quae! Itaque quas facere voluptatem veritatis nulla fugit laborum enim, repellat similique dolore, nam amet facilis voluptates! Enim laudantium nihil incidunt accusamus? Laudantium rerum perspiciatis recusandae? Ullam assumenda dolor natus officiis suscipit ipsum asperiores sequi itaque quas. Assumenda officia, cumque quos totam cupiditate porro minima omnis id odit fugit voluptatum explicabo! Eos atque tempore id odio vero modi ad tempora similique veritatis facilis quam exercitationem ab fuga eaque accusantium, a voluptas excepturi.</p>
-    </ScrollFX>
+    
   </main>
 </template>
 
@@ -72,8 +56,12 @@ export default defineComponent({
 
 <style lang="scss">
   .view-container {
+    --page-color: #ee3e60;
     // padding: 1.5em;
     .mytitlecontainer {
+      position: absolute;
+      top: 30%;
+      left: 20px;
       // border-radius: 0.5rem;
 
       & * {
@@ -125,6 +113,9 @@ export default defineComponent({
         font-size: 1rem;
       }
     }
+    .mybackyard {
+      height: 50vh;
+    }
 
     [class^="fade1-"] {
       transition: opacity 0.5s ease;
@@ -150,7 +141,7 @@ export default defineComponent({
   }
 
   .p1 {
-    p.caption {
+    .caption {
       line-height: 1.1em;
       color: var(--secondary);
       background-color: var(--primary);     

@@ -66,7 +66,7 @@ export default defineComponent({
     width: 60px;
     height: 30px;
     min-width: 60px;
-    background-color: var(--accent);
+    background-color: var(--background);
     transition: background-color 0.5s ease;
 
     span {

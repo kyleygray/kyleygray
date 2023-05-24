@@ -47,8 +47,8 @@ export default defineComponent({
 .view-container {
   position: absolute;
   height: 100vh;
-  width: calc(100% - 25vw);
-  margin-left: 25vw;
+  width: calc(100% - 20vw);
+  margin-left: 20vw;
   background-color: var(--secondary);
   transition-property: background-color, transform, opacity;
   transition-duration: 0.5s;
@@ -90,7 +90,7 @@ export default defineComponent({
 }
 .page-leave-to {
   transform: translate(0%, 0%) !important;
-  background-color: var(--accent);
+  background-color: var(--background);
 }
 
 .uppage-enter-active,
@@ -108,7 +108,7 @@ export default defineComponent({
 }
 .uppage-leave-to {
   transform: translate(0%, 0%) !important;
-  background-color: var(--accent);
+  background-color: var(--background);
 }
 
 .slide-enter-active,

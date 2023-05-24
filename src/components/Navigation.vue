@@ -7,7 +7,7 @@
       <nav>
         <router-link to="/about">about</router-link>
         <router-link to="/skills">skills</router-link>
-        <router-link to="/experience">experience</router-link>
+        <router-link to="/experience">exp.</router-link>
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">
@@ -147,7 +147,8 @@ export default defineComponent({
 
       &.router-link-exact-active {
         background-color: var(--accent);
-        color: var(--primary);
+        color: var(--compliment);
+        font-weight: bold;
       }
     }
 
@@ -227,7 +228,7 @@ export default defineComponent({
 
   &.small-nav {
     height: 100vh;
-    width: 25vw;
+    width: 20vw;
     transform: translate(0%, 0%);
     border-radius: 0em;
     border: 0;
@@ -324,7 +325,8 @@ export default defineComponent({
       font-size: 1.1em;
       &.router-link-exact-active {
         background-color: var(--accent);
-        color: var(--primary);
+        color: var(--compliment);
+        font-weight: bold;
       }
     }
     transition: margin 0.5s ease, background-color 0.5s ease;

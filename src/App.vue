@@ -78,7 +78,7 @@ html,
 body {
   margin: 0;
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--secondary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,7 +94,7 @@ body {
   font-family: 'Anonymous Pro', monospace;
   // text-align: center;
   color: var(--primary);
-  background-color: var(--background);
+  background-color: var(--secondary);
   transition: background-color 0.5s ease, color 0.5s ease;
   width: 100vw;
   height: 100vh;

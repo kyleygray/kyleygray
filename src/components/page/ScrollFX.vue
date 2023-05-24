@@ -68,7 +68,6 @@ export default defineComponent({
 
                 // Map normalizedPercentage to a value within the valueStart and valueEnd range
                 let newValue = parseFloat((normalizedPercentage * (valueEnd - valueStart) + valueStart).toFixed(2));
-                // newValue = props.property === "opacity" ? newValue / 100 : newValue;
 
                 // Set the new style value (with the unit)
                 wrapper.value.style[props.property] = `${newValue}${unitStart}`;
