@@ -1,8 +1,13 @@
 <template>
   <div v-show="!isMobile" class="container">
-    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, 'navbox': true}">
+    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, navbox: true }">
       <router-link class="my-K" to="/">
-        <img ref="theK" :class="{ 'the-k': true, 'inverted': inverted }" src="@/assets/kline.png" alt="K">
+        <img
+          ref="theK"
+          :class="{ 'the-k': true, inverted: inverted }"
+          src="@/assets/kline.png"
+          alt="K"
+        />
       </router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -12,19 +17,41 @@
       </nav>
       <div class="controls">
         <div class="themes">
-          <ThemeButton @click="toggleInversion(themes.defaultTheme)" :theme="themes.defaultTheme" />
-          <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
+          <ThemeButton
+            @click="toggleInversion(themes.defaultTheme)"
+            :theme="themes.defaultTheme"
+          />
+          <ThemeButton
+            @click="toggleInversion(themes.invertedTheme)"
+            :theme="themes.invertedTheme"
+          />
         </div>
         <div class="accessibility">
-          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="⌇" size="2rem"/>
+          <ToggleButton
+            @click="methods.toggleAccessibility()"
+            :toggleActive="state.animationsOff"
+            label="⌇"
+            size="2rem"
+          />
         </div>
       </div>
     </div>
   </div>
   <div v-show="isMobile" class="container">
-    <div :class="{ 'small-nav-mobile': !isHome, 'big-nav-mobile': isHome, 'navbox-mobile': true}">
+    <div
+      :class="{
+        'small-nav-mobile': !isHome,
+        'big-nav-mobile': isHome,
+        'navbox-mobile': true,
+      }"
+    >
       <router-link class="my-K" to="/">
-        <img ref="theK" :class="{ 'the-k': true, 'inverted': inverted }" src="@/assets/kline.png" alt="K">
+        <img
+          ref="theK"
+          :class="{ 'the-k': true, inverted: inverted }"
+          src="@/assets/kline.png"
+          alt="K"
+        />
       </router-link>
       <nav>
         <router-link to="/about">about</router-link>
@@ -34,11 +61,22 @@
       </nav>
       <div class="controls">
         <div class="themes">
-          <ThemeButton @click="toggleInversion(themes.defaultTheme)" :theme="themes.defaultTheme" />
-          <ThemeButton @click="toggleInversion(themes.invertedTheme)" :theme="themes.invertedTheme" />
+          <ThemeButton
+            @click="toggleInversion(themes.defaultTheme)"
+            :theme="themes.defaultTheme"
+          />
+          <ThemeButton
+            @click="toggleInversion(themes.invertedTheme)"
+            :theme="themes.invertedTheme"
+          />
         </div>
         <div class="accessibility">
-          <ToggleButton @click="methods.toggleAccessibility()" :toggleActive="state.animationsOff" label="⌇" size="2rem" />
+          <ToggleButton
+            @click="methods.toggleAccessibility()"
+            :toggleActive="state.animationsOff"
+            label="⌇"
+            size="2rem"
+          />
         </div>
       </div>
     </div>
@@ -58,7 +96,7 @@ export default defineComponent({
   name: "NavigationComponent",
   components: {
     ToggleButton,
-    ThemeButton
+    ThemeButton,
   },
   setup() {
     const { state, methods } = useStore();
@@ -75,8 +113,8 @@ export default defineComponent({
       (activeComponent) => {
         isHome.value = activeComponent === "home";
       },
-      {immediate: true},
-    )
+      { immediate: true }
+    );
 
     // eslint-disable-next-line no-undef
     function toggleInversion(theme: themes.Theme) {
@@ -92,16 +130,13 @@ export default defineComponent({
       isMobile,
       theK,
       toggleInversion,
-      inverted
+      inverted,
     };
   },
 });
 </script>
 
 <style lang="scss" scoped>
-
-
-
 .container {
   display: block;
   position: absolute;
@@ -116,9 +151,9 @@ export default defineComponent({
   background-color: var(--secondary);
   display: grid;
   grid-template:
-  "a a a" 20%
-  "b b b" 50%
-  "c c c" 40%;
+    "a a a" 20%
+    "b b b" 50%
+    "c c c" 40%;
   // border: 1px solid var(--primary);
   max-width: 50vw;
   height: 50vh;
@@ -148,7 +183,6 @@ export default defineComponent({
       &.router-link-exact-active {
         background-color: var(--accent);
         color: var(--compliment);
-        font-weight: bold;
       }
     }
 
@@ -208,9 +242,8 @@ export default defineComponent({
       align-items: center;
       justify-content: center;
     }
-
   }
-  
+
   &.big-nav {
     height: 50vh;
     width: 50vw;
@@ -242,7 +275,6 @@ export default defineComponent({
       transform: translateY(0%);
     }
   }
-  
 }
 
 .navbox-mobile {
@@ -273,7 +305,6 @@ export default defineComponent({
     .controls {
       transform: translate(-200%, 150%);
     }
-
   }
 
   &.small-nav-mobile {
@@ -281,7 +312,6 @@ export default defineComponent({
     transform: translateY(calc(100vh - 150px));
 
     & > nav {
-      
     }
   }
 
@@ -303,7 +333,6 @@ export default defineComponent({
       &.inverted {
         filter: invert(1);
       }
-
     }
   }
 
@@ -326,7 +355,6 @@ export default defineComponent({
       &.router-link-exact-active {
         background-color: var(--accent);
         color: var(--compliment);
-        font-weight: bold;
       }
     }
     transition: margin 0.5s ease, background-color 0.5s ease;
@@ -355,11 +383,7 @@ export default defineComponent({
     }
 
     .accessibility {
-      
     }
-
   }
-
 }
-
 </style>
