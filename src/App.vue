@@ -6,10 +6,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, ref, provide, computed, onMounted, onBeforeUnmount } from "vue";
+import {
+  defineComponent,
+  watch,
+  ref,
+  provide,
+  computed,
+  onMounted,
+  onBeforeUnmount,
+} from "vue";
 import NavigationComponent from "@/components/Navigation.vue";
 import PageHandler from "@/components/PageHandler.vue";
-import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue"
+import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
 
 import useStore from "@/services/store";
 
@@ -19,35 +27,37 @@ export default defineComponent({
     PageHandler,
     AccessibilityWrapper,
   },
-  
+
   setup() {
     const { state, methods } = useStore();
     const viewWidth = ref(window.innerWidth);
     const MOBILE_WIDTH = "768";
     const isMobileDevice = computed(() => {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
     });
     const isMobile = computed(() => {
-      return (isMobileDevice.value || (viewWidth.value < MOBILE_WIDTH));
+      return isMobileDevice.value || viewWidth.value < MOBILE_WIDTH;
     });
     const mobileHelper = () => {
       return {
         viewWidth,
         MOBILE_WIDTH,
-        isMobile
-      }
-    }
+        isMobile,
+      };
+    };
     provide("mobileHelper", mobileHelper());
     const handleResize = () => {
       viewWidth.value = window.innerWidth;
-    }
+    };
 
     onMounted(() => {
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
     });
 
     onBeforeUnmount(() => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     });
 
     watch(
@@ -60,20 +70,18 @@ export default defineComponent({
           root.classList.remove("animations-off");
         }
       },
-      {immediate: true},
+      { immediate: true }
     );
 
     return {
       state,
-      methods
-    }
+      methods,
+    };
   },
-
 });
 </script>
 
 <style lang="scss">
-
 html,
 body {
   margin: 0;
@@ -91,7 +99,7 @@ body {
 
 #app {
   display: grid;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Inconsolata", monospace;
   // text-align: center;
   color: var(--primary);
   background-color: var(--secondary);
@@ -102,8 +110,13 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rubik', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", serif;
 }
 
 main {
@@ -116,10 +129,8 @@ main {
   animation: unset;
   * {
     transition: all 0s !important;
-    transition-duration: 0s !important; 
+    transition-duration: 0s !important;
     animation: unset !important;
   }
 }
-
 </style>
-

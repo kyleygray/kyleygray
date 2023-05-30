@@ -16,7 +16,7 @@
       </div>
       <img
         class="mybackyard w-full object-cover rounded-lg"
-        src="@/assets/backyard.png"
+        src="@/assets/design/design0.jpg"
         alt="cover image"
       />
     </div>
@@ -43,20 +43,33 @@
         :values="['0', '1']"
         :range="[30, 60]"
       > -->
-      <GalleryComponent
-        class=""
-        :images="[nature[0], nature[1], nature[2]]"
-        location="src/assets/nature/"
-      />
-      <p class="text-xl mt-5">
+      <p class="text-2xl my-10">
         Kyley is a professional cryptid located in Seattle, Washington. Since the young
         age of 13, they have been creating websites, designing visual art, producing
         electronic music, and exploring their mind and relative relational universe.
       </p>
-      <p class="text-xl mt-5">
+      <GalleryComponent
+        class=""
+        :images="[
+          '/src/assets/design/design2.jpg',
+          '/src/assets/design/design3.jpg',
+          '/src/assets/design/design1.jpg',
+        ]"
+        location="src/assets/nature/"
+      />
+      <p class="text-2xl my-10">
         This website was created with love and care using skills and knowledge developed
         over many years. Thank you for taking the time to visit.
       </p>
+      <GalleryComponent
+        class=""
+        :images="[
+          '/src/assets/nature/nature4_s.jpg',
+          '/src/assets/aboutme.jpg',
+          '/src/assets/nature/nature6_s.jpg',
+        ]"
+        location="src/assets/nature/"
+      />
       <!-- <GalleryComponent
         :images="[nature[3], nature[4], nature[5]]"
         location="src/assets/nature/"
@@ -114,15 +127,16 @@ export default defineComponent({
     position: absolute;
     top: 30%;
     left: 20px;
-    // border-radius: 0.5rem;
+    border: 2px dotted var(--primary);
+    border-radius: 0.5rem;
 
     & * {
       // transition: background-color 0.5s ease;
     }
     .mytitle {
       border-radius: 0.5rem 0.5rem 0 0;
-      color: var(--secondary);
-      background-color: var(--primary);
+      color: var(--primary);
+      background-color: var(--secondary);
       &.rainbow {
         color: var(--danger);
         .fx {
@@ -166,6 +180,7 @@ export default defineComponent({
     }
   }
   .mybackyard {
+    border: 2px dotted var(--primary);
     height: 50vh;
   }
 
@@ -201,5 +216,8 @@ export default defineComponent({
     color: var(--secondary);
     background-color: var(--primary);
   }
+}
+
+.p2 {
 }
 </style>

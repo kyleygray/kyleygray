@@ -30,6 +30,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+$boxshadow: var(--primary);
 .gallery-container {
   .gallery-component-image-wrapper {
     flex-basis: calc(
@@ -38,7 +39,7 @@ export default defineComponent({
     margin: 0.3em; // to create space between the images
     box-sizing: border-box;
     position: relative;
-    padding-bottom: 25vh; // This will keep the image square
+    padding-bottom: 25vh;
 
     .image {
       position: absolute;
@@ -47,8 +48,9 @@ export default defineComponent({
       left: 0;
       right: 0;
       background-size: cover;
-      background-position: 0px, 0px;
+      background-position: center;
       border-radius: 0.5rem;
+      border: 2px dotted var(--primary);
     }
   }
 }
