@@ -1,63 +1,123 @@
 <template>
   <div class="view-container" ref="viewParent">
-    <div class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aliquid ducimus aut eaque ab molestiae repudiandae ad recusandae a accusantium, dolore nisi debitis deserunt ex id numquam! Nostrum dolorem, voluptatibus eveniet voluptatem ab cupiditate officiis ducimus accusamus, iste, eligendi saepe sequi ratione natus necessitatibus totam voluptate amet reprehenderit dolor impedit. Officiis quos esse consequatur harum sequi magni ipsam, reiciendis iure quae itaque, obcaecati quidem animi iste atque incidunt sit quod hic nam totam iusto. Nisi, quis vel. Sit nemo sed, esse, ducimus, iste quidem facilis itaque repellendus tenetur cupiditate voluptas ad commodi inventore officiis voluptatem accusantium consequatur similique nihil assumenda!</div>
-    <div class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aliquid ducimus aut eaque ab molestiae repudiandae ad recusandae a accusantium, dolore nisi debitis deserunt ex id numquam! Nostrum dolorem, voluptatibus eveniet voluptatem ab cupiditate officiis ducimus accusamus, iste, eligendi saepe sequi ratione natus necessitatibus totam voluptate amet reprehenderit dolor impedit. Officiis quos esse consequatur harum sequi magni ipsam, reiciendis iure quae itaque, obcaecati quidem animi iste atque incidunt sit quod hic nam totam iusto. Nisi, quis vel. Sit nemo sed, esse, ducimus, iste quidem facilis itaque repellendus tenetur cupiditate voluptas ad commodi inventore officiis voluptatem accusantium consequatur similique nihil assumenda!</div>
-    <div class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aliquid ducimus aut eaque ab molestiae repudiandae ad recusandae a accusantium, dolore nisi debitis deserunt ex id numquam! Nostrum dolorem, voluptatibus eveniet voluptatem ab cupiditate officiis ducimus accusamus, iste, eligendi saepe sequi ratione natus necessitatibus totam voluptate amet reprehenderit dolor impedit. Officiis quos esse consequatur harum sequi magni ipsam, reiciendis iure quae itaque, obcaecati quidem animi iste atque incidunt sit quod hic nam totam iusto. Nisi, quis vel. Sit nemo sed, esse, ducimus, iste quidem facilis itaque repellendus tenetur cupiditate voluptas ad commodi inventore officiis voluptatem accusantium consequatur similique nihil assumenda!</div>
-    <div class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aliquid ducimus aut eaque ab molestiae repudiandae ad recusandae a accusantium, dolore nisi debitis deserunt ex id numquam! Nostrum dolorem, voluptatibus eveniet voluptatem ab cupiditate officiis ducimus accusamus, iste, eligendi saepe sequi ratione natus necessitatibus totam voluptate amet reprehenderit dolor impedit. Officiis quos esse consequatur harum sequi magni ipsam, reiciendis iure quae itaque, obcaecati quidem animi iste atque incidunt sit quod hic nam totam iusto. Nisi, quis vel. Sit nemo sed, esse, ducimus, iste quidem facilis itaque repellendus tenetur cupiditate voluptas ad commodi inventore officiis voluptatem accusantium consequatur similique nihil assumenda!</div>
-    <AnimatedFX provider="viewParent" name="test" :steps="[25, 75]">
-      <div class="animated">test</div>
-    </AnimatedFX>
-    <ScrollFX provider="viewParent" property="opacity" :values="['0', '1']" :range="['30', '60']">
-      <div class="opacity">scroll</div>
-    </ScrollFX>
-    <div class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam enim nisi quo? Culpa voluptatum deleniti, fugit ullam architecto cum aliquid accusantium nihil ratione explicabo eos, qui corporis corrupti, natus minus distinctio! Autem cumque soluta ad esse enim! Veniam eos rem, labore dolores dolore sed repudiandae! Id illo fuga, aut odio pariatur amet deserunt, iste quasi consectetur debitis vitae quidem beatae eum molestias? Modi nihil iure, corrupti laudantium minus debitis odit fugiat laborum repudiandae ex quos atque mollitia excepturi placeat, velit quasi unde voluptate adipisci incidunt! Quae vel error temporibus praesentium, minus exercitationem, quas enim corporis, eaque harum placeat inventore. Odio?</div>
-    <div class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam enim nisi quo? Culpa voluptatum deleniti, fugit ullam architecto cum aliquid accusantium nihil ratione explicabo eos, qui corporis corrupti, natus minus distinctio! Autem cumque soluta ad esse enim! Veniam eos rem, labore dolores dolore sed repudiandae! Id illo fuga, aut odio pariatur amet deserunt, iste quasi consectetur debitis vitae quidem beatae eum molestias? Modi nihil iure, corrupti laudantium minus debitis odit fugiat laborum repudiandae ex quos atque mollitia excepturi placeat, velit quasi unde voluptate adipisci incidunt! Quae vel error temporibus praesentium, minus exercitationem, quas enim corporis, eaque harum placeat inventore. Odio?</div>
-    <div class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam enim nisi quo? Culpa voluptatum deleniti, fugit ullam architecto cum aliquid accusantium nihil ratione explicabo eos, qui corporis corrupti, natus minus distinctio! Autem cumque soluta ad esse enim! Veniam eos rem, labore dolores dolore sed repudiandae! Id illo fuga, aut odio pariatur amet deserunt, iste quasi consectetur debitis vitae quidem beatae eum molestias? Modi nihil iure, corrupti laudantium minus debitis odit fugiat laborum repudiandae ex quos atque mollitia excepturi placeat, velit quasi unde voluptate adipisci incidunt! Quae vel error temporibus praesentium, minus exercitationem, quas enim corporis, eaque harum placeat inventore. Odio?</div>
-    <div class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam enim nisi quo? Culpa voluptatum deleniti, fugit ullam architecto cum aliquid accusantium nihil ratione explicabo eos, qui corporis corrupti, natus minus distinctio! Autem cumque soluta ad esse enim! Veniam eos rem, labore dolores dolore sed repudiandae! Id illo fuga, aut odio pariatur amet deserunt, iste quasi consectetur debitis vitae quidem beatae eum molestias? Modi nihil iure, corrupti laudantium minus debitis odit fugiat laborum repudiandae ex quos atque mollitia excepturi placeat, velit quasi unde voluptate adipisci incidunt! Quae vel error temporibus praesentium, minus exercitationem, quas enim corporis, eaque harum placeat inventore. Odio?</div>
+    <div class="skillselect">
+      <button
+        @click="changeView('webdev')"
+        :class="{ activebtn: activeView === 'webdev' }"
+      >
+        webdev
+      </button>
+      <button
+        @click="changeView('design')"
+        :class="{ activebtn: activeView === 'design' }"
+      >
+        design
+      </button>
+      <button @click="changeView('audio')" :class="{ activebtn: activeView === 'audio' }">
+        audio
+      </button>
+      <button @click="changeView('ux')" :class="{ activebtn: activeView === 'ux' }">
+        ux
+      </button>
+      <button @click="changeView('os')" :class="{ activebtn: activeView === 'os' }">
+        os
+      </button>
+    </div>
+    <div class="skillcontainer">
+      <div v-show="activeView === 'default'">
+        <p class="text-3xl font-extralight">(Select a skillset...)</p>
+      </div>
+
+      <div v-show="activeView === 'webdev'">
+        <p class="text-3xl">Web Development &amp; Design</p>
+      </div>
+
+      <div v-show="activeView === 'design'">
+        <p class="text-3xl">Design &amp; Illustration</p>
+      </div>
+
+      <div v-show="activeView === 'audio'">
+        <p class="text-3xl">Audio &amp; Music Production</p>
+      </div>
+
+      <div v-show="activeView === 'ux'">
+        <p class="text-3xl">User Experience Design</p>
+      </div>
+
+      <div v-show="activeView === 'os'">
+        <p class="text-3xl">Operating Systems</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, provide } from 'vue';
+import { defineComponent, ref, provide } from "vue";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
+
+type SkillView = "default" | "webdev" | "design" | "audio" | "ux" | "os";
 
 export default defineComponent({
   components: {
     AnimatedFX,
-    ScrollFX
+    ScrollFX,
   },
-  setup () {
+  setup() {
     const viewParent = ref(null);
-    provide('viewParent', viewParent)
-    
+    provide("viewParent", viewParent);
+
+    const activeView = ref<SkillView>("default");
+
+    const changeView = (view: SkillView) => {
+      activeView.value = view;
+    };
+
     return {
-      viewParent
-    }
-  }
+      viewParent,
+      activeView,
+      changeView,
+    };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
-  .view-container {
-   
+.view-container {
+  height: 100vh; // to ensure the view-container takes full viewport height
+  display: flex;
+  flex-direction: column; // to stack skillselect and skillcontainer vertically
+
+  .skillselect {
+    flex-basis: 10%; // to allocate 10% of the height to skillselect
+    display: flex; // to align buttons in a row
+    flex-wrap: wrap;
+    justify-content: flex-start; // to provide equal space around the buttons
+    align-items: center; // to center align the buttons vertically
+
+    button {
+      padding: 0.5em;
+      margin: 0px 10px;
+      margin-bottom: 10px;
+      border: 1px dotted var(--primary);
+      border-radius: 1em;
+      min-width: 100px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+
+      &.activebtn {
+        background-color: var(--accent);
+      }
+    }
   }
 
-  .test-0 {
-    background-color: red;
-  }
+  .skillcontainer {
+    flex-basis: 90%; // to allocate 90% of the height to skillcontainer
+    overflow: auto; // to enable scroll if content height exceeds the container height
 
-  .test-1 {
-    background-color: blue;
+    div {
+      padding: 1em;
+    }
   }
-
-  .test-2 {
-    background-color: green;
-  }
-
-  div.opacity {
-    width: 100%;
-    background: black;
-    height: 100px;
-  }
+}
 </style>
