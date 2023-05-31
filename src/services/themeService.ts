@@ -1,9 +1,7 @@
-import * as themes from "./themes";
+import Theme from "./themes";
 
-const changeTheme = (theme: themes.Theme) => {
+const changeTheme = (theme: Theme) => {
   const root = document.documentElement;
-  console.log(root);
-  console.log(themes);
   root.style.setProperty("--primary", theme.primary);
   root.style.setProperty("--secondary", theme.secondary);
   root.style.setProperty("--accent", theme.accent);

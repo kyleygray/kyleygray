@@ -58,16 +58,13 @@ export default defineComponent({
 
     const handleThemeChange = (dark: boolean) => {
       if (dark) {
-        console.log("detected dark theme", themes.invertedTheme);
         changeTheme(themes.invertedTheme);
       } else {
-        console.log("detected light theme", themes.defaultTheme);
         changeTheme(themes.defaultTheme);
       }
     };
 
     onBeforeMount(() => {
-      console.log(window.matchMedia("(prefers-color-scheme: dark)"));
       handleThemeChange(window.matchMedia("(prefers-color-scheme: dark)").matches);
     });
 
