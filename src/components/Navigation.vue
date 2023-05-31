@@ -12,7 +12,7 @@
       <nav>
         <router-link to="/about">about</router-link>
         <router-link to="/skills">skills</router-link>
-        <router-link to="/experience">exp.</router-link>
+        <router-link to="/experience">experience</router-link>
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">
@@ -56,7 +56,7 @@
       <nav>
         <router-link to="/about">about</router-link>
         <router-link to="/skills">skills</router-link>
-        <router-link to="/experience">exp.</router-link>
+        <router-link to="/experience">experience</router-link>
         <router-link to="/contact">contact</router-link>
       </nav>
       <div class="controls">

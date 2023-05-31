@@ -1,78 +1,80 @@
 <template>
   <div @click="changeTheme(props.theme)" :class="toggle" :style="buttonTheme">
-    <span>{{props.theme.name}}</span>
+    <span>{{ props.theme.name }}</span>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import * as themes from '@/services/themes';
-import useStore from '@/services/store';
+import { defineComponent, computed } from "vue";
+import * as themes from "@/services/themes";
+import useStore from "@/services/store";
 
 export default defineComponent({
-  name: 'ThemeButton',
+  name: "ThemeButton",
   props: {
     theme: {
       type: themes.Theme,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
     const changeTheme = useStore().methods.setTheme;
-    const toggle = computed(() => (props.theme.name === useStore().state.theme.name ? "toggleOn" : "toggleOff"));
+    const activeTheme = useStore().state.theme.name;
+    const toggle = computed(() =>
+      props.theme.name === activeTheme ? "toggleOn" : "toggleOff"
+    );
     const buttonTheme = computed(() => {
       return {
         background: `linear-gradient(45deg, ${props.theme.secondary}, ${props.theme.background})`,
-        color: props.theme.primary
-      }
-    })
+        color: props.theme.primary,
+      };
+    });
 
     return {
       toggle,
       changeTheme,
       buttonTheme,
-      props
-    }
-  }
+      props,
+    };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
-  div {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    border: 1px solid var(--primary);
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    margin: 5px;
+div {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
 
-    span {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      min-width: 40px;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
+  span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-width: 40px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+
+  &.toggleOn {
+    &::before {
+      text-align: center;
+      content: "▼";
       font-size: 0.8em;
-    }
-
-    &.toggleOn {
-      &::before {
-        text-align: center;
-        content: '▼';
-        font-size: 0.8em;
-        position: absolute;
-        top: -20px;
-        left: 0px;
-        width: 100%;
-      }
-    }
-    &.toggleOff {
-      
+      position: absolute;
+      top: -20px;
+      left: 0px;
+      width: 100%;
     }
   }
+  &.toggleOff {
+  }
+}
 </style>

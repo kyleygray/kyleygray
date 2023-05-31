@@ -13,11 +13,13 @@ import {
   provide,
   computed,
   onMounted,
+  onBeforeMount,
   onBeforeUnmount,
 } from "vue";
 import NavigationComponent from "@/components/Navigation.vue";
 import PageHandler from "@/components/PageHandler.vue";
 import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
+import useThemes from "@/services/themes.ts";
 
 import useStore from "@/services/store";
 
@@ -30,6 +32,8 @@ export default defineComponent({
 
   setup() {
     const { state, methods } = useStore();
+    const themes = useThemes();
+    const changeTheme = useStore().methods.setTheme;
     const viewWidth = ref(window.innerWidth);
     const MOBILE_WIDTH = "768";
     const isMobileDevice = computed(() => {
@@ -52,12 +56,37 @@ export default defineComponent({
       viewWidth.value = window.innerWidth;
     };
 
+    const handleThemeChange = (dark: boolean) => {
+      if (dark) {
+        console.log("detected dark theme", themes.invertedTheme);
+        changeTheme(themes.invertedTheme);
+      } else {
+        console.log("detected light theme", themes.defaultTheme);
+        changeTheme(themes.defaultTheme);
+      }
+    };
+
+    onBeforeMount(() => {
+      console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+      handleThemeChange(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
     onMounted(() => {
       window.addEventListener("resize", handleResize);
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          handleThemeChange(e.matches);
+        });
     });
 
     onBeforeUnmount(() => {
       window.removeEventListener("resize", handleResize);
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", (e) => {
+          handleThemeChange(e.matches);
+        });
     });
 
     watch(
