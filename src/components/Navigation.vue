@@ -181,6 +181,7 @@ export default defineComponent({
       transition: color 0.5s ease, background-color 0.5s ease;
 
       &.router-link-exact-active {
+        border-color: var(--accent);
         background-color: var(--accent);
         color: var(--compliment);
       }
