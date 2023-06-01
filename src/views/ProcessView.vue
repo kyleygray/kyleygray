@@ -45,7 +45,7 @@
         </div>
 
         <div v-show="activeView === 'ux'">
-          <p class="text-3xl">User Experience Design</p>
+          <p class="text-3xl">User Experience Design &amp; Prototyping</p>
         </div>
 
         <div v-show="activeView === 'os'">
@@ -59,6 +59,15 @@
       </div>
 
       <div class="" v-show="activeView === 'webdev'">
+        <div class="devicons">
+          <i class="devicon-vuejs-plain" data-name="Vue"></i>
+          <i class="devicon-angularjs-plain" data-name="Angular"></i>
+          <i class="devicon-html5-plain" data-name="HTML"></i>
+          <i class="devicon-css3-plain" data-name="CSS"></i>
+          <i class="devicon-sass-original" data-name="Sass"></i>
+          <i class="devicon-javascript-plain" data-name="JavaScript"></i>
+          <i class="devicon-typescript-plain" data-name="TypeScript"></i>
+        </div>
         <p class="text-lg">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, nesciunt, facere
           natus quisquam accusamus iure repellendus, aliquid odio ipsam sit similique
@@ -74,6 +83,12 @@
       </div>
 
       <div class="" v-show="activeView === 'design'">
+        <div class="devicons">
+          <i class="devicon-photoshop-plain" data-name="Photoshop"></i>
+          <i class="devicon-illustrator-plain" data-name="Illustrator"></i>
+          <i class="devicon-figma-plain" data-name="Figma"></i>
+          <i class="devicon-apple-original" data-name="Procreate"></i>
+        </div>
         <p class="text-lg">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis corrupti
           unde aliquid quas cum nesciunt provident iure expedita, vitae cumque iusto
@@ -89,6 +104,12 @@
       </div>
 
       <div class="" v-show="activeView === 'audio'">
+        <div class="devicons">
+          <i data-name="Reason">
+            <img src="@/assets/devicons/Reason_Studios.svg" />
+          </i>
+          <i class="devicon-apple-original" data-name="Logic"></i>
+        </div>
         <p class="text-lg">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ratione ipsa
           laudantium sequi deserunt officia quia debitis accusamus corporis esse obcaecati
@@ -105,6 +126,14 @@
       </div>
 
       <div class="" v-show="activeView === 'ux'">
+        <div class="devicons">
+          <i class="devicon-vuejs-plain" data-name="Vue"></i>
+          <i class="devicon-angularjs-plain" data-name="Angular"></i>
+          <i class="devicon-photoshop-plain" data-name="Photoshop"></i>
+          <i class="devicon-illustrator-plain" data-name="Illustrator"></i>
+          <i class="devicon-figma-plain" data-name="Figma"></i>
+          <i class="devicon-google-plain" data-name="Google UX"></i>
+        </div>
         <p class="text-lg">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit,
           doloribus quidem corporis nam doloremque voluptatum dicta quis nemo soluta, ab
@@ -120,6 +149,14 @@
       </div>
 
       <div class="" v-show="activeView === 'os'">
+        <div class="devicons">
+          <i class="devicon-windows8-original" data-name="Windows"></i>
+          <i class="devicon-apple-original" data-name="Mac"></i>
+          <i class="devicon-linux-plain" data-name="Linux"></i>
+          <i class="devicon-digitalocean-plain" data-name="Server Cloud"></i>
+          <i class="devicon-bash-plain" data-name="Bash"></i>
+          <i class="devicon-gitlab-plain" data-name="Gitlabs"></i>
+        </div>
         <p class="text-lg">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat perferendis
           eum vitae velit quis recusandae expedita earum mollitia nemo voluptatibus. Dicta
@@ -178,6 +215,35 @@ export default defineComponent({
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
   }
 
+  .devicons {
+    font-size: 3em;
+    display: flex;
+    margin: 0.5em 0;
+    flex-wrap: wrap;
+
+    i {
+      margin: 0.1em;
+      position: relative;
+      display: flex;
+      width: object-fit;
+      max-width: 50px;
+      margin: 0.2em;
+
+      &::after {
+        content: attr(data-name);
+        display: block;
+        text-align: center;
+        position: absolute;
+        font-size: 0.2em;
+        left: 0;
+        right: 0;
+        bottom: -1.5em;
+        font-family: "Inconsolata", monospace;
+        font-style: initial;
+      }
+    }
+  }
+
   .skillselect {
     flex-basis: 10%; // to allocate 10% of the height to skillselect
     display: flex; // to align buttons in a row
@@ -215,7 +281,7 @@ export default defineComponent({
     flex-basis: 90%; // to allocate 90% of the height to skillcontainer
     overflow: auto; // to enable scroll if content height exceeds the container height
 
-    div {
+    & > div {
       padding: 1em;
       padding-left: 0;
     }
