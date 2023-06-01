@@ -174,6 +174,10 @@ export default defineComponent({
   display: flex;
   flex-direction: column; // to stack skillselect and skillcontainer vertically
 
+  & * {
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  }
+
   .skillselect {
     flex-basis: 10%; // to allocate 10% of the height to skillselect
     display: flex; // to align buttons in a row
@@ -185,6 +189,10 @@ export default defineComponent({
     padding-left: 0;
     margin-left: 0;
     box-shadow: -22px 5px 2px 2px var(--accent);
+
+    & > * {
+      width: 100%;
+    }
 
     button {
       padding: 0.5em;
@@ -215,7 +223,7 @@ export default defineComponent({
 
   .skillheader p {
     margin-top: 10px;
-    border-left: 5px solid var(--primary);
+    border-left: 5px double var(--primary);
     padding-left: 0.5em;
 
     &.empty {

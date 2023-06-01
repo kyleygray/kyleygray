@@ -17,14 +17,8 @@
       </nav>
       <div class="controls">
         <div class="themes">
-          <ThemeButton
-            @click="toggleInversion(themes.defaultTheme)"
-            :theme="themes.defaultTheme"
-          />
-          <ThemeButton
-            @click="toggleInversion(themes.invertedTheme)"
-            :theme="themes.invertedTheme"
-          />
+          <ThemeButton :theme="themes.defaultTheme" />
+          <ThemeButton :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
           <ToggleButton
@@ -61,14 +55,8 @@
       </nav>
       <div class="controls">
         <div class="themes">
-          <ThemeButton
-            @click="toggleInversion(themes.defaultTheme)"
-            :theme="themes.defaultTheme"
-          />
-          <ThemeButton
-            @click="toggleInversion(themes.invertedTheme)"
-            :theme="themes.invertedTheme"
-          />
+          <ThemeButton :theme="themes.defaultTheme" />
+          <ThemeButton :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
           <ToggleButton
@@ -84,7 +72,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, inject, computed, onMounted } from "vue";
+import { defineComponent, ref, watch, inject } from "vue";
 
 import ToggleButton from "@/components/ToggleButton.vue";
 import ThemeButton from "@/components/ThemeButton.vue";
@@ -103,9 +91,7 @@ export default defineComponent({
     const themes = useThemes();
     const isHome = ref(true);
     const { isMobile } = inject("mobileHelper");
-    const myName = ref("KG");
     const theK = ref(null);
-
     const inverted = ref(false);
 
     watch(
@@ -116,20 +102,21 @@ export default defineComponent({
       { immediate: true }
     );
 
-    // eslint-disable-next-line no-undef
-    function toggleInversion(theme: themes.Theme) {
-      inverted.value = theme.inverted;
-    }
+    watch(
+      () => state.theme,
+      (theme) => {
+        inverted.value = theme.inverted; // Access `inverted` directly from `newVal`
+      },
+      { immediate: true } // this makes the watcher fire immediately upon setup
+    );
 
     return {
       isHome,
-      myName,
       themes,
       state,
       methods,
       isMobile,
       theK,
-      toggleInversion,
       inverted,
     };
   },
@@ -266,7 +253,6 @@ export default defineComponent({
     transform: translate(0%, 0%);
     border-radius: 0em;
     border: 0;
-    // border-right: 1px dotted var(--accent);
 
     & > nav {
       margin: 0 20%;
@@ -297,7 +283,6 @@ export default defineComponent({
       width: 100%;
 
       .the-k {
-        // height: auto;
         width: 100px;
         max-width: 100px;
       }
@@ -362,8 +347,6 @@ export default defineComponent({
 
     & > * {
       margin: 10px 0px;
-      // color: var(--secondary);
-      // background: var(--primary);
       border: 1px dotted var(--primary);
       border-radius: 1rem;
       display: block;

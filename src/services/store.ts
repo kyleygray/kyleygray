@@ -1,19 +1,18 @@
 import { ref, readonly, Ref } from "vue";
 import useThemeService from "./themeService";
-import Theme from "./themes";
-import useThemes from "./themes";
+import * as themes from "./themes";
 
 const state = {
-  theme: ref<Theme>(useThemes().defaultTheme),
+  theme: ref(themes.default().defaultTheme),
   animationsOff: ref(false),
   contrast: ref(false),
   activeComponent: ref("home"),
 };
 
 const methods = {
-  setTheme(theme: Theme) {
+  setTheme(theme: themes.Theme) {
     state.theme.value = theme;
-    console.log(state.theme.value);
+    // console.log(state.theme.value);
     useThemeService().changeTheme(state.theme.value);
   },
   toggleAccessibility() {
@@ -24,7 +23,7 @@ const methods = {
   },
   setActiveComponent(component: string) {
     state.activeComponent.value = component;
-    console.log(state.activeComponent.value);
+    // console.log(state.activeComponent.value);
   },
   getAnimationState(): boolean {
     return state.animationsOff.value;
