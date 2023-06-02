@@ -29,27 +29,27 @@
       </div>
       <div class="skillheader">
         <div v-show="activeView === 'default'">
-          <p class="text-3xl font-extralight empty">(Select a skillset...)</p>
+          <h1 class="text-2xl p-2 pb-0 font-extralight empty">(Select a skillset...)</h1>
         </div>
 
         <div v-show="activeView === 'webdev'">
-          <p class="text-3xl">Web Development &amp; Design</p>
+          <h1 class="text-2xl p-2 pb-0">Web Development &amp; Design</h1>
         </div>
 
         <div v-show="activeView === 'design'">
-          <p class="text-3xl">Design &amp; Illustration</p>
+          <h1 class="text-2xl p-2 pb-0">Design &amp; Illustration</h1>
         </div>
 
         <div v-show="activeView === 'audio'">
-          <p class="text-3xl">Audio &amp; Music Production</p>
+          <h1 class="text-2xl p-2 pb-0">Audio &amp; Music Production</h1>
         </div>
 
         <div v-show="activeView === 'ux'">
-          <p class="text-3xl">User Experience Design &amp; Prototyping</p>
+          <h1 class="text-2xl p-2 pb-0">User Experience Design &amp; Prototyping</h1>
         </div>
 
         <div v-show="activeView === 'os'">
-          <p class="text-3xl">Operating Systems</p>
+          <h1 class="text-2xl p-2 pb-0">Operating Systems</h1>
         </div>
       </div>
     </div>
@@ -106,7 +106,8 @@
       <div class="" v-show="activeView === 'audio'">
         <div class="devicons">
           <i data-name="Reason">
-            <img src="@/assets/devicons/Reason_Studios.svg" />
+            <img v-if="!inverted" src="@/assets/devicons/Reason_Studios.svg" />
+            <img v-if="inverted" src="@/assets/devicons/Reason_Studios_i.svg" />
           </i>
           <i class="devicon-apple-original" data-name="Logic"></i>
         </div>
@@ -175,7 +176,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, provide } from "vue";
+import { defineComponent, ref, provide, watch } from "vue";
+import useStore from "@/services/store.ts";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 
@@ -188,6 +190,7 @@ export default defineComponent({
   },
   setup() {
     const viewParent = ref(null);
+    const { state } = useStore();
     provide("viewParent", viewParent);
 
     const activeView = ref<SkillView>("default");
@@ -196,10 +199,21 @@ export default defineComponent({
       activeView.value = view;
     };
 
+    const inverted = ref(false);
+
+    watch(
+      () => state.theme,
+      (theme) => {
+        inverted.value = theme.inverted; // Access `inverted` directly from `newVal`
+      },
+      { immediate: true } // this makes the watcher fire immediately upon setup
+    );
+
     return {
       viewParent,
       activeView,
       changeView,
+      inverted,
     };
   },
 });
@@ -254,7 +268,9 @@ export default defineComponent({
     padding: 1em;
     padding-left: 0;
     margin-left: 0;
-    box-shadow: -22px 5px 2px 2px var(--accent);
+    box-shadow: -11px 2px 0px 2px var(--accent);
+    border-left: 1px dotted var(--primary);
+    border-bottom: 1px dotted var(--primary);
 
     & > * {
       width: 100%;
@@ -289,7 +305,7 @@ export default defineComponent({
 
   .skillheader p {
     margin-top: 10px;
-    border-left: 5px double var(--primary);
+    // border-left: 5px double var(--primary);
     padding-left: 0.5em;
 
     &.empty {

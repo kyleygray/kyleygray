@@ -169,16 +169,16 @@ export default defineComponent({
             // border-radius: 0.8em 0.8em 0 0;
             padding: 0.1em 0.3em;
             font-size: 1.2em;
-            color: var(--secondary);
-            background-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--accent);
           }
         }
 
         .company {
           margin: 0;
           padding: 0 0.3em;
-          background-color: var(--primary);
-          color: var(--secondary);
+          background-color: var(--accent);
+          color: var(--primary);
           position: relative;
 
           h1 {
