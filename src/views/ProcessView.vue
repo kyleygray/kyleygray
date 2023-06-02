@@ -261,12 +261,12 @@ export default defineComponent({
     }
 
     button {
-      padding: 0.5em;
+      padding: 0.3em;
       margin: 0px 10px;
       margin-bottom: 10px;
       border: 1px dotted var(--primary);
-      border-radius: 1em;
-      min-width: 100px;
+      border-radius: 0.8em;
+      min-width: 80px;
       cursor: pointer;
       transition: background-color 0.5s ease;
 
