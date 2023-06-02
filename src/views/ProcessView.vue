@@ -176,7 +176,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, provide, watch } from "vue";
+import { defineComponent, ref, provide, watch, onMounted } from "vue";
 import useStore from "@/services/store.ts";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
@@ -192,6 +192,12 @@ export default defineComponent({
     const viewParent = ref(null);
     const { state } = useStore();
     provide("viewParent", viewParent);
+    const devicons = ref(new Set());
+
+    function addDevicons(el) {
+      console.log(el);
+      devicons.value.add(el);
+    }
 
     const activeView = ref<SkillView>("default");
 
@@ -209,11 +215,16 @@ export default defineComponent({
       { immediate: true } // this makes the watcher fire immediately upon setup
     );
 
+    onMounted(() => {
+      console.log(devicons.value);
+    });
+
     return {
       viewParent,
       activeView,
       changeView,
       inverted,
+      addDevicons,
     };
   },
 });
@@ -236,6 +247,14 @@ export default defineComponent({
     flex-wrap: wrap;
 
     i {
+      // $delay-time: 0.3s;
+
+      // @for $i from 1 through 10 {
+      //   &:nth-child(#{$i}) {
+      //     transition-delay: $delay-time * $i !important;
+      //   }
+      // }
+
       margin: 0.1em;
       position: relative;
       display: flex;
@@ -310,6 +329,40 @@ export default defineComponent({
 
     &.empty {
       border: 0;
+    }
+  }
+
+  .icons-enter-active,
+  .icons-leave-active {
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    .devicons {
+      transition-property: opacity;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+    }
+  }
+  .icons-enter-from {
+    .devicons {
+      opacity: 0;
+    }
+  }
+  .icons-enter-to,
+  .icons-leave-from {
+    .devicons {
+      opacity: 1;
+    }
+  }
+  .icons-leave-to {
+    transition-property: opacity;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+    .devicons {
+      transition-property: opacity;
+      transition-duration: 0s;
+      transition-timing-function: ease;
+      opacity: 1;
     }
   }
 }

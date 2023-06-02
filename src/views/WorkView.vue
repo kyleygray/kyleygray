@@ -141,10 +141,11 @@ export default defineComponent({
     .project {
       width: calc(50% - 1em);
       margin: 0.5em;
-      border-right: 1px dotted var(--primary);
-      border-bottom: 1px dotted var(--primary);
-      box-shadow: 10px 10px 0px 0px var(--accent);
-      // border-radius: 1em;
+      // border-right: 1px dotted var(--primary);
+      // border-bottom: 1px dotted var(--primary);
+      // box-shadow: 10px 10px 0px 0px var(--accent);
+      transition: background-color 0.5s ease, color 0.5s ease;
+      border-radius: 0 1em 1em 0;
       // padding: 1em;
 
       @media (max-width: 767px) {
@@ -155,6 +156,7 @@ export default defineComponent({
         & > * {
           margin-left: 1em;
           margin-right: 1em;
+          transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .title,
@@ -166,11 +168,12 @@ export default defineComponent({
           width: 100%;
           margin: 0;
           h1 {
-            // border-radius: 0.8em 0.8em 0 0;
+            border-radius: 0 1em 0 0;
             padding: 0.1em 0.3em;
             font-size: 1.2em;
             color: var(--primary);
             background-color: var(--accent);
+            transition: background-color 0.5s ease, color 0.5s ease;
           }
         }
 
