@@ -144,7 +144,7 @@ export default defineComponent({
       // border-right: 1px dotted var(--primary);
       // border-bottom: 1px dotted var(--primary);
       // box-shadow: 10px 10px 0px 0px var(--accent);
-      transition: background-color 0.5s ease, color 0.5s ease;
+      // transition: background-color 0.5s ease, color 0.5s ease;
       border-radius: 0 1em 1em 0;
       // padding: 1em;
 
@@ -156,7 +156,7 @@ export default defineComponent({
         & > * {
           margin-left: 1em;
           margin-right: 1em;
-          transition: background-color 0.5s ease, color 0.5s ease;
+          // transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .title,

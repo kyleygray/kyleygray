@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, watch, ref } from "vue";
 import * as themes from "@/services/themes";
 import useStore from "@/services/store";
 
@@ -18,17 +18,24 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const changeTheme = useStore().methods.setTheme;
-    const activeTheme = useStore().state.theme.name;
-    const toggle = computed(() =>
-      props.theme.name === activeTheme ? "toggleOn" : "toggleOff"
-    );
+    const { state, methods } = useStore();
+    const changeTheme = methods.setTheme;
+    const activeTheme = ref(state.theme);
+    const toggle = ref("toggleOn");
     const buttonTheme = computed(() => {
       return {
         background: `linear-gradient(45deg, ${props.theme.secondary}, ${props.theme.background})`,
         color: props.theme.primary,
       };
     });
+
+    watch(
+      () => state.theme,
+      (theme) => {
+        toggle.value = theme.name === props.theme.name ? "toggleOn" : "toggleOff";
+      },
+      { immediate: true }
+    );
 
     return {
       toggle,

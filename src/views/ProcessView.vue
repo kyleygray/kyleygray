@@ -29,7 +29,7 @@
       </div>
       <div class="skillheader">
         <div v-show="activeView === 'default'">
-          <h1 class="text-2xl p-2 pb-0 font-extralight empty">(Select a skillset...)</h1>
+          <p class="text-2xl p-2 pb-0 font-extralight empty">(Select a skillset...)</p>
         </div>
 
         <div v-show="activeView === 'webdev'">
