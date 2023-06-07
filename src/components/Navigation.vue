@@ -10,10 +10,12 @@
         />
       </router-link>
       <nav>
-        <router-link to="/about">about</router-link>
-        <router-link to="/skills">skills</router-link>
-        <router-link to="/experience">experience</router-link>
-        <router-link to="/contact">contact</router-link>
+        <router-link to="/about" active-class="router-link-active">about</router-link>
+        <router-link to="/skills" active-class="router-link-active">skills</router-link>
+        <router-link to="/experience" active-class="router-link-active"
+          >experience</router-link
+        >
+        <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
       <div class="controls">
         <div class="themes">
@@ -48,10 +50,12 @@
         />
       </router-link>
       <nav>
-        <router-link to="/about">about</router-link>
-        <router-link to="/skills">skills</router-link>
-        <router-link to="/experience">experience</router-link>
-        <router-link to="/contact">contact</router-link>
+        <router-link to="/about" active-class="router-link-active">about</router-link>
+        <router-link to="/skills" active-class="router-link-active">skills</router-link>
+        <router-link to="/experience" active-class="router-link-active"
+          >experience</router-link
+        >
+        <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
       <div class="controls">
         <div class="themes">
@@ -167,7 +171,7 @@ export default defineComponent({
       color: var(--primary);
       transition: color 0.5s ease, background-color 0.5s ease;
 
-      &.router-link-exact-active {
+      &.router-link-active {
         border-color: var(--accent);
         background-color: var(--accent);
         color: var(--compliment);
@@ -338,7 +342,7 @@ export default defineComponent({
       transition: color 0.5s ease, background-color 0.5s ease;
       padding-top: 10px;
       font-size: 1.1em;
-      &.router-link-exact-active {
+      &.router-link-active {
         background-color: var(--accent);
         color: var(--compliment);
       }

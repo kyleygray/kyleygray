@@ -32,12 +32,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "skills",
     component: ProcessView,
     children: [
-      { path: "webdev", name: "webdevskill", component: WebDevSkill },
-      { path: "design", name: "Designskill", component: DesignSkill },
-      { path: "audio", name: "audioskill", component: AudioSkill },
-      { path: "ux", name: "uxskill", component: UXSkill },
-      { path: "os", name: "osskill", component: OSSkill },
-      { path: "", name: "defaultskill", component: DefaultSkill },
+      { path: "webdev", name: "webdev", component: WebDevSkill },
+      { path: "design", name: "design", component: DesignSkill },
+      { path: "audio", name: "audio", component: AudioSkill },
+      { path: "ux", name: "ux", component: UXSkill },
+      { path: "os", name: "os", component: OSSkill },
+      { path: "", name: "default", component: DefaultSkill },
     ],
   },
   {

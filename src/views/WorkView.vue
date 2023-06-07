@@ -12,6 +12,9 @@
             <h2 class="period">2020 - 2022</h2>
           </div>
           <div class="content">
+            <div class="skilllinks">
+              <router-link to="/skills/webdev">webdev</router-link>
+            </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
               sapiente optio voluptas in rem nam cumque consequatur, eligendi
