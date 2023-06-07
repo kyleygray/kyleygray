@@ -54,7 +54,10 @@
       </div>
     </div>
     <div class="skillcontainer">
-      <div class="" v-show="activeView === 'default'">
+      <router-view v-slot="{ Component }">
+        <component :is="Component" />
+      </router-view>
+      <!-- <div class="" v-show="activeView === 'default'">
         <p class=""></p>
       </div>
 
@@ -170,18 +173,26 @@
           commodi placeat voluptatem libero error vel magni iure similique! Facilis
           veritatis ab similique?
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, provide, watch, onMounted } from "vue";
+import { defineComponent, ref, provide, watch, onMounted, computed } from "vue";
+import router from "@/router";
 import useStore from "@/services/store.ts";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 
-type SkillView = "default" | "webdev" | "design" | "audio" | "ux" | "os";
+export enum SkillView {
+  Default = "default",
+  WebDev = "webdev",
+  Design = "design",
+  Audio = "audio",
+  UX = "ux",
+  OS = "os",
+}
 
 export default defineComponent({
   components: {
@@ -199,25 +210,16 @@ export default defineComponent({
       devicons.value.add(el);
     }
 
-    const activeView = ref<SkillView>("default");
+    const activeView = ref<SkillView>(SkillView.Default);
 
     const changeView = (view: SkillView) => {
       activeView.value = view;
+      router.push(`/skills/${activeView.value}`);
     };
 
-    const inverted = ref(false);
+    const inverted = computed(() => state.theme.inverted);
 
-    watch(
-      () => state.theme,
-      (theme) => {
-        inverted.value = theme.inverted; // Access `inverted` directly from `newVal`
-      },
-      { immediate: true } // this makes the watcher fire immediately upon setup
-    );
-
-    onMounted(() => {
-      console.log(devicons.value);
-    });
+    onMounted(() => {});
 
     return {
       viewParent,
