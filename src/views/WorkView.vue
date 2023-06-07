@@ -1,6 +1,7 @@
 <template>
   <div class="view-container">
-    <h1 class="text-3xl py-5">Career Experience</h1>
+    <h1 class="text-3xl pt-5 pb-1">Career Experience</h1>
+    <p class="mb-5">(Click a skill for more info.)</p>
     <div class="project-container">
       <article class="project">
         <div class="info">
@@ -14,6 +15,8 @@
           <div class="content">
             <div class="skilllinks">
               <router-link to="/skills/webdev">webdev</router-link>
+              <router-link to="/skills/ux">ux</router-link>
+              <router-link to="/skills/webdev">design</router-link>
             </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
@@ -38,6 +41,12 @@
             <h2 class="period">2020 - 2022</h2>
           </div>
           <div class="content">
+            <div class="skilllinks">
+              <router-link to="/skills/webdev">webdev</router-link>
+              <router-link to="/skills/ux">ux</router-link>
+              <router-link to="/skills/webdev">design</router-link>
+              <router-link to="/skills/os">os</router-link>
+            </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
               sapiente optio voluptas in rem nam cumque consequatur, eligendi
@@ -61,6 +70,10 @@
             <h2 class="period">2020 - 2022</h2>
           </div>
           <div class="content">
+            <div class="skilllinks">
+              <router-link to="/skills/webdev">webdev</router-link>
+              <router-link to="/skills/os">os</router-link>
+            </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
               sapiente optio voluptas in rem nam cumque consequatur, eligendi
@@ -84,6 +97,11 @@
             <h2 class="period"></h2>
           </div>
           <div class="content">
+            <div class="skilllinks">
+              <router-link to="/skills/audio">audio</router-link>
+              <router-link to="/skills/os">os</router-link>
+              <router-link to="/skills/webdev">webdev</router-link>
+            </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
               sapiente optio voluptas in rem nam cumque consequatur, eligendi
@@ -100,13 +118,19 @@
       <article class="project">
         <div class="info">
           <div class="title">
-            <h1>Freelance Developer</h1>
+            <h1>Freelance Producer</h1>
           </div>
           <div class="company">
             <h1>@ Self-Employed</h1>
             <h2 class="period">2020 - 2022</h2>
           </div>
           <div class="content">
+            <div class="skilllinks">
+              <router-link to="/skills/webdev">webdev</router-link>
+              <router-link to="/skills/design">design</router-link>
+              <router-link to="/skills/audio">audio</router-link>
+              <router-link to="/skills/os">os</router-link>
+            </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
               sapiente optio voluptas in rem nam cumque consequatur, eligendi
@@ -214,6 +238,19 @@ export default defineComponent({
           //   object-fit: cover;
           //   max-height: 200px;
           // }
+
+          .skilllinks {
+            margin-top: 20px;
+            a {
+              margin: 0px 5px;
+              border: 1px dotted var(--primary);
+              padding: 0.5em;
+              border-radius: 0.5em;
+              &:nth-child(1) {
+                margin-left: 0px;
+              }
+            }
+          }
 
           p {
             // flex-basis: 70%;

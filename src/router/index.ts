@@ -38,6 +38,7 @@ const routes: Array<RouteRecordRaw> = [
       { path: "ux", name: "ux", component: UXSkill },
       { path: "os", name: "os", component: OSSkill },
       { path: "", name: "default", component: DefaultSkill },
+      { path: ":pathmatch(.*)*", redirect: "/skills" },
     ],
   },
   {
