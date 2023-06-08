@@ -68,7 +68,7 @@ import useStore from "@/services/store.ts";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 
-export enum SkillView {
+enum SkillView {
   Default = "default",
   WebDev = "webdev",
   Design = "design",

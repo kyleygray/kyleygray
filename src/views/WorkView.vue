@@ -1,7 +1,7 @@
 <template>
   <div class="view-container">
     <h1 class="text-3xl pt-5 pb-1">Career Experience</h1>
-    <p class="mb-5">(Click a skill for more info.)</p>
+    <p class="mb-5">(Click a skill button for more info.)</p>
     <div class="project-container">
       <article class="project">
         <div class="info">
@@ -10,7 +10,7 @@
           </div>
           <div class="company">
             <h1>@ BP3 Global</h1>
-            <h2 class="period">2020 - 2022</h2>
+            <h2 class="period">2022 - 2023</h2>
           </div>
           <div class="content">
             <div class="skilllinks">
@@ -67,7 +67,7 @@
           </div>
           <div class="company">
             <h1>@ WorkBoard</h1>
-            <h2 class="period">2020 - 2022</h2>
+            <h2 class="period">2022</h2>
           </div>
           <div class="content">
             <div class="skilllinks">
@@ -94,7 +94,7 @@
           </div>
           <div class="company">
             <h1>@ King's High School</h1>
-            <h2 class="period"></h2>
+            <h2 class="period">2018-2020</h2>
           </div>
           <div class="content">
             <div class="skilllinks">
@@ -122,7 +122,7 @@
           </div>
           <div class="company">
             <h1>@ Self-Employed</h1>
-            <h2 class="period">2020 - 2022</h2>
+            <h2 class="period">2016 - present</h2>
           </div>
           <div class="content">
             <div class="skilllinks">
