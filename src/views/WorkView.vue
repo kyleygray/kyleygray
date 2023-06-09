@@ -1,7 +1,11 @@
 <template>
   <div class="view-container">
-    <h1 class="text-3xl pt-5 pb-1">Career Experience</h1>
-    <p class="mb-5">(Click a skill button for more info.)</p>
+    <h1 class="text-3xl pt-5 pb-1">
+      <TextFX text="Career Experience" type="fadein" speed="30" />
+    </h1>
+    <p class="mb-5">
+      <TextFX text="(Click a skill button for more info.)" type="fadein" speed="20" />
+    </p>
     <div class="project-container">
       <article class="project">
         <div class="info">
@@ -16,7 +20,7 @@
             <div class="skilllinks">
               <router-link to="/skills/webdev">webdev</router-link>
               <router-link to="/skills/ux">ux</router-link>
-              <router-link to="/skills/webdev">design</router-link>
+              <router-link to="/skills/design">design</router-link>
             </div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
@@ -44,7 +48,7 @@
             <div class="skilllinks">
               <router-link to="/skills/webdev">webdev</router-link>
               <router-link to="/skills/ux">ux</router-link>
-              <router-link to="/skills/webdev">design</router-link>
+              <router-link to="/skills/design">design</router-link>
               <router-link to="/skills/os">os</router-link>
             </div>
             <p>
@@ -149,9 +153,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import TextFX from "@/components/page/TextFX.vue";
 
 export default defineComponent({
-  components: {},
+  components: {
+    TextFX,
+  },
   setup() {
     return {};
   },

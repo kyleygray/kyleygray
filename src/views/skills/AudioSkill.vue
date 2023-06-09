@@ -2,8 +2,12 @@
   <div>
     <div class="devicons">
       <i data-name="Reason">
-        <img v-if="!inverted" src="@/assets/devicons/Reason_Studios.svg" />
-        <img v-if="inverted" src="@/assets/devicons/Reason_Studios_i.svg" />
+        <transition name="fade">
+          <img v-if="!inverted" src="@/assets/devicons/Reason_Studios.svg" />
+        </transition>
+        <transition name="fade">
+          <img v-if="inverted" src="@/assets/devicons/Reason_Studios_i.svg" />
+        </transition>
       </i>
       <i class="devicon-apple-original" data-name="Logic"></i>
     </div>
@@ -31,6 +35,7 @@ export default defineComponent({
   setup() {
     const { state } = useStore();
     const inverted = computed(() => state.theme.inverted);
+
     return {
       inverted,
     };
@@ -38,4 +43,23 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  // position: absolute;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  position: absolute;
+  opacity: 0;
+}
+</style>
