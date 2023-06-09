@@ -28,34 +28,52 @@
         </button>
       </div>
       <div class="skillheader">
-        <div v-show="activeView === 'default'">
-          <p class="text-2xl p-2 pb-0 font-extralight empty">(Select a skillset...)</p>
+        <div v-if="activeView === 'default'">
+          <p class="text-2xl p-2 pb-0 font-extralight empty">
+            <TextFX text="(Select a skillset...)" type="fadein" speed="30" />
+          </p>
         </div>
 
-        <div v-show="activeView === 'webdev'">
-          <h1 class="text-2xl p-2 pb-0">Web Development &amp; Design</h1>
+        <div v-if="activeView === 'webdev'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX text="Web Development &amp; Design" type="fadein" speed="30" />
+          </h1>
         </div>
 
-        <div v-show="activeView === 'design'">
-          <h1 class="text-2xl p-2 pb-0">Design &amp; Illustration</h1>
+        <div v-if="activeView === 'design'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX text="Design &amp; Illustration" type="fadein" speed="30" />
+          </h1>
         </div>
 
-        <div v-show="activeView === 'audio'">
-          <h1 class="text-2xl p-2 pb-0">Audio &amp; Music Production</h1>
+        <div v-if="activeView === 'audio'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX text="Audio &amp; Music Production" type="fadein" speed="30" />
+          </h1>
         </div>
 
-        <div v-show="activeView === 'ux'">
-          <h1 class="text-2xl p-2 pb-0">User Experience Design &amp; Prototyping</h1>
+        <div v-if="activeView === 'ux'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX
+              text="User Experience Design &amp; Prototyping"
+              type="fadein"
+              speed="30"
+            />
+          </h1>
         </div>
 
-        <div v-show="activeView === 'os'">
-          <h1 class="text-2xl p-2 pb-0">Operating Systems</h1>
+        <div v-if="activeView === 'os'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX text="Operating Systems" type="fadein" speed="30" />
+          </h1>
         </div>
       </div>
     </div>
     <div class="skillcontainer">
       <router-view v-slot="{ Component }">
-        <component :is="Component" />
+        <transition name="skill">
+          <component :is="Component" />
+        </transition>
       </router-view>
     </div>
   </div>
@@ -67,6 +85,7 @@ import router from "@/router";
 import useStore from "@/services/store.ts";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
+import TextFX from "@/components/page/TextFX.vue";
 
 enum SkillView {
   Default = "default",
@@ -81,6 +100,7 @@ export default defineComponent({
   components: {
     // AnimatedFX,
     // ScrollFX,
+    TextFX,
   },
   setup() {
     const viewParent = ref(null);
@@ -175,15 +195,18 @@ export default defineComponent({
     flex-wrap: wrap;
 
     i {
-      // $delay-time: 0.3s;
+      // $delay-time: 0.1s;
 
       // @for $i from 1 through 10 {
       //   &:nth-child(#{$i}) {
-      //     transition-delay: $delay-time * $i !important;
+      //     animation-delay: $delay-time * $i !important;
       //   }
       // }
 
-      margin: 0.1em;
+      // animation: icons 0.5s;
+
+      // margin: 0.1em;
+      // margin-right: 0px;
       position: relative;
       display: flex;
       width: object-fit;
@@ -215,38 +238,36 @@ export default defineComponent({
     }
   }
 
-  .icons-enter-active,
-  .icons-leave-active {
-    transition-property: opacity;
+  .skill-enter-active,
+  .skill-leave-active {
+    transition-property: opacity, margin-top;
     transition-duration: 0.5s;
     transition-timing-function: ease;
-    .devicons {
-      transition-property: opacity;
-      transition-duration: 0.5s;
-      transition-timing-function: ease;
-    }
   }
-  .icons-enter-from {
-    .devicons {
-      opacity: 0;
-    }
+  .skill-enter-from {
+    opacity: 0;
+    margin-top: -40px;
   }
-  .icons-enter-to,
-  .icons-leave-from {
-    .devicons {
-      opacity: 1;
-    }
+  .skill-enter-to,
+  .skill-leave-from {
+    opacity: 1;
+    margin-top: 0px;
   }
-  .icons-leave-to {
-    transition-property: opacity;
-    transition-duration: 0s;
-    transition-timing-function: ease;
-    .devicons {
-      transition-property: opacity;
-      transition-duration: 0s;
-      transition-timing-function: ease;
-      opacity: 1;
-    }
+  .skill-leave-to {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+@keyframes icons {
+  0% {
+    margin-right: 0px;
+  }
+  50% {
+    margin-right: -20px;
+  }
+  100% {
+    margin-right: 0px;
   }
 }
 </style>
