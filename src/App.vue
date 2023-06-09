@@ -1,5 +1,13 @@
 <template>
   <AccessibilityWrapper>
+    <div class="resume-btn">
+      <a
+        href="/src/assets/KyleyGrayResumeMay2023.pdf"
+        class="resume-btn inverted-btn"
+        download
+        >My Resumé</a
+      >
+    </div>
     <NavigationComponent />
     <PageHandler />
   </AccessibilityWrapper>
@@ -147,6 +155,32 @@ h6 {
 
 main {
   padding: 0;
+}
+
+.resume-btn {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  // text-align: center;
+  // padding-top: 5px;
+  transition: transform 0.5s ease, width 0.5s ease;
+
+  a {
+    position: absolute;
+    // border: 1px solid var(--primary);
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 0px 20px 0px 0px;
+    // font-weight: bold;
+    font-size: 0.8em;
+  }
 }
 
 .animations-off {

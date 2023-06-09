@@ -1,6 +1,6 @@
 <template>
   <main class="view-container p-0" ref="viewParent">
-    <div class="w-full h-5 relative">
+    <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative">
           <TextFX text="Kyley Gray" type="fadein" speed="20" />
@@ -19,39 +19,12 @@
         src="@/assets/design/design0.jpg"
         alt="cover image"
       />
-      <!-- <CanvasAnimation :jumbotronRef="jumbotron" /> -->
     </div>
-
-    <!-- <article class="p1">
-      <p class="caption text-xl p-5 mb-5 mt-0 rounded-b-lg">
-        <TextFX
-          type="fadein"
-          text="
-      We are continuously inspired by the world around us. The things we do and the
-        choices we make are a result of the opportunities given to us combined with our
-        total life experiences. I cannot control who I am, but at the same time my
-        identitiy lies somewhere inside the tangent between our will and my destiny.
-      "
-          speed="10"
-        />
-      </p>
-    </article> -->
-
     <article class="p2">
-      <!-- <ScrollFX
-        provider="viewParent"
-        property="opacity"
-        :values="['0', '1']"
-        :range="[30, 60]"
-      > -->
-      <p class="text-2xl my-10">
-        Kyley is a professional cryptid located in Seattle, Washington. Since the young
-        age of 13, they have been creating websites, designing visual art, producing
-        electronic music, and exploring their mind and relative relational universe.
-      </p>
-      <p class="text-2xl my-10">
-        This website was created with love and care using skills and knowledge developed
-        over many years. Thank you for taking the time to visit.
+      <p class="text-2xl my-5">
+        Hello! 👋 I make things on the computer! 💻 This website was
+        <b>custom-built</b> 👀 from the ground up for the purpose of showcasing my work,
+        skills, and experience. ✨ Feel free to explore around! 😄
       </p>
       <GalleryComponent
         class=""
@@ -87,6 +60,7 @@ import TextFX from "@/components/page/TextFX.vue";
 import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
+import ResumeBtn from "@/components/page/ResumeBtn.vue";
 
 import { nature } from "@/assets/nature/nature.js";
 
@@ -95,6 +69,7 @@ export default defineComponent({
     TextFX,
     // ScrollFX,
     GalleryComponent,
+    // ResumeBtn,
   },
   methods: {
     makeRainbow() {
@@ -220,5 +195,10 @@ export default defineComponent({
 }
 
 .p2 {
+}
+
+.about-resume-btn {
+  a {
+  }
 }
 </style>

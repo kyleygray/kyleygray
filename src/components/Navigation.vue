@@ -84,6 +84,8 @@ import ThemeButton from "@/components/ThemeButton.vue";
 import useStore from "../services/store";
 import useThemes from "../services/themes";
 
+import ResumeBtn from "@/components/page/ResumeBtn.vue";
+
 export default defineComponent({
   name: "NavigationComponent",
   components: {
@@ -142,8 +144,8 @@ export default defineComponent({
   background-color: var(--secondary);
   display: grid;
   grid-template:
-    "a a a" 20%
-    "b b b" 50%
+    "a a a" 15%
+    "b b b" 55%
     "c c c" 40%;
   // border: 1px solid var(--primary);
   max-width: 50vw;
@@ -166,8 +168,8 @@ export default defineComponent({
   nav {
     a {
       text-align: center;
-      height: 40px;
-      padding-top: 8px;
+      height: 35px;
+      padding-top: 5px;
       color: var(--primary);
       transition: color 0.5s ease, background-color 0.5s ease;
 
@@ -277,6 +279,27 @@ export default defineComponent({
   transition-duration: 0.5s;
   transition-timing-function: ease;
 
+  .my-K {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.5s ease;
+    align-self: center;
+    transform: translate(0%, 0%);
+    transition: transform 0.5s ease;
+
+    .the-k {
+      height: auto;
+      width: 100%;
+      max-width: 100px;
+      filter: invert(0);
+      transition: filter 0.5s ease;
+
+      &.inverted {
+        filter: invert(1);
+      }
+    }
+  }
+
   &.big-nav-mobile {
     width: 100vw;
     transform: translateY(calc(50vh - 100px));
@@ -303,26 +326,9 @@ export default defineComponent({
 
     & > nav {
     }
-  }
 
-  .my-K {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.5s ease;
-    align-self: center;
-    transform: translate(0%, 0%);
-    transition: transform 0.5s ease;
-
-    .the-k {
-      height: auto;
-      width: 100%;
-      max-width: 100px;
-      filter: invert(0);
-      transition: filter 0.5s ease;
-
-      &.inverted {
-        filter: invert(1);
-      }
+    .my-K {
+      transform: scale(80%) translateY(-20px);
     }
   }
 
@@ -373,5 +379,8 @@ export default defineComponent({
     .accessibility {
     }
   }
+}
+
+.inverted-btn {
 }
 </style>
