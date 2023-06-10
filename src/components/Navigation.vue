@@ -144,8 +144,8 @@ export default defineComponent({
   background-color: var(--secondary);
   display: grid;
   grid-template:
-    "a a a" 15%
-    "b b b" 55%
+    "a a a" 20%
+    "b b b" 50%
     "c c c" 40%;
   // border: 1px solid var(--primary);
   max-width: 50vw;

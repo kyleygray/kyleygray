@@ -22,9 +22,8 @@
     </div>
     <article class="p2">
       <p class="text-2xl my-5">
-        Hello! 👋 I make things on the computer! 💻 This website was
-        <b>custom-built</b> 👀 from the ground up for the purpose of showcasing my work,
-        skills, and experience. ✨ Feel free to explore around! 😄
+        Hello! 👋 I make things on the computer! This website was custom-built from the
+        ground up for the purpose of showcasing my work, skills, and experience.
       </p>
       <GalleryComponent
         class=""
