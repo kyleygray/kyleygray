@@ -9,13 +9,20 @@
           alt="K"
         />
       </router-link>
-      <nav>
+      <nav v-show="!isHome">
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
         <router-link to="/experience" active-class="router-link-active"
           >experience</router-link
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
+      </nav>
+      <nav v-show="isHome">
+        <div class="homeheadline">
+          <!-- <p>Kyley Gray</p>
+          <p>Multimedia Design &amp; Development</p> -->
+        </div>
+        <router-link class="biglink" to="/about">enter site</router-link>
       </nav>
       <div class="controls">
         <div class="themes">
@@ -49,13 +56,20 @@
           alt="K"
         />
       </router-link>
-      <nav>
+      <nav v-show="!isHome">
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
         <router-link to="/experience" active-class="router-link-active"
           >experience</router-link
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
+      </nav>
+      <nav v-show="isHome">
+        <div class="homeheadline">
+          <!-- <p>Kyley Gray</p>
+          <p>Multimedia Design &amp; Development</p> -->
+        </div>
+        <router-link class="biglink" to="/about">enter site</router-link>
       </nav>
       <div class="controls">
         <div class="themes">
@@ -140,7 +154,7 @@ export default defineComponent({
 }
 
 .navbox {
-  min-height: 400px;
+  // min-height: 400px;
   background-color: var(--secondary);
   display: grid;
   grid-template:
@@ -149,7 +163,7 @@ export default defineComponent({
     "c c c" 40%;
   // border: 1px solid var(--primary);
   max-width: 50vw;
-  height: 50vh;
+  height: 25vh;
   transform: translate(0%, 0%);
   padding: 0.5em;
   transition-property: transform, height, width, margin, background-color;
@@ -178,6 +192,11 @@ export default defineComponent({
         background-color: var(--accent);
         color: var(--compliment);
       }
+
+      &.biglink {
+        width: 100%;
+        font-size: 1.5em;
+      }
     }
 
     display: block;
@@ -187,11 +206,11 @@ export default defineComponent({
     margin: 0 30%;
     transition: margin 0.5s ease, background-color 0.5s ease;
 
-    & > * {
+    & > a {
       margin: 10px 0px;
       // color: var(--secondary);
       // background: var(--primary);
-      border: 1px dotted var(--primary);
+      // border: 1px dotted var(--primary);
       border-radius: 1em;
       display: block;
       text-decoration: none;
@@ -352,12 +371,16 @@ export default defineComponent({
         background-color: var(--accent);
         color: var(--compliment);
       }
+      &.biglink {
+        width: 100%;
+        font-size: 1.5em;
+      }
     }
     transition: margin 0.5s ease, background-color 0.5s ease;
 
     & > * {
       margin: 10px 0px;
-      border: 1px dotted var(--primary);
+      // border: 1px dotted var(--primary);
       border-radius: 1rem;
       display: block;
       text-decoration: none;
@@ -381,6 +404,49 @@ export default defineComponent({
   }
 }
 
-.inverted-btn {
+.enterbtn-enter-active,
+.enterbtn-leave-active {
+  & > a {
+    transition: opacity 0.5s ease;
+  }
+}
+.enterbtn-enter-from {
+  & > a {
+    opacity: 0;
+  }
+}
+.enterbtn-enter-to,
+.enterbtn-leave-from {
+  & > a {
+    opacity: 1;
+  }
+}
+.enterbtn-leave-to {
+  & > a {
+    opacity: 0;
+  }
+}
+
+.enternav-enter-active,
+.enternav-leave-active {
+  & > a {
+    transition: opacity 0.5s ease;
+  }
+}
+.enternav-enter-from {
+  & > a {
+    opacity: 0;
+  }
+}
+.enternav-enter-to,
+.enternav-leave-from {
+  & > a {
+    opacity: 1;
+  }
+}
+.enternav-leave-to {
+  & > a {
+    opacity: 0;
+  }
 }
 </style>
