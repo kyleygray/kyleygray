@@ -64,7 +64,11 @@
 
         <div v-if="activeView === 'os'">
           <h1 class="text-2xl p-2 pb-0">
-            <TextFX text="Operating Systems" type="fadein" speed="30" />
+            <TextFX
+              text="Operating Systems &amp; Information Technology"
+              type="fadein"
+              speed="30"
+            />
           </h1>
         </div>
       </div>

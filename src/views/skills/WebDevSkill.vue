@@ -9,26 +9,21 @@
       <i class="devicon-javascript-plain" data-name="JavaScript"></i>
       <i class="devicon-typescript-plain" data-name="TypeScript"></i>
     </div>
-    <p class="text-lg">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, nesciunt, facere natus
-      quisquam accusamus iure repellendus, aliquid odio ipsam sit similique perspiciatis
-      quasi? Consectetur commodi provident vero labore? Natus vitae qui fuga iure
-      mollitia? Voluptatibus, sed. Assumenda nisi totam voluptatem tenetur quae, ducimus
-      aut, porro sunt dignissimos iure autem atque. Repellendus reiciendis laborum facilis
-      rerum excepturi corrupti commodi hic eius cum dolorum veritatis, nesciunt vero
-      consectetur, praesentium doloremque quaerat! Molestiae sequi voluptatem vel ab
-      exercitationem error optio eum aut dolores quia. Illum deleniti similique fugiat
-      sequi, quod ratione numquam distinctio quo nihil! Similique, reiciendis? Impedit non
-      fugiat quam quasi blanditiis?
-    </p>
+    <div class="text-lg">
+      <SkillStats years="7" skillLevel="advanced" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import SkillStats from "@/components/page/SkillStats.vue";
 
 export default defineComponent({
   name: "WebDevSkill",
+  components: {
+    SkillStats,
+  },
   setup() {
     return {};
   },

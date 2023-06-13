@@ -1,7 +1,7 @@
 <template>
   <div v-show="!isMobile" class="container">
     <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, navbox: true }">
-      <router-link class="my-K" to="/">
+      <router-link class="my-K" to="">
         <img
           ref="theK"
           :class="{ 'the-k': true, inverted: inverted }"
@@ -48,7 +48,7 @@
         'navbox-mobile': true,
       }"
     >
-      <router-link class="my-K" to="/">
+      <router-link class="my-K" to="">
         <img
           ref="theK"
           :class="{ 'the-k': true, inverted: inverted }"

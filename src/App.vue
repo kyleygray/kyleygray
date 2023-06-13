@@ -193,4 +193,29 @@ main {
     animation: unset !important;
   }
 }
+
+.primary-bg {
+  background-color: var(--primary);
+  transition: background-color 0.5s ease;
+}
+.secondary-bg {
+  background-color: var(--secondary);
+  transition: background-color 0.5s ease;
+}
+.accent-bg {
+  background-color: var(--accent);
+  transition: background-color 0.5s ease;
+}
+.primary-text {
+  color: var(--primary);
+  transition: color 0.5s ease;
+}
+.secondary-text {
+  color: var(--secondary);
+  transition: color 0.5s ease;
+}
+.accent-text {
+  color: var(--accent);
+  transition: color 0.5s ease;
+}
 </style>
