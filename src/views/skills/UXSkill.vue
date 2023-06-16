@@ -11,16 +11,17 @@
     <div class="text-lg">
       <SkillStats years="3" skillLevel="beginner" />
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil provident
-        exercitationem iusto iure assumenda eius itaque, magnam architecto quisquam
-        reprehenderit vitae animi fugiat sint cupiditate earum perferendis nisi debitis
-        deleniti.
+        I want usability of interfaces to be a priority. In the gallery below you can see
+        a simplified progression of the website, from wireframe to an early version of the
+        finalized UI system. I wanted to create an interface that was fun to interact with
+        as well as easily customizable and accessible for users with cognitive and sensory
+        impairment.
       </p>
       <GalleryComponent
         :images="[
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
+          '/src/assets/skills/uxskill/ux1.png',
+          '/src/assets/skills/uxskill/ux2.png',
+          '/src/assets/skills/uxskill/ux3.png',
         ]"
       />
     </div>

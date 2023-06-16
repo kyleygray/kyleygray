@@ -11,17 +11,18 @@
     <div class="text-lg">
       <SkillStats years="4" skillLevel="intermediate" />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium minima
-        sed possimus dolor dignissimos in temporibus aspernatur cum. Ipsam deleniti veniam
-        amet itaque aspernatur aut? Est animi natus eaque!
+        I have a good understanding of all major operating systems from a user, developer,
+        and an administrator perspective. I regularly manage my own command-line tools and
+        I am not afraid to dig deep into the critical system files if necessary. My
+        current OS of choice is MacOS, followed by Arch Linux.
       </p>
-      <GalleryComponent
+      <!-- <GalleryComponent
         :images="[
           'https://placehold.it/500x500',
           'https://placehold.it/500x500',
           'https://placehold.it/500x500',
         ]"
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -29,13 +30,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
-import GalleryComponent from "@/components/page/GalleryComponent.vue";
+// import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
 export default defineComponent({
   name: "OSSkill",
   components: {
     SkillStats,
-    GalleryComponent,
+    // GalleryComponent,
   },
   setup() {
     return {};

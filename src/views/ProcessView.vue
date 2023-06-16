@@ -26,6 +26,9 @@
         <button @click="changeView('os')" :class="{ activebtn: activeView === 'os' }">
           os
         </button>
+        <button @click="changeView('ai')" :class="{ activebtn: activeView === 'ai' }">
+          ai
+        </button>
       </div>
       <div class="skillheader">
         <div v-if="activeView === 'default'">
@@ -71,6 +74,12 @@
             />
           </h1>
         </div>
+
+        <div v-if="activeView === 'ai'">
+          <h1 class="text-2xl p-2 pb-0">
+            <TextFX text="Artificial Intelligence" type="fadein" speed="30" />
+          </h1>
+        </div>
       </div>
     </div>
     <div class="skillcontainer">
@@ -98,6 +107,7 @@ enum SkillView {
   Audio = "audio",
   UX = "ux",
   OS = "os",
+  AI = "ai",
 }
 
 export default defineComponent({

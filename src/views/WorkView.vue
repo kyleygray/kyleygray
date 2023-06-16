@@ -126,6 +126,7 @@
               <router-link to="/skills/design">design</router-link>
               <router-link to="/skills/audio">audio</router-link>
               <router-link to="/skills/os">os</router-link>
+              <router-link to="/skills/ai">ai</router-link>
             </div>
             <p>
               <ul class="content-list">

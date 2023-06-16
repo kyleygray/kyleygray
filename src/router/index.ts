@@ -11,6 +11,7 @@ import DesignSkill from "@/views/skills/DesignSkill.vue";
 import AudioSkill from "@/views/skills/AudioSkill.vue";
 import UXSkill from "@/views/skills/UXSkill.vue";
 import OSSkill from "@/views/skills/OSSkill.vue";
+import AISkill from "@/views/skills/AISkill.vue";
 
 import EventBus from "@/services/eventBus";
 
@@ -37,6 +38,7 @@ const routes: Array<RouteRecordRaw> = [
       { path: "audio", name: "audio", component: AudioSkill },
       { path: "ux", name: "ux", component: UXSkill },
       { path: "os", name: "os", component: OSSkill },
+      { path: "ai", name: "ai", component: AISkill },
       { path: "", name: "default", component: DefaultSkill },
       { path: ":pathmatch(.*)*", redirect: "/skills" },
     ],

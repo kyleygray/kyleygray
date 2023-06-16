@@ -11,16 +11,17 @@
     </div>
     <div class="text-lg">
       <SkillStats years="7" skillLevel="advanced" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quia facere
-        deleniti velit, obcaecati quas error, vitae perferendis exercitationem consectetur
-        illo corporis inventore porro? Ea repellat a labore accusamus at!
+      <p class="my-5">
+        I have always been primarily focused on web development as my technical career
+        specialty. Ever since deploying my first website with Adobe Dreamweaver at the age
+        of 16, my insperation as a developer is influenced by a lifetime of internet
+        consumption. I really enjoy making things look good.
       </p>
       <GalleryComponent
         :images="[
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
+          '/src/assets/skills/webdevskill/webdev1.jpg',
+          '/src/assets/skills/webdevskill/webdev2.jpg',
+          '/src/assets/skills/webdevskill/webdev3.jpg',
         ]"
       />
     </div>

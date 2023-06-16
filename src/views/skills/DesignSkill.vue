@@ -6,17 +6,19 @@
       <i class="devicon-apple-original" data-name="Procreate"></i>
     </div>
     <div class="text-lg">
-      <SkillStats years="5" skillLevel="intermediate" />
+      <SkillStats years="6" skillLevel="intermediate" />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta omnis neque, autem
-        quod eos quia exercitationem voluptatum deserunt incidunt esse vero nostrum amet
-        hic perferendis aliquam architecto totam blanditiis voluptatibus.
+        My approach to design is to be bold and friendly. I'm not afraid to try new
+        things, I'm not afraid to express myself in unconventional ways. I really hate
+        hamburger menus as a UI feature. My preferred style of illustration is surrealism
+        and abstract.
       </p>
       <GalleryComponent
+        class=""
         :images="[
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
+          '/src/assets/design/design2.jpg',
+          '/src/assets/design/design3.jpg',
+          '/src/assets/nature/dogmoeba.jpg',
         ]"
       />
     </div>

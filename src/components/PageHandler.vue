@@ -52,7 +52,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .view-container {
-  // position: absolute;
+  position: absolute;
   height: 100vh;
   width: calc(100% - 20vw);
   margin-left: 20vw;
@@ -84,7 +84,7 @@ export default defineComponent({
 
 .page-enter-active,
 .page-leave-active {
-  position: absolute;
+  // position: absolute;
   transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
 }
 .page-enter-from {
