@@ -32,7 +32,6 @@
           '/src/assets/design/design3.jpg',
           '/src/assets/design/design1.jpg',
         ]"
-        location="src/assets/nature/"
       />
       <GalleryComponent
         class=""
@@ -41,13 +40,7 @@
           '/src/assets/nature/fullbackyard.jpg',
           '/src/assets/nature/dogmoeba.jpg',
         ]"
-        location="src/assets/nature/"
       />
-      <!-- <GalleryComponent
-        :images="[nature[3], nature[4], nature[5]]"
-        location="src/assets/nature/"
-      /> -->
-      <!-- </ScrollFX> -->
     </article>
   </main>
 </template>
