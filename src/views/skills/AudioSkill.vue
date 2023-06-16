@@ -13,6 +13,18 @@
     </div>
     <div class="text-lg">
       <SkillStats years="12" skillLevel="expert" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio error
+        laboriosam ullam ipsa doloremque animi quibusdam repudiandae consectetur, eos
+        consequuntur earum tempore itaque aperiam esse est, eum expedita vero cum?
+      </p>
+      <GalleryComponent
+        :images="[
+          'https://placehold.it/500x500',
+          'https://placehold.it/500x500',
+          'https://placehold.it/500x500',
+        ]"
+      />
     </div>
   </div>
 </template>
@@ -21,11 +33,13 @@
 import { defineComponent, computed } from "vue";
 import useStore from "@/services/store.ts";
 import SkillStats from "@/components/page/SkillStats.vue";
+import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
 export default defineComponent({
   name: "AudioSkill",
   components: {
     SkillStats,
+    GalleryComponent,
   },
   setup() {
     const { state } = useStore();

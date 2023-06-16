@@ -1,5 +1,5 @@
 <template>
-  <table class="min-w-full divide-y">
+  <table class="min-w-50 divide-y">
     <thead class="">
       <tr>
         <th
@@ -7,24 +7,24 @@
           colspan="3"
           class="px-6 py-3 text-left text-md font-medium uppercase tracking-wider accent-bg"
         >
-          Experience
+          Skill Stats
         </th>
       </tr>
     </thead>
     <tbody class="divide-y">
       <tr>
-        <td class="px-6 py-4 whitespace-nowrap text-md font-bold">Years</td>
-        <td class="px-6 py-4 whitespace-nowrap text-md">{{ props.years }}</td>
-        <td class="px-6 py-4 whitespace-nowrap text-md">
+        <td class="px-6 py-4 w-2 whitespace-nowrap text-md font-bold">Years</td>
+        <td class="px-6 py-4 w-2 whitespace-nowrap text-md">{{ props.years }}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-xl">
           <TextFX :text="yearblocks" speed="30" />
         </td>
       </tr>
       <tr>
-        <td class="px-6 py-4 whitespace-nowrap text-md font-bold">Skill Level</td>
-        <td class="px-6 py-4 whitespace-nowrap text-md">
+        <td class="px-6 py-4 w-2 whitespace-nowrap text-md font-bold">Skill Level</td>
+        <td class="px-6 py-4 w-2 whitespace-nowrap text-md">
           {{ SkillLevel[props.skillLevel].t }}
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-md">
+        <td class="px-6 py-4 whitespace-nowrap text-xl">
           <TextFX :text="SkillLevel[props.skillLevel].b" speed="30" />
         </td>
       </tr>
@@ -39,23 +39,23 @@ import TextFX from "@/components/page/TextFx.vue";
 export enum SkillLevel {
   novice = {
     t: "Novice",
-    b: "▪️",
+    b: "★",
   },
   beginner = {
     t: "Beginner",
-    b: "▪️▪️",
+    b: "★★",
   },
   intermediate = {
     t: "Intermediate",
-    b: "▪️▪️▪️",
+    b: "★★★",
   },
   advanced = {
     t: "Advanced",
-    b: "▪️▪️▪️▪️",
+    b: "★★★★",
   },
   expert = {
     t: "Expert",
-    b: "▪️▪️▪️▪️▪️",
+    b: "★★★★★",
   },
 }
 
@@ -76,11 +76,21 @@ export default defineComponent({
   },
   setup(props) {
     const yearblocks = computed(() => {
-      return "▪️".repeat(props.years);
+      return "★".repeat(props.years);
     });
     return { props, yearblocks, SkillLevel };
   },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (max-width: 767px) {
+  table {
+    width: 100%;
+
+    & > * {
+      width: auto;
+    }
+  }
+}
+</style>

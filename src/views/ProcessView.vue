@@ -148,6 +148,8 @@ export default defineComponent({
   }
 
   .skillselect {
+    transform: translateX(0%);
+    opacity: 1;
     flex-basis: 10%; // to allocate 10% of the height to skillselect
     display: flex; // to align buttons in a row
     flex-wrap: wrap;
@@ -244,21 +246,23 @@ export default defineComponent({
 
   .skill-enter-active,
   .skill-leave-active {
-    transition-property: opacity, margin-top;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .skill-enter-from {
     opacity: 0;
-    margin-top: -40px;
+    transform: translateX(-10%);
+    // margin-top: -40px;
   }
   .skill-enter-to,
   .skill-leave-from {
     opacity: 1;
-    margin-top: 0px;
+    transform: translateX(0%);
+    // margin-top: 0px;
   }
   .skill-leave-to {
-    position: absolute;
+    // position: absolute;
+    transform: translateX(10%);
     opacity: 0;
   }
 }

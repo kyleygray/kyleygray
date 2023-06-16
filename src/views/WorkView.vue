@@ -23,13 +23,12 @@
               <router-link to="/skills/design">design</router-link>
             </div>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
-              sapiente optio voluptas in rem nam cumque consequatur, eligendi
-              reprehenderit pariatur alias saepe harum quas obcaecati libero. Blanditiis
-              assumenda esse impedit magni quidem saepe praesentium at quaerat obcaecati
-              soluta iure dolorem, sunt, in harum officia, nihil est itaque dolores
-              suscipit. Unde odio, voluptas nihil sed animi nobis dignissimos distinctio
-              ipsum quo exercitationem!
+              <ul class="content-list">
+                <li>UX consultant for large national clients.</li>
+                <li>Designer and prototyper in Angular.</li>
+                <li>Wireframes, presentations, reports, interviews.</li>
+                <li>Highly-collaborative workplace, clear communication with team members.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -52,13 +51,11 @@
               <router-link to="/skills/os">os</router-link>
             </div>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
-              sapiente optio voluptas in rem nam cumque consequatur, eligendi
-              reprehenderit pariatur alias saepe harum quas obcaecati libero. Blanditiis
-              assumenda esse impedit magni quidem saepe praesentium at quaerat obcaecati
-              soluta iure dolorem, sunt, in harum officia, nihil est itaque dolores
-              suscipit. Unde odio, voluptas nihil sed animi nobis dignissimos distinctio
-              ipsum quo exercitationem!
+              <ul class="content-list">
+                <li>Designer, developer, and owner of several front-end UIs for interfacing with consumer databases.</li>
+                <li>Developed in Angular with a Java Springboot backend.</li>
+                <li>Managed hosting in GitLabs and Cloud Foundry.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -79,13 +76,10 @@
               <router-link to="/skills/os">os</router-link>
             </div>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
-              sapiente optio voluptas in rem nam cumque consequatur, eligendi
-              reprehenderit pariatur alias saepe harum quas obcaecati libero. Blanditiis
-              assumenda esse impedit magni quidem saepe praesentium at quaerat obcaecati
-              soluta iure dolorem, sunt, in harum officia, nihil est itaque dolores
-              suscipit. Unde odio, voluptas nihil sed animi nobis dignissimos distinctio
-              ipsum quo exercitationem!
+              <ul class="content-list">
+              <li>Developed and maintained several scripts for test automation in Cypress.</li>
+              <li>Reported and presented bugs in the application to developers.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -107,13 +101,11 @@
               <router-link to="/skills/webdev">webdev</router-link>
             </div>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
-              sapiente optio voluptas in rem nam cumque consequatur, eligendi
-              reprehenderit pariatur alias saepe harum quas obcaecati libero. Blanditiis
-              assumenda esse impedit magni quidem saepe praesentium at quaerat obcaecati
-              soluta iure dolorem, sunt, in harum officia, nihil est itaque dolores
-              suscipit. Unde odio, voluptas nihil sed animi nobis dignissimos distinctio
-              ipsum quo exercitationem!
+              <ul class="content-list">
+              <li>Designed, managed, and taught 8 semesters of computer science courses.</li>
+              <li>Managed over 500 student Microsoft Surface laptops.</li>
+              <li>Supervised and mentored a student-lead IT helpdesk.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -136,13 +128,10 @@
               <router-link to="/skills/os">os</router-link>
             </div>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos debitis
-              sapiente optio voluptas in rem nam cumque consequatur, eligendi
-              reprehenderit pariatur alias saepe harum quas obcaecati libero. Blanditiis
-              assumenda esse impedit magni quidem saepe praesentium at quaerat obcaecati
-              soluta iure dolorem, sunt, in harum officia, nihil est itaque dolores
-              suscipit. Unde odio, voluptas nihil sed animi nobis dignissimos distinctio
-              ipsum quo exercitationem!
+              <ul class="content-list">
+                <li>Designed, developed, and deployed several client and personal websites.</li>
+                <li>Managed and advised hosting solutions for clients.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -233,7 +222,7 @@ export default defineComponent({
         }
 
         .content {
-          font-size: 0.8em;
+          font-size: 0.9em;
           margin-left: 0.3em;
           // display: flex;
           // flex-direction: row;
@@ -263,6 +252,13 @@ export default defineComponent({
             // flex-basis: 70%;
             padding: 1em;
             padding-left: 0;
+            
+            ul.content-list {
+
+              li {
+                border-bottom: 1px solid var(--accent);
+              }
+            }
           }
 
           @media (max-width: 767px) {

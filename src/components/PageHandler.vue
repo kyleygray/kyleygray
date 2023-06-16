@@ -1,7 +1,14 @@
 <template>
   <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
-        <component :class="{ 'mobile-view': isMobile, 'home-view': state.activeComponent === 'home', 'page-view': state.activeComponent !== 'home' }" :is="Component" />
+      <component
+        :class="{
+          'mobile-view': isMobile,
+          'home-view': state.activeComponent === 'home',
+          'page-view': state.activeComponent !== 'home',
+        }"
+        :is="Component"
+      />
     </transition>
   </router-view>
 </template>
@@ -11,41 +18,41 @@ import { defineComponent, computed, ref, inject } from "vue";
 import useStore from "@/services/store";
 
 export default defineComponent({
-    name: "PageHandler",
-    setup() {
-        const { state, methods } = useStore();
-        const activeTransition = ref("page");
-        const { isMobile } = inject("mobileHelper");
+  name: "PageHandler",
+  setup() {
+    const { state, methods } = useStore();
+    const activeTransition = ref("page");
+    const { isMobile } = inject("mobileHelper");
 
-        activeTransition.value = computed(() => {
-            if (state.animationsOff) {
-                return "";
-            }
-            if (state.activeComponent === "home") {
-              if (isMobile.value) {
-                return "upslide";
-              }
-                return "slide";
-            }
-            if (isMobile.value) {
-              return "uppage";
-            }
-            return "page";
-            });
+    activeTransition.value = computed(() => {
+      if (state.animationsOff) {
+        return "";
+      }
+      if (state.activeComponent === "home") {
+        if (isMobile.value) {
+          return "upslide";
+        }
+        return "slide";
+      }
+      if (isMobile.value) {
+        return "uppage";
+      }
+      return "page";
+    });
 
-        return {
-            activeTransition,
-            state,
-            methods,
-            isMobile
-        };
-    }
+    return {
+      activeTransition,
+      state,
+      methods,
+      isMobile,
+    };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 .view-container {
-  position: absolute;
+  // position: absolute;
   height: 100vh;
   width: calc(100% - 20vw);
   margin-left: 20vw;
@@ -56,7 +63,7 @@ export default defineComponent({
   overflow-x: hidden;
   opacity: 1;
   padding: 20px;
-    
+
   &.home-view {
     transform: translate(100%, 0%);
     opacity: 0;
@@ -77,6 +84,7 @@ export default defineComponent({
 
 .page-enter-active,
 .page-leave-active {
+  position: absolute;
   transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
 }
 .page-enter-from {
@@ -140,5 +148,4 @@ export default defineComponent({
 .upslide-leave-to {
   transform: translate(0%, 0%);
 }
-
 </style>

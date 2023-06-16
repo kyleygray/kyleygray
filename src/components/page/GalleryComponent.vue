@@ -32,6 +32,7 @@ export default defineComponent({
 <style lang="scss">
 $boxshadow: var(--primary);
 .gallery-container {
+  position: relative;
   .gallery-component-image-wrapper {
     flex-basis: calc(
       33.33% - 0.6em

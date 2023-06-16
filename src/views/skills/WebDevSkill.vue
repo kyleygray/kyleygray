@@ -11,6 +11,18 @@
     </div>
     <div class="text-lg">
       <SkillStats years="7" skillLevel="advanced" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quia facere
+        deleniti velit, obcaecati quas error, vitae perferendis exercitationem consectetur
+        illo corporis inventore porro? Ea repellat a labore accusamus at!
+      </p>
+      <GalleryComponent
+        :images="[
+          'https://placehold.it/500x500',
+          'https://placehold.it/500x500',
+          'https://placehold.it/500x500',
+        ]"
+      />
     </div>
   </div>
 </template>
@@ -18,11 +30,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
+import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
 export default defineComponent({
   name: "WebDevSkill",
   components: {
     SkillStats,
+    GalleryComponent,
   },
   setup() {
     return {};

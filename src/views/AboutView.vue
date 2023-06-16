@@ -4,11 +4,11 @@
       <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative">
           <TextFX text="Kyley Gray" type="fadein" speed="20" />
-          <!-- <button
+          <button
             ref="rainbowbtn"
             class="absolute right-2 top-2 rainbow-btn"
             @click="makeRainbow()"
-          ></button> -->
+          ></button>
         </h1>
         <h2 class="mydesc text-2xl font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
@@ -113,7 +113,7 @@ export default defineComponent({
       color: var(--primary);
       background-color: var(--secondary);
       &.rainbow {
-        color: var(--danger);
+        color: #ff8888;
         .fx {
           .fadein {
             animation: colorcycle 10s linear infinite;
@@ -146,7 +146,7 @@ export default defineComponent({
         rgba(251, 7, 217, 1) 90%,
         rgba(255, 0, 0, 1) 100%
       );
-      opacity: 0;
+      opacity: 0.2;
       &:hover {
         opacity: 1;
       }
