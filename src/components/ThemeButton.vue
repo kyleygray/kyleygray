@@ -54,16 +54,16 @@ div {
   cursor: pointer;
   user-select: none;
   border: 1px solid var(--primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  margin: 5px;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  margin: 0.25em;
 
   span {
     display: flex;
     width: 100%;
     height: 100%;
-    min-width: 40px;
+    max-width: 40px;
     align-items: center;
     justify-content: center;
     font-weight: bold;

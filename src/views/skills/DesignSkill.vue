@@ -7,7 +7,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="6" skillLevel="intermediate" />
-      <p class="my-5">
+      <p class="my-5 text-sm">
         My approach to design is to be bold and friendly. I'm not afraid to try new
         things, I'm not afraid to express myself in unconventional ways. I really hate
         hamburger menus as a UI feature. My preferred style of illustration is surrealism

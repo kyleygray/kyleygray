@@ -81,7 +81,7 @@
             @click="methods.toggleAccessibility()"
             :toggleActive="state.animationsOff"
             label="⌇"
-            size="2rem"
+            size="1.5rem"
           />
         </div>
       </div>
@@ -290,6 +290,7 @@ export default defineComponent({
 }
 
 .navbox-mobile {
+  font-size: 14px;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   padding: 0px 20px;
@@ -309,7 +310,7 @@ export default defineComponent({
     .the-k {
       height: auto;
       width: 100%;
-      max-width: 100px;
+      max-width: 5em;
       filter: invert(0);
       transition: filter 0.5s ease;
 

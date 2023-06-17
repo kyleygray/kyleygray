@@ -1,11 +1,11 @@
 <template>
-  <table class="min-w-50 divide-y">
+  <table class="divide-y">
     <thead class="">
       <tr>
         <th
           scope="col"
           colspan="3"
-          class="px-6 py-3 text-left text-md font-medium uppercase tracking-wider accent-bg"
+          class="px-4 py-1 text-left text-md font-medium uppercase tracking-wider accent-bg"
         >
           Skill Stats
         </th>
@@ -86,10 +86,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @media (max-width: 767px) {
   table {
+    font-size: 12px;
     width: 100%;
 
     & > * {
-      width: auto;
+      // width: auto;
     }
   }
 }

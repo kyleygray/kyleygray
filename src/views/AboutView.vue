@@ -2,7 +2,7 @@
   <main class="view-container p-0" ref="viewParent">
     <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
-        <h1 ref="mytitle" class="mytitle text-4xl font-bold p-2 relative">
+        <h1 ref="mytitle" class="mytitle md:text-4xl sm:text-2xl font-bold p-2 relative">
           <TextFX text="Kyley Gray" type="fadein" speed="20" />
           <button
             ref="rainbowbtn"
@@ -10,7 +10,7 @@
             @click="makeRainbow()"
           ></button>
         </h1>
-        <h2 class="mydesc text-2xl font-normal p-2">
+        <h2 class="mydesc md:text-2xl sm:text-xl font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
         </h2>
       </div>
@@ -21,7 +21,7 @@
       />
     </div>
     <article class="p2">
-      <p class="text-2xl my-5">
+      <p class="md:text-2xl sm:text-xl my-5">
         Hello! 👋 I am a web developer, music producer, designer, illustrator,
         technologist, hiker, psychonaut, cryptid, and queer individual from Seattle, WA,
         USA. This custom-built website is intended to showcase my work and skills.

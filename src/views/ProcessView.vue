@@ -32,31 +32,31 @@
       </div>
       <div class="skillheader">
         <div v-if="activeView === 'default'">
-          <p class="text-2xl p-2 pb-0 font-extralight empty">
+          <p class="md:text-2xl sm:text-xl p-2 pb-0 font-extralight empty">
             <TextFX text="(Select a skillset...)" type="fadein" speed="30" />
           </p>
         </div>
 
         <div v-if="activeView === 'webdev'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX text="Web Development &amp; Design" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'design'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX text="Design &amp; Illustration" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'audio'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX text="Audio &amp; Music Production" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'ux'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX
               text="User Experience Design &amp; Prototyping"
               type="fadein"
@@ -66,7 +66,7 @@
         </div>
 
         <div v-if="activeView === 'os'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX
               text="Operating Systems &amp; Information Technology"
               type="fadein"
@@ -76,7 +76,7 @@
         </div>
 
         <div v-if="activeView === 'ai'">
-          <h1 class="text-2xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
             <TextFX text="Artificial Intelligence" type="fadein" speed="30" />
           </h1>
         </div>
@@ -174,16 +174,17 @@ export default defineComponent({
     border-bottom: 1px dotted var(--primary);
 
     & > * {
-      width: 100%;
+      // width: 100%;
     }
 
     button {
+      font-size: 0.8rem;
       padding: 0.3em;
-      margin: 0px 10px;
-      margin-bottom: 10px;
+      margin: 0em 0.2em;
+      // margin-bottom: 0.5em;
       border: 1px dotted var(--primary);
-      border-radius: 0.8em;
-      min-width: 80px;
+      border-radius: 0.4em;
+      // min-width: 6em;
       cursor: pointer;
       transition: background-color 0.5s ease;
 
@@ -276,6 +277,17 @@ export default defineComponent({
     // position: absolute;
     transform: translateX(10%);
     opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .skillheader {
+    p {
+      font-size: 12px;
+    }
+  }
+  .devicons i {
+    font-size: 0.6em;
   }
 }
 

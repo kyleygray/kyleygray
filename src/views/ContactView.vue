@@ -3,7 +3,6 @@
     <h1 class="text-3xl pt-5 pb-0 mb-0 contact-title">
       <TextFX text="Contact Info" type="fadein" speed="30" />
     </h1>
-
     <div class="">
       <!-- Contact Details -->
       <div class="text-2xl">
@@ -62,8 +61,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .view-container {
-  // position: relative;
-
   .contact-title {
     border-bottom: 5px solid var(--accent);
     border-left: 2px solid var(--accent);
@@ -71,13 +68,23 @@ export default defineComponent({
     border-bottom-left-radius: 0.5em;
   }
 
+  .portrait {
+    position: absolute;
+    right: 2rem;
+    top: 8rem;
+    max-width: 30%;
+    img {
+      border-radius: 1em;
+    }
+  }
+
   .calan {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
     img {
       user-select: none;
       pointer-events: none;
-      bottom: 0px;
-      right: 0px;
-      position: absolute;
     }
   }
 
@@ -105,6 +112,13 @@ export default defineComponent({
   .fade-leave-to {
     position: absolute;
     opacity: 0;
+  }
+
+  @media (max-width: 767px) {
+    .portrait {
+      position: static;
+      width: 100%;
+    }
   }
 }
 </style>

@@ -10,7 +10,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="4" skillLevel="intermediate" />
-      <p class="my-5">
+      <p class="my-5 text-sm">
         I have a good understanding of all major operating systems from a user, developer,
         and an administrator perspective. I regularly manage my own command-line tools and
         I am not afraid to dig deep into the critical system files if necessary. My

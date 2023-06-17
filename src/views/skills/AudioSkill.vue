@@ -13,7 +13,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="12" skillLevel="expert" />
-      <p class="my-5">
+      <p class="my-5 text-sm">
         I have been producing electronic music since 2004, a wide range of styles and
         production skills. I have obtained a certification in Sound Design with Reason
         from the Berklee College of Music. I have released 2 albums under my own label on

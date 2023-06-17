@@ -13,7 +13,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="2" skillLevel="beginner" />
-      <p class="my-5">
+      <p class="my-5 text-sm">
         With the emerging advancements in artificial intelligence, I have been focused on
         maximizing my professional and productive benefit with AI. Learning how to use it
         has been a crucial element in building this website, as the cache of knowledge it
