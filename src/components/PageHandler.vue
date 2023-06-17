@@ -53,7 +53,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .view-container {
   position: absolute;
-  height: 100vh;
+  height: 100svh;
   width: calc(100% - 20vw);
   margin-left: 20vw;
   background-color: var(--secondary);
@@ -72,7 +72,7 @@ export default defineComponent({
   &.mobile-view {
     width: 100%;
     margin: 0;
-    height: calc(100vh - 150px);
+    height: calc(100svh - 120px);
 
     transform: translate(0%, -100%);
   }
