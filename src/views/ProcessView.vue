@@ -195,8 +195,10 @@ export default defineComponent({
   }
 
   .skillcontainer {
+    position: relative;
     flex-basis: 90%; // to allocate 90% of the height to skillcontainer
-    overflow: auto; // to enable scroll if content height exceeds the container height
+    overflow-x: hidden; // to enable scroll if content height exceeds the container height
+    overflow-y: scroll;
 
     & > div {
       padding: 1em;

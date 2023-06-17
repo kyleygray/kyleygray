@@ -10,7 +10,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="3" skillLevel="beginner" />
-      <p>
+      <p class="my-5">
         I want usability of interfaces to be a priority. In the gallery below you can see
         a simplified progression of the website, from wireframe to an early version of the
         finalized UI system. I wanted to create an interface that was fun to interact with

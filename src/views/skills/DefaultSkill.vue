@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="toilets"></div>
 </template>
 
 <script lang="ts">
@@ -14,4 +14,15 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.toilets {
+  // position: absolute;
+  background: url("@/assets/toilets.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  // opacity: 0.25;
+  background-repeat: no-repeat;
+}
+</style>

@@ -12,10 +12,11 @@
     <div class="text-lg">
       <SkillStats years="7" skillLevel="advanced" />
       <p class="my-5">
-        I have always been primarily focused on web development as my technical career
-        specialty. Ever since deploying my first website with Adobe Dreamweaver at the age
-        of 16, my insperation as a developer is influenced by a lifetime of internet
-        consumption. I really enjoy making things look good.
+        After getting my undergraduate Computer Science degree, I have always been
+        primarily focused on web development as my technical career specialty. This
+        website was created from the ground up using a Vue 3 + Vite stack. I prefer SCSS
+        for styling. Most of my professional work has been proprietary, working for
+        companies such as Boeing and Charter/Spectrum.
       </p>
       <GalleryComponent
         :images="[
