@@ -149,7 +149,7 @@ export default defineComponent({
 
 <style lang="scss">
 .view-container {
-  height: 100vh; // to ensure the view-container takes full viewport height
+  // height: 100svh; // to ensure the view-container takes full viewport height
   display: flex;
   flex-direction: column; // to stack skillselect and skillcontainer vertically
 
@@ -214,23 +214,16 @@ export default defineComponent({
     flex-wrap: wrap;
 
     i {
-      // $delay-time: 0.1s;
-
-      // @for $i from 1 through 10 {
-      //   &:nth-child(#{$i}) {
-      //     animation-delay: $delay-time * $i !important;
-      //   }
-      // }
-
-      // animation: icons 0.5s;
-
-      // margin: 0.1em;
-      // margin-right: 0px;
       position: relative;
       display: flex;
       width: object-fit;
       max-width: 50px;
       margin: 0.2em;
+
+      img {
+        max-width: 50px;
+        width: 1em;
+      }
 
       &::after {
         content: attr(data-name);
