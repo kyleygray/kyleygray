@@ -27,9 +27,9 @@ import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
-import img1 from "@/assets/skills/uxskill/ux1.png";
-import img2 from "@/assets/skills/uxskill/ux2.png";
-import img3 from "@/assets/skills/uxskill/ux3.png";
+import img1 from "@/assets/skills/uxskill/ux1.jpg";
+import img2 from "@/assets/skills/uxskill/ux2.jpg";
+import img3 from "@/assets/skills/uxskill/ux3.jpg";
 
 export default defineComponent({
   name: "UXSkill",
