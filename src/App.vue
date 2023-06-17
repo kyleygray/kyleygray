@@ -165,8 +165,8 @@ main {
   justify-self: center;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 30px;
+  width: 6em;
+  height: 2em;
   // text-align: center;
   // padding-top: 5px;
   transition: transform 0.5s ease, width 0.5s ease;
@@ -176,7 +176,7 @@ main {
     // border: 1px solid var(--primary);
     color: var(--secondary);
     background-color: var(--primary);
-    border-radius: 0px 20px 0px 0px;
+    border-radius: 0em 1em 0em 0em;
     // font-weight: bold;
     font-size: 0.8em;
   }

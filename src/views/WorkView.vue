@@ -161,6 +161,7 @@ export default defineComponent({
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    max-width: 767px;
 
     .project {
       width: calc(50% - 1em);

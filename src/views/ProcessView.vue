@@ -32,31 +32,31 @@
       </div>
       <div class="skillheader">
         <div v-if="activeView === 'default'">
-          <p class="md:text-2xl sm:text-xl p-2 pb-0 font-extralight empty">
+          <p class="md:text-2xl sm:text-xl font-extralight empty">
             <TextFX text="(Select a skillset...)" type="fadein" speed="30" />
           </p>
         </div>
 
         <div v-if="activeView === 'webdev'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX text="Web Development &amp; Design" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'design'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX text="Design &amp; Illustration" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'audio'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX text="Audio &amp; Music Production" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'ux'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX
               text="User Experience Design &amp; Prototyping"
               type="fadein"
@@ -160,13 +160,13 @@ export default defineComponent({
   .skillselect {
     transform: translateX(0%);
     opacity: 1;
-    flex-basis: 10%; // to allocate 10% of the height to skillselect
-    display: flex; // to align buttons in a row
+    // flex-basis: 10%; // to allocate 10% of the height to skillselect
+    // display: flex; // to align buttons in a row
     flex-wrap: wrap;
     justify-content: flex-start; // to provide equal space around the buttons
     align-items: center; // to center align the buttons vertically
     background-color: var(--secondary);
-    padding: 1em;
+    // padding: 1em;
     padding-left: 0;
     margin-left: 0;
     box-shadow: -11px 2px 0px 2px var(--accent);
@@ -176,30 +176,41 @@ export default defineComponent({
     & > * {
       // width: 100%;
     }
+    .skillnav {
+      display: flex;
+      width: 100%;
+      max-width: 767px;
 
-    button {
-      font-size: 0.8rem;
-      padding: 0.3em;
-      margin: 0em 0.2em;
-      // margin-bottom: 0.5em;
-      border: 1px dotted var(--primary);
-      border-radius: 0.4em;
-      // min-width: 6em;
-      cursor: pointer;
-      transition: background-color 0.5s ease;
+      button {
+        width: calc(100% / 6 - 5px);
+        font-size: 0.8rem;
+        min-width: 2em;
+        padding: 0.3em;
+        margin: 0em 0.2em;
+        // margin-bottom: 0.5em;
+        border: 1px dotted var(--primary);
+        border-radius: 0.4em;
+        // min-width: 6em;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
 
-      &.activebtn {
-        border-color: var(--accent);
-        background-color: var(--accent);
+        &.activebtn {
+          border-color: var(--accent);
+          background-color: var(--accent);
+        }
       }
+    }
+    .skillheader {
+      padding: 0.2em;
     }
   }
 
   .skillcontainer {
     position: relative;
-    flex-basis: 90%; // to allocate 90% of the height to skillcontainer
+    flex-basis: 100%; // to allocate 90% of the height to skillcontainer
     overflow-x: hidden; // to enable scroll if content height exceeds the container height
     overflow-y: scroll;
+    max-width: 767px;
 
     & > div {
       padding: 1em;

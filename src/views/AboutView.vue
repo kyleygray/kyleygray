@@ -10,7 +10,7 @@
             @click="makeRainbow()"
           ></button> -->
         </h1>
-        <h2 class="mydesc text-xl font-normal p-2">
+        <h2 class="mydesc md:text-xl sm:text-base font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
         </h2>
       </div>
@@ -90,8 +90,9 @@ export default defineComponent({
   // padding: 1.5em;
   .mytitlecontainer {
     position: absolute;
-    top: 5em;
+    top: 2em;
     left: 1.5em;
+    max-width: 70vw;
     border: 2px dotted var(--primary);
     border-radius: 0.5rem;
 
