@@ -283,7 +283,7 @@ export default defineComponent({
 @media (max-width: 767px) {
   .skillheader {
     p {
-      font-size: 12px;
+      font-size: 16px;
     }
   }
   .devicons i {
