@@ -17,13 +17,7 @@
         as well as easily customizable and accessible for users with cognitive and sensory
         impairment.
       </p>
-      <GalleryComponent
-        :images="[
-          '/src/assets/skills/uxskill/ux1.png',
-          '/src/assets/skills/uxskill/ux2.png',
-          '/src/assets/skills/uxskill/ux3.png',
-        ]"
-      />
+      <GalleryComponent :images="[img1, img2, img3]" />
     </div>
   </div>
 </template>
@@ -33,6 +27,10 @@ import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
+import img1 from "@/assets/skills/uxskill/ux1.png";
+import img2 from "@/assets/skills/uxskill/ux2.png";
+import img3 from "@/assets/skills/uxskill/ux3.png";
+
 export default defineComponent({
   name: "UXSkill",
   components: {
@@ -40,7 +38,7 @@ export default defineComponent({
     GalleryComponent,
   },
   setup() {
-    return {};
+    return { img1, img2, img3 };
   },
 });
 </script>

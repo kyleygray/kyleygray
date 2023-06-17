@@ -23,12 +23,12 @@
       </p>
 
       <div class="audiowrapper">
-        <AudioPlayer file="/src/assets/audio/audio1.mp3" />
-        <AudioPlayer file="/src/assets/audio/audio2.mp3" />
+        <AudioPlayer :file="audio1" />
+        <AudioPlayer :file="audio2" />
       </div>
       <div class="audiowrapper">
-        <AudioPlayer file="/src/assets/audio/audio3.mp3" />
-        <AudioPlayer file="/src/assets/audio/audio4.mp3" />
+        <AudioPlayer :file="audio3" />
+        <AudioPlayer :file="audio4" />
       </div>
     </div>
   </div>
@@ -41,11 +41,15 @@ import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import AudioPlayer from "@/components/page/AudioPlayer.vue";
 
+import audio1 from "@/assets/audio/audio1.mp3";
+import audio2 from "@/assets/audio/audio2.mp3";
+import audio3 from "@/assets/audio/audio3.mp3";
+import audio4 from "@/assets/audio/audio4.mp3";
+
 export default defineComponent({
   name: "AudioSkill",
   components: {
     SkillStats,
-    // GalleryComponent,
     AudioPlayer,
   },
   setup() {
@@ -54,6 +58,10 @@ export default defineComponent({
 
     return {
       inverted,
+      audio1,
+      audio2,
+      audio3,
+      audio4,
     };
   },
 });

@@ -1,12 +1,7 @@
 <template>
   <AccessibilityWrapper>
     <div class="resume-btn">
-      <a
-        href="/src/assets/KyleyGrayResumeMay2023.pdf"
-        class="resume-btn inverted-btn"
-        download
-        >My Resumé</a
-      >
+      <a :href="resume" target="_blank" class="resume-btn inverted-btn">My Resumé</a>
     </div>
     <NavigationComponent />
     <PageHandler />
@@ -30,6 +25,8 @@ import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
 import useThemes from "@/services/themes.ts";
 
 import useStore from "@/services/store";
+
+import resume from "@/assets/KyleyGrayResumeMay2023.pdf";
 
 export default defineComponent({
   components: {
@@ -110,6 +107,7 @@ export default defineComponent({
     return {
       state,
       methods,
+      resume,
     };
   },
 });

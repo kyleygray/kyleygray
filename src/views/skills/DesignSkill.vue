@@ -13,14 +13,7 @@
         hamburger menus as a UI feature. My preferred style of illustration is surrealism
         and abstract.
       </p>
-      <GalleryComponent
-        class=""
-        :images="[
-          '/src/assets/design/design2.jpg',
-          '/src/assets/design/design3.jpg',
-          '/src/assets/nature/dogmoeba.jpg',
-        ]"
-      />
+      <GalleryComponent class="" :images="[img1, img2, img3]" />
     </div>
   </div>
 </template>
@@ -30,6 +23,10 @@ import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
+import img1 from "@/assets/design/design2.jpg";
+import img2 from "@/assets/design/design3.jpg";
+import img3 from "@/assets/nature/dogmoeba.jpg";
+
 export default defineComponent({
   name: "DesignSkill",
   components: {
@@ -37,7 +34,11 @@ export default defineComponent({
     GalleryComponent,
   },
   setup() {
-    return {};
+    return {
+      img1,
+      img2,
+      img3,
+    };
   },
 });
 </script>

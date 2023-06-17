@@ -18,13 +18,7 @@
         for styling. Most of my professional work has been proprietary, working for
         companies such as Boeing and Charter/Spectrum.
       </p>
-      <GalleryComponent
-        :images="[
-          '/src/assets/skills/webdevskill/webdev1.jpg',
-          '/src/assets/skills/webdevskill/webdev2.jpg',
-          '/src/assets/skills/webdevskill/webdev3.jpg',
-        ]"
-      />
+      <GalleryComponent :images="[img1, img2, img3]" />
     </div>
   </div>
 </template>
@@ -34,6 +28,10 @@ import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
+import img1 from "@/assets/skills/webdevskill/webdev1.jpg";
+import img2 from "@/assets/skills/webdevskill/webdev2.jpg";
+import img3 from "@/assets/skills/webdevskill/webdev3.jpg";
+
 export default defineComponent({
   name: "WebDevSkill",
   components: {
@@ -41,7 +39,7 @@ export default defineComponent({
     GalleryComponent,
   },
   setup() {
-    return {};
+    return { img1, img2, img3 };
   },
 });
 </script>

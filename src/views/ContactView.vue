@@ -21,12 +21,7 @@
           ></a>
         </div>
         <p class="my-14">
-          <a
-            class="resume-download"
-            href="/src/assets/KyleyGrayResumeMay2023.pdf"
-            download
-            >Download My Resumé</a
-          >
+          <a class="resume-download" target="_blank" :href="resume">Download My Resumé</a>
         </p>
       </div>
       <!-- Calan Image -->
@@ -47,6 +42,8 @@ import { defineComponent, computed } from "vue";
 import TextFX from "@/components/page/TextFX.vue";
 import useStore from "@/services/store.ts";
 
+import resume from "@/assets/KyleyGrayResumeMay2023.pdf";
+
 export default defineComponent({
   components: {
     TextFX,
@@ -57,6 +54,7 @@ export default defineComponent({
 
     return {
       inverted,
+      resume,
     };
   },
 });

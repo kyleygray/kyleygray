@@ -22,25 +22,12 @@
     </div>
     <article class="p2">
       <p class="text-2xl my-5">
-        Hello! 👋 I make things on the computer! This website was custom-built from the
-        ground up for the purpose of showcasing my work, skills, and experience.
+        Hello! 👋 I am a web developer, music producer, designer, illustrator,
+        technologist, hiker, psychonaut, cryptid, and queer individual from Seattle, WA,
+        USA. This custom-built website is intended to showcase my work and skills.
       </p>
-      <GalleryComponent
-        class=""
-        :images="[
-          '/src/assets/design/design2.jpg',
-          '/src/assets/design/design3.jpg',
-          '/src/assets/design/design1.jpg',
-        ]"
-      />
-      <GalleryComponent
-        class=""
-        :images="[
-          '/src/assets/nature/psychoflower.jpg',
-          '/src/assets/nature/fullbackyard.jpg',
-          '/src/assets/nature/dogmoeba.jpg',
-        ]"
-      />
+      <GalleryComponent class="" :images="[img1, img2, img3]" />
+      <GalleryComponent class="" :images="[img4, img5, img6]" />
     </article>
   </main>
 </template>
@@ -54,7 +41,12 @@ import ScrollFX from "@/components/page/ScrollFX.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import ResumeBtn from "@/components/page/ResumeBtn.vue";
 
-import { nature } from "@/assets/nature/nature.js";
+import img1 from "@/assets/design/design2.jpg";
+import img2 from "@/assets/design/design3.jpg";
+import img3 from "@/assets/design/design1.jpg";
+import img4 from "@/assets/nature/psychoflower.jpg";
+import img5 from "@/assets/nature/fullbackyard.jpg";
+import img6 from "@/assets/nature/dogmoeba.jpg";
 
 export default defineComponent({
   components: {
@@ -81,7 +73,12 @@ export default defineComponent({
     return {
       viewParent,
       mytitle,
-      nature,
+      img1,
+      img2,
+      img3,
+      img4,
+      img5,
+      img6,
     };
   },
 });

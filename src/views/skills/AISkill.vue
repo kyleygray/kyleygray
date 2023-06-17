@@ -21,13 +21,6 @@
         direction, I have been having a very lengthy and detailed conversation with
         ChatGPT-4 and it has had some influence over the functionality and style.
       </p>
-      <!-- <GalleryComponent
-        :images="[
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-        ]"
-      /> -->
     </div>
   </div>
 </template>
@@ -36,13 +29,11 @@
 import { defineComponent, computed } from "vue";
 import useStore from "@/services/store.ts";
 import SkillStats from "@/components/page/SkillStats.vue";
-// import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
 export default defineComponent({
   name: "AISkill",
   components: {
     SkillStats,
-    // GalleryComponent,
   },
   setup() {
     const { state } = useStore();

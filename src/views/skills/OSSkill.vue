@@ -16,13 +16,6 @@
         I am not afraid to dig deep into the critical system files if necessary. My
         current OS of choice is MacOS, followed by Arch Linux.
       </p>
-      <!-- <GalleryComponent
-        :images="[
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-          'https://placehold.it/500x500',
-        ]"
-      /> -->
     </div>
   </div>
 </template>
@@ -30,13 +23,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SkillStats from "@/components/page/SkillStats.vue";
-// import GalleryComponent from "@/components/page/GalleryComponent.vue";
 
 export default defineComponent({
   name: "OSSkill",
   components: {
     SkillStats,
-    // GalleryComponent,
   },
   setup() {
     return {};
