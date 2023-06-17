@@ -11,7 +11,7 @@
     </div>
     <div class="text-lg">
       <SkillStats years="7" skillLevel="advanced" />
-      <p class="my-5 text-sm">
+      <p class="my-5 text-base">
         After getting my undergraduate Computer Science degree, I have always been
         primarily focused on web development as my technical career specialty. This
         website was created from the ground up using a Vue 3 + Vite stack. I prefer SCSS

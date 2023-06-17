@@ -47,7 +47,8 @@ export default defineComponent({
       );
     });
     const isMobile = computed(() => {
-      return isMobileDevice.value || viewWidth.value < MOBILE_WIDTH;
+      // return isMobileDevice.value || viewWidth.value < MOBILE_WIDTH;
+      return viewWidth.value < MOBILE_WIDTH;
     });
     const mobileHelper = () => {
       return {
@@ -137,7 +138,7 @@ body {
   background-color: var(--secondary);
   transition: background-color 0.5s ease, color 0.5s ease;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   margin: 0;
   padding: 0;
 }

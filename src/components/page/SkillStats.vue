@@ -1,30 +1,24 @@
 <template>
-  <table class="divide-y">
+  <table class="">
     <thead class="">
       <tr>
-        <th
-          scope="col"
-          colspan="3"
-          class="px-4 py-1 text-left text-md font-medium uppercase tracking-wider accent-bg"
-        >
-          Skill Stats
-        </th>
+        <th scope="col" colspan="3" class="title">Skill Stats</th>
       </tr>
     </thead>
-    <tbody class="divide-y">
+    <tbody class="">
       <tr>
-        <td class="px-6 py-4 w-2 whitespace-nowrap text-md font-bold">Years</td>
-        <td class="px-6 py-4 w-2 whitespace-nowrap text-md">{{ props.years }}</td>
-        <td class="px-6 py-4 whitespace-nowrap text-xl">
+        <td class="year-label">Years</td>
+        <td class="year-number">{{ props.years }}</td>
+        <td class="year-stars">
           <TextFX :text="yearblocks" speed="30" />
         </td>
       </tr>
       <tr>
-        <td class="px-6 py-4 w-2 whitespace-nowrap text-md font-bold">Skill Level</td>
-        <td class="px-6 py-4 w-2 whitespace-nowrap text-md">
+        <td class="skill-label">Skill</td>
+        <td class="skill-number">
           {{ SkillLevel[props.skillLevel].t }}
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-xl">
+        <td class="skill-stars">
           <TextFX :text="SkillLevel[props.skillLevel].b" speed="30" />
         </td>
       </tr>
@@ -84,9 +78,24 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+table {
+  width: 100%;
+  max-width: 767px;
+}
+
+table * {
+  padding: 0.2em;
+}
+
+.title {
+  text-align: left;
+  padding-left: 0.5em;
+  background-color: var(--accent);
+}
+
 @media (max-width: 767px) {
   table {
-    font-size: 12px;
+    font-size: 14px;
     width: 100%;
 
     & > * {

@@ -59,9 +59,7 @@
       <nav v-show="!isHome">
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/experience" active-class="router-link-active"
-          >experience</router-link
-        >
+        <router-link to="/experience" active-class="router-link-active">exp.</router-link>
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
       <nav v-show="isHome">
@@ -149,7 +147,7 @@ export default defineComponent({
   position: absolute;
   left: 0;
   top: 0;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
 }
 
@@ -260,7 +258,7 @@ export default defineComponent({
   &.big-nav {
     height: 50vh;
     width: 50vw;
-    transform: translate(50%, 20vh);
+    transform: translate(50%, 20svh);
     border-radius: 1em;
 
     .the-k {
@@ -273,7 +271,7 @@ export default defineComponent({
   }
 
   &.small-nav {
-    height: 100vh;
+    height: 100svh;
     width: 20vw;
     transform: translate(0%, 0%);
     border-radius: 0em;
@@ -294,7 +292,7 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 20% 60% 20%;
   padding: 0px 20px;
-  height: 150px;
+  height: 120px;
   transition-property: transform, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -322,7 +320,7 @@ export default defineComponent({
 
   &.big-nav-mobile {
     width: 100vw;
-    transform: translateY(calc(50vh - 100px));
+    transform: translateY(calc(50svh - 100px));
 
     .my-K {
       text-align: center;
@@ -342,7 +340,7 @@ export default defineComponent({
 
   &.small-nav-mobile {
     width: 100vw;
-    transform: translateY(calc(100vh - 150px));
+    transform: translateY(calc(100svh - 120px));
 
     & > nav {
     }
@@ -360,14 +358,16 @@ export default defineComponent({
     a {
       text-align: center;
       width: 42.5%;
-      height: 50px;
+      height: 2.2em;
       margin-left: 2.5%;
       margin-right: 2.5%;
-      margin-top: 5px;
+      margin-top: 0.1em;
       color: var(--primary);
       transition: color 0.5s ease, background-color 0.5s ease;
-      padding-top: 10px;
-      font-size: 1.1em;
+      padding-top: 0.2em;
+      font-size: 1em;
+      border: 1px dotted var(--primary);
+      border-radius: 1em;
       &.router-link-active {
         background-color: var(--accent);
         color: var(--compliment);
@@ -380,13 +380,12 @@ export default defineComponent({
     transition: margin 0.5s ease, background-color 0.5s ease;
 
     & > * {
-      margin: 10px 0px;
+      margin: 0.4em 0em;
       // border: 1px dotted var(--primary);
-      border-radius: 1rem;
       display: block;
       text-decoration: none;
       width: 100%;
-      padding: 3px 0px;
+      padding: 0.1em 0em;
     }
   }
 

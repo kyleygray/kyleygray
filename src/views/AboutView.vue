@@ -2,15 +2,15 @@
   <main class="view-container p-0" ref="viewParent">
     <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
-        <h1 ref="mytitle" class="mytitle md:text-4xl sm:text-2xl font-bold p-2 relative">
+        <h1 ref="mytitle" class="mytitle rainbow text-4xl font-bold p-2 relative">
           <TextFX text="Kyley Gray" type="fadein" speed="20" />
-          <button
+          <!-- <button
             ref="rainbowbtn"
             class="absolute right-2 top-2 rainbow-btn"
             @click="makeRainbow()"
-          ></button>
+          ></button> -->
         </h1>
-        <h2 class="mydesc md:text-2xl sm:text-xl font-normal p-2">
+        <h2 class="mydesc text-xl font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
         </h2>
       </div>
@@ -90,8 +90,8 @@ export default defineComponent({
   // padding: 1.5em;
   .mytitlecontainer {
     position: absolute;
-    top: 30%;
-    left: 20px;
+    top: 5em;
+    left: 1.5em;
     border: 2px dotted var(--primary);
     border-radius: 0.5rem;
 
@@ -99,6 +99,7 @@ export default defineComponent({
       // transition: background-color 0.5s ease;
     }
     .mytitle {
+      text-shadow: 2px 2px 0px var(--accent);
       border-radius: 0.5rem 0.5rem 0 0;
       color: var(--primary);
       background-color: var(--secondary);
@@ -146,7 +147,7 @@ export default defineComponent({
   }
   .mybackyard {
     border: 2px dotted var(--primary);
-    height: 50vh;
+    height: 35svh;
   }
 
   [class^="fade1-"] {

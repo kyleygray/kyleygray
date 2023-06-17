@@ -79,9 +79,6 @@ export default defineComponent({
   }
 
   .calan {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
     img {
       user-select: none;
       pointer-events: none;
