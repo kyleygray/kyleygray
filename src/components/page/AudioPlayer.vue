@@ -141,7 +141,7 @@ export default defineComponent({
         &::after {
           content: "";
           position: absolute;
-          right: 0;
+          right: -0.3em;
           align-self: center;
           // justify-self: flex-start;
           width: 0.3em;

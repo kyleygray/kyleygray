@@ -115,6 +115,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: "Rubik";
+  src: url("@/assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("@/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
 html,
 body {
   margin: 0;

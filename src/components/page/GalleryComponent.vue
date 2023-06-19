@@ -9,13 +9,18 @@
       <!-- <ImageModal :image="image" /> -->
       <div
         @click="handleClick(index, image)"
-        :class="{
-          image: true,
-          selected: selected === index,
-          unselected: selected !== index && selected !== 0,
-        }"
+        class="image"
         :style="{ backgroundImage: `url(${image})` }"
-      ></div>
+      >
+        <div class="imagepreload"></div>
+      </div>
+      <!-- <div
+        @click="handleClick(index, image)"
+        class="image"
+        :style="{ backgroundImage: `url()` }"
+      > -->
+      <!-- <div class="imagepreload"></div> -->
+      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -36,17 +41,25 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const selected = ref(0);
+    const selected = ref(-1);
     const images = ref(null);
 
     function handleClick(index) {
+      if (index === selected.value) {
+        selected.value = -1;
+      } else {
+        selected.value = index;
+      }
       console.log(index, this.$refs.images[index], props.images[index]);
       this.$refs.images.forEach((image, j) => {
-        if (index === j) {
+        if (index === j && selected.value !== -1) {
           image.classList.add("selected");
           image.classList.remove("unselected");
-        } else {
+        } else if (selected.value !== -1) {
           image.classList.add("unselected");
+          image.classList.remove("selected");
+        } else {
+          image.classList.remove("unselected");
           image.classList.remove("selected");
         }
       });
@@ -56,6 +69,7 @@ export default defineComponent({
       props,
       selected,
       handleClick,
+      // eslint-disable-next-line vue/no-dupe-keys
       images,
     };
   },
@@ -74,14 +88,13 @@ $boxshadow: var(--primary);
     box-sizing: border-box;
     position: relative;
     padding-bottom: 6em;
-    transition: flex-basis 1s ease, padding-bottom 1s ease, filter 1s ease;
+    transition: flex-basis 0.5s ease, padding-bottom 0.5s ease;
     cursor: pointer;
 
     &.selected {
       flex-basis: calc(80% - 0.6em);
       padding-bottom: 50svh;
-      cursor: initial;
-      filter: saturate(100%);
+      // filter: saturate(100%);
       .image {
         background-size: contain;
       }
@@ -89,9 +102,9 @@ $boxshadow: var(--primary);
     &.unselected {
       flex-basis: calc(10% - 0.6em);
       padding-bottom: 50svh;
-      filter: saturate(0%);
+      // filter: saturate(0%);
       .image {
-        box-shadow: inset 0px 0px 10px 5px var(--accent);
+        box-shadow: inset 0px 0px 50px 10px var(--primary);
       }
     }
 
@@ -105,6 +118,14 @@ $boxshadow: var(--primary);
       background-position: center;
       border-radius: 0.5rem;
       border: 2px dotted var(--primary);
+
+      .imagepreload {
+        position: absolute;
+        background-color: red;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
     }
   }
 }

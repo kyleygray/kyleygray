@@ -17,7 +17,7 @@
       <img
         class="mybackyard w-full object-cover rounded-lg"
         src="@/assets/design/design0.jpg"
-        alt="cover image"
+        alt=""
       />
     </div>
     <article class="p2">
