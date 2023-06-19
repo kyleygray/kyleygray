@@ -6,6 +6,15 @@
     <NavigationComponent />
     <PageHandler />
   </AccessibilityWrapper>
+  <!-- These are here to force preloading this is very bad practice dont do this IRL -->
+  <h1 style="font-size: 0">!</h1>
+  <img style="display: none" :src="design0" alt="" />
+  <img style="display: none" :src="design1" alt="" />
+  <img style="display: none" :src="design2" alt="" />
+  <img style="display: none" :src="design3" alt="" />
+  <img style="display: none" :src="nature" alt="" />
+  <img style="display: none" :src="flower" alt="" />
+  <img style="display: none" :src="dogmoeba" alt="" />
 </template>
 
 <script lang="ts">
@@ -22,11 +31,19 @@ import {
 import NavigationComponent from "@/components/Navigation.vue";
 import PageHandler from "@/components/PageHandler.vue";
 import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
-import useThemes from "@/services/themes.ts";
 
+import useThemes from "@/services/themes.ts";
 import useStore from "@/services/store";
 
 import resume from "@/assets/KyleyGrayResumeMay2023.pdf";
+
+import design0 from "@/assets/design/design0.jpg";
+import design1 from "@/assets/design/design1.jpg";
+import design2 from "@/assets/design/design2.jpg";
+import design3 from "@/assets/design/design3.jpg";
+import backyard from "@/assets/nature/fullbackyard.jpg";
+import flower from "@/assets/nature/psychoflower.jpg";
+import dogmoeba from "@/assets/nature/dogmoeba.jpg";
 
 export default defineComponent({
   components: {
@@ -109,6 +126,13 @@ export default defineComponent({
       state,
       methods,
       resume,
+      design0,
+      design1,
+      design2,
+      design3,
+      backyard,
+      flower,
+      dogmoeba,
     };
   },
 });

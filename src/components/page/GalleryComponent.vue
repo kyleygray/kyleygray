@@ -105,6 +105,9 @@ $boxshadow: var(--primary);
       // filter: saturate(0%);
       .image {
         box-shadow: inset 0px 0px 50px 10px var(--primary);
+        .imagepreload::after {
+          content: "";
+        }
       }
     }
 
@@ -121,10 +124,20 @@ $boxshadow: var(--primary);
 
       .imagepreload {
         position: absolute;
-        background-color: red;
+        background-color: var(--accent);
         width: 100%;
         height: 100%;
         z-index: -1;
+        display: flex;
+
+        &::after {
+          font-family: monospace;
+          content: "slow internet...";
+          align-self: center;
+          text-align: center;
+          width: 100%;
+          font-size: 1em;
+        }
       }
     }
   }
