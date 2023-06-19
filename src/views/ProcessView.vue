@@ -3,30 +3,39 @@
     <div class="skillselect">
       <div class="skillnav">
         <button
-          @click="changeView('webdev')"
+          @click="changeView('webdev', viewParent)"
           :class="{ activebtn: activeView === 'webdev' }"
         >
           webdev
         </button>
         <button
-          @click="changeView('design')"
+          @click="changeView('design', viewParent)"
           :class="{ activebtn: activeView === 'design' }"
         >
           design
         </button>
         <button
-          @click="changeView('audio')"
+          @click="changeView('audio', viewParent)"
           :class="{ activebtn: activeView === 'audio' }"
         >
           audio
         </button>
-        <button @click="changeView('ux')" :class="{ activebtn: activeView === 'ux' }">
+        <button
+          @click="changeView('ux', viewParent)"
+          :class="{ activebtn: activeView === 'ux' }"
+        >
           ux
         </button>
-        <button @click="changeView('os')" :class="{ activebtn: activeView === 'os' }">
+        <button
+          @click="changeView('os', viewParent)"
+          :class="{ activebtn: activeView === 'os' }"
+        >
           os
         </button>
-        <button @click="changeView('ai')" :class="{ activebtn: activeView === 'ai' }">
+        <button
+          @click="changeView('ai', viewParent)"
+          :class="{ activebtn: activeView === 'ai' }"
+        >
           ai
         </button>
       </div>
@@ -118,6 +127,7 @@ export default defineComponent({
   },
   setup() {
     const viewParent = ref(null);
+    const skillSelect = ref(null);
     provide("viewParent", viewParent);
     const devicons = ref(new Set());
 
@@ -128,7 +138,8 @@ export default defineComponent({
 
     const activeView = ref<SkillView>(SkillView.Default);
 
-    const changeView = (view: SkillView) => {
+    const changeView = (view: SkillView, viewParent) => {
+      //TODO: Fix the jerking bug
       activeView.value = view;
       router.push(`/skills/${activeView.value}`);
     };
@@ -139,6 +150,7 @@ export default defineComponent({
 
     return {
       viewParent,
+      skillSelect,
       activeView,
       changeView,
       addDevicons,

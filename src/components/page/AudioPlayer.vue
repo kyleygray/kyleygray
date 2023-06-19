@@ -10,14 +10,17 @@
       <button class="focus:outline-none" @click="togglePlay">
         {{ isPlaying ? "◼" : "▶" }}
       </button>
-      <input
+      <!-- <input
         type="range"
         min="0"
         :max="duration"
         v-model="currentTime"
         @input="changeTime"
         class="w-full audio-bar"
-      />
+      /> -->
+      <div class="audio-bar" @click="changeTime" ref="audioBar">
+        <span ref="audioTracker"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +41,8 @@ export default defineComponent({
     const isPlaying = ref(false);
     const duration = ref(0);
     const currentTime = ref(0);
+    const audioBar = ref(null);
+    const audioTracker = ref(null);
 
     const togglePlay = () => {
       if (isPlaying.value) {
@@ -51,15 +56,20 @@ export default defineComponent({
     const updateTime = (e) => {
       currentTime.value = e.target.currentTime;
       duration.value = e.target.duration;
+      audioTracker.value.style.width =
+        (e.target.currentTime / e.target.duration) * 100 + "%";
     };
 
-    const changeTime = () => {
-      audioRef.value.currentTime = currentTime.value;
+    const changeTime = (e) => {
+      console.log(e.layerX, e.explicitOriginalTarget);
+      audioRef.value.currentTime =
+        duration.value * (e.layerX / e.explicitOriginalTarget.clientWidth);
     };
 
     const resetPlayer = () => {
       currentTime.value = 0;
       isPlaying.value = false;
+      audioTracker.value.style.width = "0%";
     };
 
     watch(isPlaying, (newVal) => {
@@ -79,6 +89,8 @@ export default defineComponent({
       resetPlayer,
       duration,
       currentTime,
+      audioBar,
+      audioTracker,
     };
   },
 });
@@ -106,6 +118,39 @@ export default defineComponent({
     }
 
     .audio-bar {
+      position: relative;
+      width: 95%;
+      margin-right: 5%;
+      display: block;
+      height: 0.4em;
+      background-color: var(--accent);
+      border-radius: 0;
+      cursor: pointer;
+
+      span {
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        transition: width 0.2s linear;
+        height: 0.4em;
+        background-color: var(--primary);
+        display: flex;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          align-self: center;
+          // justify-self: flex-start;
+          width: 0.3em;
+          box-shadow: 0px 0px 10px 5px var(--secondary);
+          height: 1em;
+          border-radius: 0.5em;
+          background-color: var(--secondary);
+        }
+      }
     }
   }
 }
