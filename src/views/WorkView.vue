@@ -3,9 +3,9 @@
     <h1 class="text-3xl pt-5 pb-1">
       <TextFX text="Career Experience" type="fadein" speed="30" />
     </h1>
-    <p class="mb-5">
+    <h1 class="mb-5 font-thin">
       <TextFX text="(Click a skill button for more info.)" type="fadein" speed="20" />
-    </p>
+    </h1>
     <div class="project-container">
       <article class="project">
         <div class="info">
@@ -186,7 +186,7 @@ export default defineComponent({
 
         .title,
         .company {
-          font-weight: bold;
+          font-weight: 500;
         }
 
         .title {
@@ -203,6 +203,7 @@ export default defineComponent({
         }
 
         .company {
+          font-weight: 300;
           margin: 0;
           padding: 0 0.3em;
           background-color: var(--accent);

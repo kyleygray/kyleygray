@@ -30,10 +30,12 @@
           <ThemeButton :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
+          <div class="anispinner">
+            <div><span></span></div>
+          </div>
           <ToggleButton
             @click="methods.toggleAccessibility()"
             :toggleActive="state.animationsOff"
-            label="⌇"
             size="2rem"
           />
         </div>
@@ -75,10 +77,12 @@
           <ThemeButton :theme="themes.invertedTheme" />
         </div>
         <div class="accessibility">
+          <div class="anispinner">
+            <div><span></span></div>
+          </div>
           <ToggleButton
             @click="methods.toggleAccessibility()"
             :toggleActive="state.animationsOff"
-            label="⌇"
             size="1.5rem"
           />
         </div>
@@ -400,7 +404,58 @@ export default defineComponent({
     }
 
     .accessibility {
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
+}
+
+.anispinner {
+  font-size: 10px;
+  position: relative;
+  width: 2em;
+  margin-right: 5px;
+  div {
+    animation: spin 5s infinite linear;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--primary);
+    border-radius: 1em;
+    transform: rotate(0deg);
+
+    span {
+      animation: activate 1s infinite linear;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0.45em, 0.45em);
+      width: 1em;
+      height: 1em;
+      border-radius: 1em;
+      background-color: var(--primary);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes activate {
+  0% {
+    transform: translate(0em, 0em);
+  }
+  100% {
+    transform: translate(0em, 0em);
   }
 }
 

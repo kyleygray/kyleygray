@@ -10,9 +10,9 @@
             @click="makeRainbow()"
           ></button> -->
         </h1>
-        <h2 class="mydesc md:text-xl sm:text-base font-normal p-2">
+        <p class="mydesc md:text-2xl sm:text-base font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
-        </h2>
+        </p>
       </div>
       <img
         class="mybackyard w-full object-cover rounded-lg"
@@ -100,7 +100,7 @@ export default defineComponent({
       // transition: background-color 0.5s ease;
     }
     .mytitle {
-      text-shadow: 2px 2px 0px var(--accent);
+      // text-shadow: 2px 2px 0px var(--accent);
       border-radius: 0.5rem 0.5rem 0 0;
       color: var(--primary);
       background-color: var(--secondary);

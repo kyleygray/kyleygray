@@ -32,9 +32,9 @@
       </div>
       <div class="skillheader">
         <div v-if="activeView === 'default'">
-          <p class="md:text-2xl sm:text-xl font-extralight empty">
-            <TextFX text="(Select a skillset...)" type="fadein" speed="30" />
-          </p>
+          <h1 class="md:text-2xl sm:text-xl font-thin">
+            <TextFX text="(select a skillset)" type="fadein" speed="30" />
+          </h1>
         </div>
 
         <div v-if="activeView === 'webdev'">
@@ -66,7 +66,7 @@
         </div>
 
         <div v-if="activeView === 'os'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX
               text="Operating Systems &amp; Information Technology"
               type="fadein"
@@ -76,7 +76,7 @@
         </div>
 
         <div v-if="activeView === 'ai'">
-          <h1 class="md:text-2xl sm:text-xl p-2 pb-0">
+          <h1 class="md:text-2xl sm:text-xl pb-0">
             <TextFX text="Artificial Intelligence" type="fadein" speed="30" />
           </h1>
         </div>

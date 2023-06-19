@@ -65,9 +65,9 @@ export default defineComponent({
   display: block;
   border: 1px solid var(--primary);
   border-radius: 1em;
-  width: 4em;
+  width: 3em;
   height: 1.5em;
-  min-width: 4em;
+  min-width: 3em;
   background-color: var(--background);
   transition: background-color 0.5s ease;
 
@@ -86,11 +86,14 @@ export default defineComponent({
 
   &.toggleOn {
     text-align: center;
+    display: flex;
     // font-size: 0.8em;
     span {
-      transform: translateX(2.5em);
+      transform: translateX(1.5em);
     }
     &::before {
+      align-self: center;
+      font-size: 0.7em;
       // padding-top: 3px;
       text-align: center;
       position: absolute;
@@ -101,9 +104,12 @@ export default defineComponent({
   }
   &.toggleOff {
     span {
+      display: flex;
       transform: translateX(0%);
     }
     &::before {
+      align-self: center;
+      font-size: 0.8em;
       text-align: center;
       position: absolute;
       margin: 0px;
