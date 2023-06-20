@@ -13,15 +13,38 @@
     </div>
     <div class="text-lg">
       <SkillStats years="12" skillLevel="expert" />
-      <p class="my-5 text-base">
+
+      <div class="token-container">
+        <SkillToken>Reason</SkillToken>
+        <SkillToken>Logic</SkillToken>
+        <SkillToken>Ableton Live</SkillToken>
+        <SkillToken>Renoise</SkillToken>
+        <!-- <SkillToken accent>I ♥ Music</SkillToken> -->
+        <SkillToken>Electronic/IDM</SkillToken>
+        <SkillToken>Hardcore</SkillToken>
+        <SkillToken>Melodic/Minimal Techno</SkillToken>
+        <SkillToken>Sound Design</SkillToken>
+        <SkillToken>Mixing</SkillToken>
+        <!-- <SkillToken accent>Dance Dance Revolution</SkillToken> -->
+        <SkillToken>Mastering</SkillToken>
+        <SkillToken>Audio Sample Editing</SkillToken>
+        <SkillToken>Original Composition</SkillToken>
+        <!-- <SkillToken accent>Producing since 2004</SkillToken> -->
+        <SkillToken>Arrangement</SkillToken>
+        <SkillToken>Film and Interactive Media</SkillToken>
+        <SkillToken highlight
+          ><a href="https://cubeshark.bandcamp.com" target="_blank"
+            >Cubeshark on Bandcamp</a
+          ></SkillToken
+        >
+      </div>
+      <p class="my-5 text-xl">
         I have been producing electronic music since 2004, a wide range of styles and
         production skills. I have obtained a certification in Sound Design with Reason
-        from the Berklee College of Music. I have released 2 albums under my own label on
-        <a class="underline" href="https://cubeshark.bandcamp.com">my bandcamp page</a>.
-        Overall, I have been doing this for a long time and I really enjoy it. Below are
-        some select samples of music produced in the last decade.
+        from the Berklee College of Music. I have released 2 albums under the alias
+        "Cubeshark". Overall, I have been doing this for a long time and I really enjoy
+        it. Below are some select samples of music produced in the last decade.
       </p>
-
       <div class="audiowrapper">
         <AudioPlayer :file="audio1" />
         <AudioPlayer :file="audio2" />
@@ -40,6 +63,7 @@ import useStore from "@/services/store.ts";
 import SkillStats from "@/components/page/SkillStats.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import AudioPlayer from "@/components/page/AudioPlayer.vue";
+import SkillToken from "@/components/page/SkillToken.vue";
 
 import audio1 from "@/assets/audio/audio1.mp3";
 import audio2 from "@/assets/audio/audio2.mp3";
@@ -51,6 +75,7 @@ export default defineComponent({
   components: {
     SkillStats,
     AudioPlayer,
+    SkillToken,
   },
   setup() {
     const { state } = useStore();

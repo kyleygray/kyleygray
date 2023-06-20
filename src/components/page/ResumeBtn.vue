@@ -1,6 +1,6 @@
 <template>
   <div class="resume-container">
-    <a href="@/assets/KyleyGrayResumeMay2023.pdf" download class="resume-btn">
+    <a href="@/assets/KyleyGrayResumeJune2023.pdf" download class="resume-btn">
       Download My Resume
     </a>
   </div>

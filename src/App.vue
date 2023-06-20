@@ -35,7 +35,7 @@ import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
 import useThemes from "@/services/themes.ts";
 import useStore from "@/services/store";
 
-import resume from "@/assets/KyleyGrayResumeMay2023.pdf";
+import resume from "@/assets/KyleyGrayResumeJune2023.pdf";
 
 import design0 from "@/assets/design/design0.jpg";
 import design1 from "@/assets/design/design1.jpg";
@@ -166,7 +166,7 @@ body {
 
 #app {
   display: grid;
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", courier, monospace;
   // text-align: center;
   color: var(--primary);
   background-color: var(--secondary);
@@ -183,7 +183,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", serif;
+  font-family: "Rubik", Arial, serif;
 }
 
 main {

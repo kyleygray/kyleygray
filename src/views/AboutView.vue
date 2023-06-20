@@ -23,8 +23,10 @@
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
         Hello! 👋 I am a web developer, music producer, designer, illustrator,
-        technologist, hiker, psychonaut, cryptid, and queer individual from Seattle, WA,
-        USA. This custom-built website is intended to showcase my work and skills.
+        technologist, hiker, psychonaut, cryptid, and queer from Seattle, Washington. This
+        website is intended to showcase my
+        <router-link to="/experience">experience</router-link> and
+        <router-link to="/skills">skills</router-link>.
       </p>
       <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" />
@@ -186,6 +188,16 @@ export default defineComponent({
 }
 
 .p2 {
+  p > a {
+    border: 1px dotted var(--primary);
+    padding: 0.1em;
+    border-radius: 0.3em;
+
+    &::after {
+      content: "▷";
+      margin-left: 0.5em;
+    }
+  }
 }
 
 .about-resume-btn {

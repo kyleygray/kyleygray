@@ -273,6 +273,17 @@ export default defineComponent({
     }
   }
 
+  .token-container {
+    padding-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5em 0em;
+
+    & > * {
+    }
+  }
+
   .skill-enter-active,
   .skill-leave-active {
     position: absolute;

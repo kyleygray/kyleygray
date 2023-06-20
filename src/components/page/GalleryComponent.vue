@@ -104,7 +104,7 @@ $boxshadow: var(--primary);
       padding-bottom: 50svh;
       // filter: saturate(0%);
       .image {
-        box-shadow: inset 0px 0px 50px 10px var(--primary);
+        box-shadow: inset 0px 0px 2em 0.2em var(--primary);
         .imagepreload::after {
           content: "";
         }

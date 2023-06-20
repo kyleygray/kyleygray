@@ -13,7 +13,15 @@
     </div>
     <div class="text-lg">
       <SkillStats years="2" skillLevel="beginner" />
-      <p class="my-5 text-base">
+      <div class="token-container">
+        <SkillToken>"Prompt Engineer" (?)</SkillToken>
+        <SkillToken>OpenAI API</SkillToken>
+        <!-- <SkillToken accent>Increased productivity and accuracy</SkillToken> -->
+        <SkillToken>Image Generation</SkillToken>
+        <SkillToken>Code Generation</SkillToken>
+        <!-- <SkillToken accent>Please don't destroy humanity</SkillToken> -->
+      </div>
+      <p class="my-5 text-xl">
         With the emerging advancements in artificial intelligence, I have been focused on
         maximizing my professional and productive benefit with AI. Learning how to use it
         has been a crucial element in building this website, as the cache of knowledge it
@@ -29,11 +37,13 @@
 import { defineComponent, computed } from "vue";
 import useStore from "@/services/store.ts";
 import SkillStats from "@/components/page/SkillStats.vue";
+import SkillToken from "@/components/page/SkillToken.vue";
 
 export default defineComponent({
   name: "AISkill",
   components: {
     SkillStats,
+    SkillToken,
   },
   setup() {
     const { state } = useStore();
