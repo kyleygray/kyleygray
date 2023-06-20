@@ -199,15 +199,17 @@ export default defineComponent({
         min-width: 2em;
         padding: 0.3em;
         margin: 0em 0.2em;
-        // margin-bottom: 0.5em;
         border: 1px dotted var(--primary);
+        background-color: var(--primary);
+        color: var(--secondary);
         border-radius: 0.4em;
-        // min-width: 6em;
         cursor: pointer;
         transition: background-color 0.5s ease;
 
         &.activebtn {
-          border-color: var(--accent);
+          border: 1px dotted var(--primary);
+          color: var(--primary);
+          // border-color: var(--accent);
           background-color: var(--accent);
         }
       }

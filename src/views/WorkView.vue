@@ -245,6 +245,8 @@ export default defineComponent({
               border: 1px dotted var(--primary);
               padding: 0.5em;
               border-radius: 0.5em;
+              background-color: var(--primary);
+              color: var(--secondary);
               &:nth-child(1) {
                 margin-left: 0px;
               }

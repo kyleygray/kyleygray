@@ -22,11 +22,11 @@
     </div>
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
-        Hello! 👋 I am a web developer, music producer, designer, illustrator,
-        technologist, hiker, psychonaut, cryptid, and queer from Seattle, Washington. This
-        website is intended to showcase my
-        <router-link to="/experience">experience</router-link> and
-        <router-link to="/skills">skills</router-link>.
+        Hello and welcome! 👋 I'm a UX-focused Web Developer from Seattle, passionate
+        about designing mobile-friendly and playful interfaces that enhance user
+        engagement and accessibility. This website is intended to showcase my
+        <router-link to="/skills">skills</router-link> and
+        <router-link to="/experience">experience</router-link>.
       </p>
       <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" />
@@ -192,6 +192,8 @@ export default defineComponent({
     border: 1px dotted var(--primary);
     padding: 0.1em;
     border-radius: 0.3em;
+    background-color: var(--primary);
+    color: var(--secondary);
 
     &::after {
       content: "▷";

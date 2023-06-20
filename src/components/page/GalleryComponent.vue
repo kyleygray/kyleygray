@@ -87,7 +87,7 @@ $boxshadow: var(--primary);
     margin: 0.3em; // to create space between the images
     box-sizing: border-box;
     position: relative;
-    padding-bottom: 6em;
+    padding-bottom: 20svh;
     transition: flex-basis 0.5s ease, padding-bottom 0.5s ease;
     cursor: pointer;
 

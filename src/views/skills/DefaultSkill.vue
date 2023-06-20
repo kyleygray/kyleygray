@@ -21,11 +21,12 @@ export default defineComponent({
   background: url("@/assets/toilets.png");
   width: 100%;
   height: 100%;
-  background-size: cover;
+  // background-size: 100%;
   background-position: center;
   // opacity: 0.25;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   text-align: center;
+  animation: move 15s infinite linear;
 
   & > * {
     align-self: center;
@@ -36,6 +37,15 @@ export default defineComponent({
     font-weight: bold;
     text-shadow: 0px 2px 4px var(--primary);
     color: var(--secondary);
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 639px 639px;
   }
 }
 

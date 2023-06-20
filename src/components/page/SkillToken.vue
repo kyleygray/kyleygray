@@ -55,9 +55,10 @@ export default defineComponent({
 
   &.highlight {
     border: 1px dotted var(--primary);
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--primary);
+    color: var(--secondary);
     font-weight: 500;
+    box-shadow: none;
     // text-decoration: underline;
     // background-color: var(--primary);
     // color: var(--secondary);
