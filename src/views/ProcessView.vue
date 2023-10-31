@@ -34,7 +34,7 @@
         </button>
         <button
           @click="changeView('ai', viewParent)"
-          :class="{ activebtn: activeView === 'ai' }"
+          :class="{ activebtn: activeView === 'ai', hidebtn: true }"
         >
           ai
         </button>
@@ -204,13 +204,20 @@ export default defineComponent({
         color: var(--secondary);
         border-radius: 0.4em;
         cursor: pointer;
-        transition: background-color 0.5s ease;
+        transition: background-color 0.5s ease, opacity 0.5s ease;
 
+        &.hidebtn {
+          opacity: 0;
+          &:hover {
+            opacity: 1;
+          }
+        }
         &.activebtn {
           border: 1px dotted var(--primary);
           color: var(--primary);
           // border-color: var(--accent);
           background-color: var(--accent);
+          opacity: 1;
         }
       }
     }

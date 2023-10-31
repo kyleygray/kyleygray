@@ -21,6 +21,9 @@ export default defineComponent({
   background: url("@/assets/toilets.png");
   width: 100%;
   height: 100%;
+  box-shadow: inset 0 0 5em 4em var(--secondary);
+  border-radius: 2em;
+  // border: 1px solid black;
   // background-size: 100%;
   background-position: center;
   // opacity: 0.25;
