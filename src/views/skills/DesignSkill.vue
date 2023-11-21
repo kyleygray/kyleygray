@@ -48,6 +48,9 @@ import SkillToken from "@/components/page/SkillToken.vue";
 import img1 from "@/assets/design/design2.jpg";
 import img2 from "@/assets/design/design3.jpg";
 import img3 from "@/assets/nature/dogmoeba.jpg";
+import img4 from "@/assets/nature/psychoflower.jpg";
+import img5 from "@/assets/nature/fullbackyard.jpg";
+import img6 from "@/assets/design/design1.jpg";
 
 export default defineComponent({
   name: "DesignSkill",
@@ -61,6 +64,9 @@ export default defineComponent({
       img1,
       img2,
       img3,
+      img4,
+      img5,
+      img6,
     };
   },
 });

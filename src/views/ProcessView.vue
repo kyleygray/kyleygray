@@ -181,6 +181,7 @@ export default defineComponent({
     // padding: 1em;
     padding-left: 0;
     margin-left: 0;
+    margin-top: 10px;
     box-shadow: -11px 2px 0px 2px var(--accent);
     border-left: 1px dotted var(--primary);
     border-bottom: 1px dotted var(--primary);
@@ -195,9 +196,9 @@ export default defineComponent({
 
       button {
         width: calc(100% / 6 - 5px);
-        font-size: 0.8rem;
+        font-size: 1rem;
         min-width: 2em;
-        padding: 0.3em;
+        padding: 0.8em;
         margin: 0em 0.2em;
         border: 1px dotted var(--primary);
         background-color: var(--primary);
@@ -230,8 +231,8 @@ export default defineComponent({
     position: relative;
     flex-basis: 100%; // to allocate 90% of the height to skillcontainer
     overflow-x: hidden; // to enable scroll if content height exceeds the container height
-    overflow-y: scroll;
-    max-width: 767px;
+    // overflow-y: scroll;
+    // max-width: 767px;
 
     & > div {
       padding: 1em;

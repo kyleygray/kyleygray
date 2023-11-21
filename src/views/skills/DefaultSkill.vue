@@ -1,13 +1,24 @@
 <template>
-  <div class="toilets"><h1>I have a degree in Computer Science</h1></div>
+  <div class="toiletsskill">
+    <div>
+      <TextFX
+        text="I have many skills, some of them are marketable."
+        type="fadein"
+        speed="20"
+      />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import TextFX from "@/components/page/TextFX.vue";
 
 export default defineComponent({
   name: "DefaultSkill",
-  components: {},
+  components: {
+    TextFX,
+  },
   setup() {
     return {};
   },
@@ -15,10 +26,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.toilets {
+.toiletsskill {
   // position: absolute;
   display: flex;
-  background: url("@/assets/toilets.png");
+  // background: url("@/assets/toilets.png");
   width: 100%;
   height: 100%;
   box-shadow: inset 0 0 5em 4em var(--secondary);
@@ -38,8 +49,9 @@ export default defineComponent({
     font-size: 4em;
     font-family: "Rubik", sans-serif;
     font-weight: bold;
-    text-shadow: 0px 2px 4px var(--primary);
-    color: var(--secondary);
+    width: 100%;
+    // text-shadow: 0px 2px 4px var(--primary);
+    color: var(--primary);
   }
 }
 
