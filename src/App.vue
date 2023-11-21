@@ -1,8 +1,8 @@
 <template>
   <AccessibilityWrapper>
-    <div class="resume-btn">
+    <!-- <div class="resume-btn">
       <a :href="resume" target="_blank" class="resume-btn inverted-btn">My Resumé</a>
-    </div>
+    </div> -->
     <NavigationComponent />
     <PageHandler />
   </AccessibilityWrapper>

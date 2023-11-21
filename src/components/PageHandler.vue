@@ -1,11 +1,18 @@
 <template>
   <router-view v-slot="{ Component }">
     <transition :name="activeTransition.value">
-      <component
+      <!-- <component
         :class="{
           'mobile-view': isMobile,
           'home-view': state.activeComponent === 'home',
           'page-view': state.activeComponent !== 'home',
+        }"
+        :is="Component"
+      /> -->
+      <component
+        :class="{
+          'mobile-view': isMobile,
+          'page-view': true,
         }"
         :is="Component"
       />
@@ -29,14 +36,11 @@ export default defineComponent({
         return "";
       }
       if (state.activeComponent === "home") {
-        if (isMobile.value) {
-          return "upslide";
-        }
-        return "slide";
+        return "fade";
       }
-      if (isMobile.value) {
-        return "uppage";
-      }
+      // if (isMobile.value) {
+      //   return "uppage";
+      // }
       return "page";
     });
 
@@ -65,10 +69,10 @@ export default defineComponent({
   padding: 0px 10px;
   padding-top: 10px;
 
-  &.home-view {
-    transform: translate(100%, 0%);
-    opacity: 0;
-  }
+  // &.home-view {
+  //   transform: translate(100%, 0%);
+  //   opacity: 0;
+  // }
 
   &.mobile-view {
     width: 100%;
@@ -100,6 +104,25 @@ export default defineComponent({
 .page-leave-to {
   transform: translate(0%, 0%) !important;
   background-color: var(--background);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  // position: absolute;
+  transition: opacity 1s ease;
+}
+.fade-enter-from {
+  opacity: 0 !important;
+  // background-color: var(--secondary);
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1 !important;
+  // background-color: var(--secondary);
+}
+.fade-leave-to {
+  opacity: 0 !important;
+  // background-color: var(--background);
 }
 
 .uppage-enter-active,

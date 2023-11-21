@@ -85,64 +85,64 @@ export default defineComponent({
 .view-container {
   --page-color: #ee3e60;
   // padding: 1.5em;
-  .mytitlecontainer {
-    position: absolute;
-    top: 2em;
-    left: 1.5em;
-    max-width: 70vw;
-    border: 2px dotted var(--primary);
-    border-radius: 0.5rem;
+  // .mytitlecontainer {
+  //   position: absolute;
+  //   top: 2em;
+  //   left: 1.5em;
+  //   max-width: 70vw;
+  //   border: 2px dotted var(--primary);
+  //   border-radius: 0.5rem;
 
-    & * {
-      // transition: background-color 0.5s ease;
-    }
-    .mytitle {
-      // text-shadow: 2px 2px 0px var(--accent);
-      border-radius: 0.5rem 0.5rem 0 0;
-      color: var(--primary);
-      background-color: var(--secondary);
-      &.rainbow {
-        color: #ff8888;
-        .fx {
-          .fadein {
-            animation: colorcycle 10s linear infinite;
-            filter: hue-rotate(0deg);
-          }
-        }
-      }
-    }
-    .mydesc {
-      border-radius: 0 0 0.5rem 0.5rem;
-      color: var(--primary);
-      background-color: var(--secondary);
-    }
-    .rainbow-btn {
-      // display: block;
-      width: 25px;
-      height: 25px;
-      border-radius: 5px;
-      background: linear-gradient(
-        45deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-      );
-      opacity: 0.2;
-      &:hover {
-        opacity: 1;
-      }
+  //   & * {
+  //     // transition: background-color 0.5s ease;
+  //   }
+  //   .mytitle {
+  //     // text-shadow: 2px 2px 0px var(--accent);
+  //     border-radius: 0.5rem 0.5rem 0 0;
+  //     color: var(--primary);
+  //     background-color: var(--secondary);
+  //     &.rainbow {
+  //       color: #ff8888;
+  //       .fx {
+  //         .fadein {
+  //           animation: colorcycle 10s linear infinite;
+  //           filter: hue-rotate(0deg);
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .mydesc {
+  //     border-radius: 0 0 0.5rem 0.5rem;
+  //     color: var(--primary);
+  //     background-color: var(--secondary);
+  //   }
+  //   .rainbow-btn {
+  //     // display: block;
+  //     width: 25px;
+  //     height: 25px;
+  //     border-radius: 5px;
+  //     background: linear-gradient(
+  //       45deg,
+  //       rgba(255, 0, 0, 1) 0%,
+  //       rgba(255, 154, 0, 1) 10%,
+  //       rgba(208, 222, 33, 1) 20%,
+  //       rgba(79, 220, 74, 1) 30%,
+  //       rgba(63, 218, 216, 1) 40%,
+  //       rgba(47, 201, 226, 1) 50%,
+  //       rgba(28, 127, 238, 1) 60%,
+  //       rgba(95, 21, 242, 1) 70%,
+  //       rgba(186, 12, 248, 1) 80%,
+  //       rgba(251, 7, 217, 1) 90%,
+  //       rgba(255, 0, 0, 1) 100%
+  //     );
+  //     opacity: 0.2;
+  //     &:hover {
+  //       opacity: 1;
+  //     }
 
-      font-size: 1rem;
-    }
-  }
+  //     font-size: 1rem;
+  //   }
+  // }
   .mybackyard {
     border: 2px dotted var(--primary);
     height: 35svh;
