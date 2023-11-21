@@ -1,7 +1,7 @@
 <template>
   <div v-show="!isMobile" class="container">
-    <div :class="{ 'small-nav': !isHome, 'big-nav': isHome, navbox: true }">
-      <router-link class="my-K" to="">
+    <div class="small-nav navbox">
+      <router-link class="my-K" to="/">
         <img
           ref="theK"
           :class="{ 'the-k': true, inverted: inverted }"
@@ -9,7 +9,7 @@
           alt="K"
         />
       </router-link>
-      <nav v-show="!isHome">
+      <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
         <router-link to="/experience" active-class="router-link-active"
@@ -17,13 +17,10 @@
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
-      <nav v-show="isHome">
-        <div class="homeheadline">
-          <!-- <p>Kyley Gray</p>
-          <p>Multimedia Design &amp; Development</p> -->
-        </div>
+      <!-- <nav>
+        <div class="homeheadline"></div>
         <router-link class="biglink" to="/about">enter site</router-link>
-      </nav>
+      </nav> -->
       <div class="controls">
         <div class="themes">
           <ThemeButton :theme="themes.defaultTheme" />
@@ -43,14 +40,8 @@
     </div>
   </div>
   <div v-show="isMobile" class="container">
-    <div
-      :class="{
-        'small-nav-mobile': !isHome,
-        'big-nav-mobile': isHome,
-        'navbox-mobile': true,
-      }"
-    >
-      <router-link class="my-K" to="">
+    <div class="small-nav-mobile navbox-mobile">
+      <router-link class="my-K" to="/">
         <img
           ref="theK"
           :class="{ 'the-k': true, inverted: inverted }"
@@ -58,19 +49,16 @@
           alt="K"
         />
       </router-link>
-      <nav v-show="!isHome">
+      <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
         <router-link to="/experience" active-class="router-link-active">exp.</router-link>
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
-      <nav v-show="isHome">
-        <div class="homeheadline">
-          <!-- <p>Kyley Gray</p>
-          <p>Multimedia Design &amp; Development</p> -->
-        </div>
+      <!-- <nav v-show="isHome">
+        <div class="homeheadline"></div>
         <router-link class="biglink" to="/about">enter site</router-link>
-      </nav>
+      </nav> -->
       <div class="controls">
         <div class="themes">
           <ThemeButton :theme="themes.defaultTheme" />

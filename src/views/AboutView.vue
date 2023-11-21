@@ -1,14 +1,9 @@
 <template>
   <main class="view-container p-0" ref="viewParent">
-    <div class="w-full object-cover relative">
+    <!-- <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle rainbow text-4xl font-bold p-2 relative">
           <TextFX text="Kyley Gray" type="fadein" speed="20" />
-          <!-- <button
-            ref="rainbowbtn"
-            class="absolute right-2 top-2 rainbow-btn"
-            @click="makeRainbow()"
-          ></button> -->
         </h1>
         <p class="mydesc md:text-2xl sm:text-base font-normal p-2">
           <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
@@ -19,17 +14,17 @@
         src="@/assets/design/design0.jpg"
         alt=""
       />
-    </div>
+    </div> -->
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
-        Hello and welcome! 👋 I'm a UX-focused Web Developer from Seattle, passionate
-        about designing mobile-friendly and playful interfaces that enhance user
-        engagement and accessibility. This website is intended to showcase my
+        Hello and welcome! I'm a UX-focused Web Developer from Seattle, passionate about
+        designing mobile-friendly and playful interfaces that enhance user engagement and
+        accessibility. This website is intended to showcase my
         <router-link to="/skills">skills</router-link> and
         <router-link to="/experience">experience</router-link>.
       </p>
-      <GalleryComponent class="" :images="[img1, img2, img3]" />
-      <GalleryComponent class="" :images="[img4, img5, img6]" />
+      <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
+      <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
     </article>
   </main>
 </template>

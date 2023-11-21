@@ -34,6 +34,7 @@
         Procreate, slowly and carefully delving into traditional mediums.
       </p>
       <GalleryComponent class="" :images="[img1, img2, img3]" />
+      <GalleryComponent class="" :images="[img4, img5, img6]" />
     </div>
   </div>
 </template>
