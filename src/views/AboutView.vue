@@ -34,7 +34,7 @@
         experience, please reference
         <a :href="resume" target="_blank" class="">my resumé</a>.<br /><br />
 
-        Want to get in touch? <router-link to="/skills">contact me</router-link>!
+        Want to get in touch? <router-link to="/contact">contact me</router-link>!
       </p>
       <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
