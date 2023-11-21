@@ -30,7 +30,7 @@
         <SkillToken>Accessibility</SkillToken>
         <SkillToken highlight
           ><a href="https://prodigalpictures.com" target="_blank"
-            >Live Example: Prodigal Pictures</a
+            >Live Example: Prodigal Pictures...</a
           ></SkillToken
         >
       </div>

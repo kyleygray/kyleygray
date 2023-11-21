@@ -6,15 +6,6 @@
     <NavigationComponent />
     <PageHandler />
   </AccessibilityWrapper>
-  <!-- These are here to force preloading this is very bad practice dont do this IRL -->
-  <h1 style="font-size: 0">!</h1>
-  <img style="display: none" :src="design0" alt="" />
-  <img style="display: none" :src="design1" alt="" />
-  <img style="display: none" :src="design2" alt="" />
-  <img style="display: none" :src="design3" alt="" />
-  <img style="display: none" :src="nature" alt="" />
-  <img style="display: none" :src="flower" alt="" />
-  <img style="display: none" :src="dogmoeba" alt="" />
 </template>
 
 <script lang="ts">

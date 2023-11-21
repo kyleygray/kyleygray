@@ -34,16 +34,16 @@
         <SkillToken>Film and Interactive Media</SkillToken>
         <SkillToken highlight
           ><a href="https://cubeshark.bandcamp.com" target="_blank"
-            >Cubeshark on Bandcamp</a
+            >Cubeshark on Bandcamp...</a
           ></SkillToken
         >
       </div>
       <p class="my-5 text-xl">
-        I have been producing electronic music since 2004, a wide range of styles and
-        production skills. I have obtained a certification in Sound Design with Reason
-        from the Berklee College of Music. I have released 2 albums under the alias
-        "Cubeshark". Overall, I have been doing this for a long time and I really enjoy
-        it. Below are some select samples of music produced in the last decade.
+        I have been producing a wide range of electronic music styles since 2004. I have
+        obtained a certification in Sound Design with Reason from the Berklee College of
+        Music. I have released 2 albums under the alias "Cubeshark". Overall, I have been
+        doing this for a long time and I really enjoy it. Below are some select samples of
+        music produced in the last decade.
       </p>
       <div class="audiowrapper">
         <AudioPlayer :file="audio1" />

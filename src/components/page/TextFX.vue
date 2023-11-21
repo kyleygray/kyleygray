@@ -7,7 +7,8 @@
       :class="anitype"
       :data-letter="letter"
       :style="{
-        transitionDelay: index / (parseInt(props.speed) * (props.text.length / 20)) + 's',
+        transitionDelay:
+          index / (parseInt(props.speed) * (props.text.length / 20)) + 0.1 + 's',
         transitionDuration: 5 / parseInt(props.speed) + 's',
         animationDelay:
           -(

@@ -25,7 +25,11 @@
         <!-- <SkillToken accent>Productive Mental Illnesses</SkillToken> -->
         <SkillToken>Photo Manipulation</SkillToken>
         <SkillToken>Video Production</SkillToken>
-        <SkillToken highlight><a href="#">Art Gallery Coming Soon...</a></SkillToken>
+        <SkillToken highlight
+          ><a target="_blank" href="https://bodyfractal.com"
+            >Visit The Dogzone...</a
+          ></SkillToken
+        >
       </div>
       <p class="my-5 text-xl">
         My approach to design is to be bold and friendly. I'm not afraid to try new

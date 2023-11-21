@@ -18,22 +18,23 @@
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
         Hello! I am a digital multimedia designer and developer from Seattle, Washington.
-        I have 20+ years of exposure to multimeda design and 8+ years of professional
-        experience. I am especially passionate for creating bold user experiences that
-        change the way you think.<br /><br />
+        I have been producing multimedia design for 20+ years and have 8+ years of
+        professional experience developing digital applications. View my
+        <router-link to="/experience">experience</router-link> for more information!<br /><br />
 
-        I am an experimentor, a playful manipulator, a bit of a mad scientist. I tackle
-        new design challenges head-on without fear without compromizing usability.
-        <br /><br />
+        I am especially passionate for creating bold user experiences that change the way
+        you think. I am an experimenter, a playful manipulator, a bit of a mad scientist.
+        I tackle new design challenges head-on without fear without compromizing
+        usability. For a more in-depth look at what I create, check out my
+        <router-link to="/skills">skills</router-link> to learn more. <br /><br />
 
         I intend my web designs to be accessible to all and viewable on all devices. I'm
         very careful to incorporate snappy and legible responsive design into everything I
-        do.<br /><br />
+        do. If you are interested in a comprehensive list of relevant skills and
+        experience, please reference
+        <a :href="resume" target="_blank" class="">my resumé</a>.<br /><br />
 
-        This website is intended to showcase my
-        <router-link to="/skills">skills</router-link> and
-        <router-link to="/experience">experience</router-link>. Feel free to take a look
-        around!
+        Want to get in touch? <router-link to="/skills">contact me</router-link>!
       </p>
       <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
@@ -49,6 +50,8 @@ import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import ResumeBtn from "@/components/page/ResumeBtn.vue";
+
+import resume from "@/assets/KyleyGrayResume.pdf";
 
 import img1 from "@/assets/design/design2.jpg";
 import img2 from "@/assets/design/design3.jpg";
@@ -88,6 +91,7 @@ export default defineComponent({
       img4,
       img5,
       img6,
+      resume,
     };
   },
 });
