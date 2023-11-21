@@ -7,6 +7,7 @@
       <h1 class="mydesc text-4xl font-thin w-100 text-center p-2">
         <TextFX text="Designer • Illustrator • Developer" type="fadein" speed="20" />
       </h1>
+      <router-link to="/about">About Me</router-link>
     </div>
     <div class="toilets"></div>
   </div>
@@ -71,19 +72,19 @@ export default defineComponent({
 
 @keyframes blurry {
   0% {
-    filter: blur(0) invert(0.8);
+    filter: blur(0) invert(0);
   }
   25% {
-    filter: blur(0) invert(0.7);
+    filter: blur(0) invert(0.4);
   }
   50% {
-    filter: blur(20px) invert(0);
+    filter: blur(20px) invert(0.8);
   }
   75% {
-    filter: blur(0) invert(0.7);
+    filter: blur(0) invert(0.4);
   }
   100% {
-    filter: blur(0) invert(0.8);
+    filter: blur(0) invert(0);
   }
 }
 
@@ -97,6 +98,8 @@ export default defineComponent({
   z-index: 100;
   // border: 2px dotted var(--primary);
   // border-radius: 0.5rem;
+
+  animation: intro 3s forwards ease;
 
   & * {
     // transition: background-color 0.5s ease;
@@ -130,6 +133,56 @@ export default defineComponent({
       .fadein {
         animation: blurinout 10s linear infinite;
       }
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    max-width: 25vw;
+    min-width: 10rem;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    margin-top: 3em;
+    text-align: center;
+    // border: 1px dotted var(--primary);
+    padding: 0.1em;
+    border-radius: 0.3em;
+    background-color: var(--primary);
+    color: var(--secondary);
+
+    &::after {
+      content: "▷";
+      margin-left: 0.5em;
+    }
+
+    animation: delayed 5s forwards ease;
+  }
+
+  @keyframes intro {
+    0% {
+      filter: blur(50px);
+    }
+    100% {
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes delayed {
+    0% {
+      opacity: 0;
+      filter: blur(20px);
+      transform: translateY(100%);
+    }
+    60% {
+      opacity: 0;
+      filter: blur(20px);
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0%);
     }
   }
 

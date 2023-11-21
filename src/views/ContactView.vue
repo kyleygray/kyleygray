@@ -1,5 +1,5 @@
 <template>
-  <div class="view-container">
+  <div class="view-container ps-10">
     <h1 class="text-3xl pt-5 pb-0 mb-0 contact-title">
       <TextFX text="Contact Info" type="fadein" speed="30" />
     </h1>
@@ -79,6 +79,8 @@ export default defineComponent({
   }
 
   .calan {
+    position: absolute;
+    bottom: 0;
     img {
       user-select: none;
       pointer-events: none;

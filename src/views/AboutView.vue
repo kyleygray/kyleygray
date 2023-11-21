@@ -1,5 +1,5 @@
 <template>
-  <main class="view-container p-0" ref="viewParent">
+  <main class="view-container p-10" ref="viewParent">
     <!-- <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle rainbow text-4xl font-bold p-2 relative">
@@ -17,11 +17,23 @@
     </div> -->
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
-        Hello and welcome! I'm a UX-focused Web Developer from Seattle, passionate about
-        designing mobile-friendly and playful interfaces that enhance user engagement and
-        accessibility. This website is intended to showcase my
+        Hello! I am a digital multimedia designer and developer from Seattle, Washington.
+        I have 20+ years of exposure to multimeda design and 8+ years of professional
+        experience. I am especially passionate for creating bold user experiences that
+        change the way you think.<br /><br />
+
+        I am an experimentor, a playful manipulator, a bit of a mad scientist. I tackle
+        new design challenges head-on without fear without compromizing usability.
+        <br /><br />
+
+        I intend my web designs to be accessible to all and viewable on all devices. I'm
+        very careful to incorporate snappy and legible responsive design into everything I
+        do.<br /><br />
+
+        This website is intended to showcase my
         <router-link to="/skills">skills</router-link> and
-        <router-link to="/experience">experience</router-link>.
+        <router-link to="/experience">experience</router-link>. Feel free to take a look
+        around!
       </p>
       <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
