@@ -59,9 +59,9 @@ import img6 from "@/assets/nature/dogmoeba.jpg";
 
 export default defineComponent({
   components: {
-    TextFX,
+    // TextFX,
     // ScrollFX,
-    GalleryComponent,
+    // GalleryComponent,
     // ResumeBtn,
   },
   methods: {

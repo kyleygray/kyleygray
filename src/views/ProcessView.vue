@@ -196,7 +196,7 @@ export default defineComponent({
 
       button {
         width: calc(100% / 6 - 5px);
-        font-size: 1rem;
+        font-size: 0.8rem;
         min-width: 2em;
         padding: 0.8em;
         margin: 0em 0.2em;

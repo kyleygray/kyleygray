@@ -46,7 +46,7 @@ export default defineComponent({
     align-self: center;
     justify-self: center;
     text-align: center;
-    font-size: 4em;
+    font-size: 3rem;
     font-family: "Rubik", sans-serif;
     font-weight: bold;
     width: 100%;

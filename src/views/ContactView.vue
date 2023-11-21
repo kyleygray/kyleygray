@@ -41,7 +41,7 @@ import { defineComponent, computed } from "vue";
 import TextFX from "@/components/page/TextFX.vue";
 import useStore from "@/services/store.ts";
 
-import resume from "@/assets/KyleyGrayResumeJuly2023.pdf";
+import resume from "@/assets/KyleyGrayResume.pdf";
 
 export default defineComponent({
   components: {

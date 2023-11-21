@@ -1,8 +1,8 @@
 <template>
   <AccessibilityWrapper>
-    <!-- <div class="resume-btn">
+    <div class="resume-btn">
       <a :href="resume" target="_blank" class="resume-btn inverted-btn">My Resumé</a>
-    </div> -->
+    </div>
     <NavigationComponent />
     <PageHandler />
   </AccessibilityWrapper>
@@ -35,7 +35,7 @@ import AccessibilityWrapper from "@/components/AccessibilityWrapper.vue";
 import useThemes from "@/services/themes.ts";
 import useStore from "@/services/store";
 
-import resume from "@/assets/KyleyGrayResumeJuly2023.pdf";
+import resume from "@/assets/KyleyGrayResume.pdf";
 
 import design0 from "@/assets/design/design0.jpg";
 import design1 from "@/assets/design/design1.jpg";

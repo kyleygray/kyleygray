@@ -143,7 +143,7 @@ export default defineComponent({
     min-width: 10rem;
     font-size: 1.5rem;
     margin: 0 auto;
-    margin-top: 3em;
+    margin-top: 2em;
     text-align: center;
     // border: 1px dotted var(--primary);
     padding: 0.1em;
@@ -172,12 +172,12 @@ export default defineComponent({
     0% {
       opacity: 0;
       filter: blur(20px);
-      transform: translateY(100%);
+      transform: translateY(-100%);
     }
     60% {
       opacity: 0;
       filter: blur(20px);
-      transform: translateY(100%);
+      transform: translateY(-100%);
     }
     100% {
       opacity: 1;
