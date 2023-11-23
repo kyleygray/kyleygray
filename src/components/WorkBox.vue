@@ -75,25 +75,36 @@ export default defineComponent({
       // border-bottom: 1px dotted var(--primary);
       // box-shadow: 10px 10px 0px 0px var(--accent);
       // transition: background-color 0.5s ease, color 0.5s ease;
-      border-radius: 0 1em 1em 0;
+      // border-radius: 0 1em 1em 0;
       // padding: 1em;
+      border-radius: 1em;
       &.move-left {
-        margin-right: calc(50% - 1em);
+        margin-right: calc(30%);
+        box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.5);
+        &:hover {
+          transform: perspective(500px) rotate3d(0, 1, 0, 15deg);
+        }
+        transition: transform 0.5s ease;
       }
 
       &.move-right {
-        margin-left: calc(50% - 1em);
+        margin-left: calc(30%);
+        box-shadow: -1px 1px 1px 1px rgba(128, 128, 128, 0.5);
+        &:hover {
+          transform: perspective(500px) rotate3d(0, 1, 0, -15deg);
+        }
+        transition: transform 0.5s ease;
       }
 
       @media (max-width: 767px) {
         width: 100%;
         &.move-left {
-        margin-right: calc(30% - 1em);
-      }
+          margin-right: calc(20% - 1em);
+        }
 
-      &.move-right {
-        margin-left: calc(30% - 1em);
-      }
+        &.move-right {
+          margin-left: calc(20% - 1em);
+        }
       }
 
 
@@ -113,7 +124,7 @@ export default defineComponent({
           width: 100%;
           margin: 0;
           h1 {
-            border-radius: 0 1em 0 0;
+            border-radius: 1em 1em 0 0;
             padding: 0.1em 0.3em;
             font-size: 1.2em;
             color: var(--primary);
@@ -169,6 +180,10 @@ export default defineComponent({
               color: var(--secondary);
               &:nth-child(1) {
                 margin-left: 0px;
+              }
+              &:hover {
+                background-color: var(--secondary);
+                color: var(--primary);
               }
             }
           }

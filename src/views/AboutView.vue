@@ -138,7 +138,7 @@ export default defineComponent({
         ],
       },
       {
-        title: "C.S. Teacher &amp; Mentor",
+        title: "C.S. Teacher & Mentor",
         company: "King's High School",
         period: "2018-2020",
         links: ["audio", "os", "webdev"],
