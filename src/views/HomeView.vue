@@ -7,7 +7,10 @@
       <h1 class="mydesc text-4xl font-thin w-100 text-center p-2">
         <TextFX text="Designer • Illustrator • Developer" type="fadein" speed="20" />
       </h1>
-      <router-link to="/about">About Me</router-link>
+      <div class="linkwrap">
+        <router-link to="/about">About Me</router-link>
+        <router-link to="/contact">Contact</router-link>
+      </div>
     </div>
     <div class="toilets"></div>
   </div>
@@ -136,26 +139,32 @@ export default defineComponent({
     }
   }
 
-  a {
+  .linkwrap {
     position: relative;
-    display: block;
-    max-width: 25vw;
-    min-width: 10rem;
-    font-size: 1.5rem;
+    display: flex;
     margin: 0 auto;
     margin-top: 2em;
-    text-align: center;
-    // border: 1px dotted var(--primary);
-    padding: 0.1em;
-    border-radius: 0.3em;
-    background-color: var(--primary);
-    color: var(--secondary);
+    max-width: 50vw;
+    min-width: 10rem;
 
-    &::after {
-      content: "▷";
-      margin-left: 0.5em;
+    a {
+      max-width: 40%;
+      margin: 0 10px;
+      position: relative;
+      display: block;
+      font-size: 1.5rem;
+      text-align: center;
+      // border: 1px dotted var(--primary);
+      padding: 0.1em;
+      border-radius: 0.3em;
+      background-color: var(--primary);
+      color: var(--secondary);
+
+      &::after {
+        content: "▷";
+        margin-left: 0.5em;
+      }
     }
-
     animation: delayed 5s forwards ease;
   }
 

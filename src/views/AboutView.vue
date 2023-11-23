@@ -1,5 +1,5 @@
 <template>
-  <main class="view-container p-10" ref="viewParent">
+  <main class="view-container" ref="viewParent">
     <!-- <div class="w-full object-cover relative">
       <div class="mytitlecontainer">
         <h1 ref="mytitle" class="mytitle rainbow text-4xl font-bold p-2 relative">
@@ -15,6 +15,21 @@
         alt=""
       />
     </div> -->
+    <div class="project-container">
+      <template v-for="(item, index) in experienceList" :key="index">
+        <WorkBox
+          :title="item.title"
+          :company="item.company"
+          :period="item.period"
+          :list="item.list"
+          :links="item.links"
+          :class="{
+            'move-right': index % 2 === 0,
+            'move-left': index % 2 !== 0,
+          }"
+        />
+      </template>
+    </div>
     <article class="p2">
       <p class="md:text-2xl sm:text-xl my-5">
         Hello! I am a digital multimedia designer and developer from Seattle, Washington.
@@ -51,6 +66,8 @@ import ScrollFX from "@/components/page/ScrollFX.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import ResumeBtn from "@/components/page/ResumeBtn.vue";
 
+import WorkBox from "@/components/WorkBox.vue";
+
 import resume from "@/assets/KyleyGrayResume.pdf";
 
 import img1 from "@/assets/design/design2.jpg";
@@ -66,6 +83,7 @@ export default defineComponent({
     // ScrollFX,
     // GalleryComponent,
     // ResumeBtn,
+    WorkBox,
   },
   methods: {
     makeRainbow() {
@@ -82,6 +100,65 @@ export default defineComponent({
     provide("viewParent", viewParent);
     const mytitle = ref(null);
 
+    const myLinks = ["webdev", "ui"];
+    const myList = ["list 1", "list 2"];
+
+    const experienceList = [
+      {
+        title: "UX Designer/Protyper",
+        company: "BP3 Global",
+        period: "2022 - 2023",
+        links: ["webdev", "ux", "design"],
+        list: [
+          "UX consultant for large national clients.",
+          "Designer and prototyper in Angular.",
+          "Wireframes, presentations, reports, interviews.",
+          "Highly-collaborative workplace, clear communication with team members.",
+        ],
+      },
+      {
+        title: "Full Stack Developer",
+        company: "Boeing",
+        period: "2020 - 2022",
+        links: ["webdev", "ux", "design", "os"],
+        list: [
+          "Designer, developer, and owner of several front-end UIs for interfacing with consumer databases.",
+          "Developed in Angular with a Java Springboot backend.",
+          "Managed hosting in GitLabs and Cloud Foundry.",
+        ],
+      },
+      {
+        title: "Automation Tester",
+        company: "WorkBoard",
+        period: "2022",
+        links: ["webdev", "os"],
+        list: [
+          "Developed and maintained several scripts for test automation in Cypress.",
+          "Reported and presented bugs in the application to developers.",
+        ],
+      },
+      {
+        title: "C.S. Teacher &amp; Mentor",
+        company: "King's High School",
+        period: "2018-2020",
+        links: ["audio", "os", "webdev"],
+        list: [
+          "Designed, managed, and taught 8 semesters of computer science courses.",
+          "Managed over 500 student Microsoft Surface laptops.",
+          "Supervised and mentored a student-lead IT helpdesk.",
+        ],
+      },
+      {
+        title: "Freelance Producer",
+        company: "Bodyfractal Creative",
+        period: "2016 - present",
+        links: ["webdev", "design", "audio", "os", "ai"],
+        list: [
+          "Designed, developed, and deployed several client and personal websites.",
+          "Managed and advised hosting solutions for clients.",
+        ],
+      },
+    ];
     return {
       viewParent,
       mytitle,
@@ -92,6 +169,10 @@ export default defineComponent({
       img5,
       img6,
       resume,
+
+      myLinks,
+      myList,
+      experienceList,
     };
   },
 });
@@ -100,6 +181,14 @@ export default defineComponent({
 <style lang="scss">
 .view-container {
   --page-color: #ee3e60;
+
+  .project-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 767px;
+    margin: 0 auto;
+  }
   // padding: 1.5em;
   // .mytitlecontainer {
   //   position: absolute;

@@ -40,6 +40,7 @@
         with some Tailwind CSS for simplicity.
       </p>
       <GalleryComponent :images="[img1, img2, img3]" />
+      <GalleryComponent :images="[img4, img5, img6]" />
     </div>
   </div>
 </template>
@@ -53,6 +54,9 @@ import SkillToken from "@/components/page/SkillToken.vue";
 import img1 from "@/assets/skills/webdevskill/webdev1.jpg";
 import img2 from "@/assets/skills/webdevskill/webdev2.jpg";
 import img3 from "@/assets/skills/webdevskill/webdev3.jpg";
+import img4 from "@/assets/skills/webdevskill/webdev4.png";
+import img5 from "@/assets/skills/webdevskill/webdev5.jpg";
+import img6 from "@/assets/skills/webdevskill/webdev6.png";
 
 export default defineComponent({
   name: "WebDevSkill",
@@ -62,7 +66,7 @@ export default defineComponent({
     SkillToken,
   },
   setup() {
-    return { img1, img2, img3 };
+    return { img1, img2, img3, img4, img5, img6 };
   },
 });
 </script>
