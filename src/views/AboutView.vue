@@ -15,7 +15,12 @@
         alt=""
       />
     </div> -->
-    <div class="project-container">
+    <!-- <ShiftyGallery :images="[img1, img2, img3, img4, img5, img6]" /> -->
+    <article class="about-title-container mt-20 mb-10 ml-5">
+      <h1 class="about-title text-6xl font-bold">Who am I?</h1>
+      <h2 class="about-subtitle text-4xl pl-5">That's a good question...</h2>
+    </article>
+    <article class="project-container">
       <template v-for="(item, index) in experienceList" :key="index">
         <WorkBox
           :title="item.title"
@@ -29,9 +34,9 @@
           }"
         />
       </template>
-    </div>
+    </article>
     <article class="p2">
-      <p class="md:text-2xl sm:text-xl my-5">
+      <!-- <p class="md:text-2xl sm:text-xl my-5">
         Hello! I am a digital multimedia designer and developer from Seattle, Washington.
         I have been producing multimedia design for 20+ years and have 8+ years of
         professional experience developing digital applications. View my
@@ -50,7 +55,7 @@
         <a :href="resume" target="_blank" class="">my resumé</a>.<br /><br />
 
         Want to get in touch? <router-link to="/contact">contact me</router-link>!
-      </p>
+      </p> -->
       <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
       <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
     </article>
@@ -65,6 +70,7 @@ import AnimatedFX from "@/components/page/AnimatedFX.vue";
 import ScrollFX from "@/components/page/ScrollFX.vue";
 import GalleryComponent from "@/components/page/GalleryComponent.vue";
 import ResumeBtn from "@/components/page/ResumeBtn.vue";
+import ShiftyGallery from "@/components/ShiftyGallery.vue";
 
 import WorkBox from "@/components/WorkBox.vue";
 
@@ -79,10 +85,8 @@ import img6 from "@/assets/nature/dogmoeba.jpg";
 
 export default defineComponent({
   components: {
-    // TextFX,
-    // ScrollFX,
-    // GalleryComponent,
-    // ResumeBtn,
+    TextFX,
+    ShiftyGallery,
     WorkBox,
   },
   methods: {
@@ -188,6 +192,26 @@ export default defineComponent({
     flex-wrap: wrap;
     max-width: 767px;
     margin: 0 auto;
+  }
+
+  .about-title-container {
+    animation: abouttitlefade 2s forwards ease;
+    z-index: 100;
+    .about-title,
+    .about-subtitle {
+      text-shadow: 0px 0px 10px var(--secondary);
+    }
+  }
+
+  @keyframes abouttitlefade {
+    0% {
+      transform: perspective(500px) translate3d(0px, -100px, 0px);
+      opacity: 0;
+    }
+    100% {
+      transform: perspective(500px) translate3d(0px, 0px, 0px);
+      opacity: 1;
+    }
   }
   // padding: 1.5em;
   // .mytitlecontainer {

@@ -1,4 +1,5 @@
 <template>
+  <!-- <AnimatedFX provider="viewParent" name="move-in" :steps="['30']"> -->
   <article class="project">
     <div class="info">
       <div class="title">
@@ -27,13 +28,18 @@
       </div>
     </div>
   </article>
+  <!-- </AnimatedFX> -->
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import AnimatedFX from "@/components/page/AnimatedFX.vue";
 
 export default defineComponent({
   name: "WorkBox",
+  components: {
+    AnimatedFX
+  },
   props: {
     title: {
       type: String,
@@ -70,7 +76,8 @@ export default defineComponent({
 <style lang="scss" scoped>
   .project {
       width: calc(50% - 1em);
-      margin: 0.5em;
+      margin: 1em;
+      user-select: none;
       // border-right: 1px dotted var(--primary);
       // border-bottom: 1px dotted var(--primary);
       // box-shadow: 10px 10px 0px 0px var(--accent);
@@ -78,11 +85,15 @@ export default defineComponent({
       // border-radius: 0 1em 1em 0;
       // padding: 1em;
       border-radius: 1em;
+      background: var(--secondary);
+      transform: perspective(500px) translate3d(0px, 0px, 10px) rotate3d(0, 0, 0, 0deg);
+      animation: project-fade 2s both ease;
+      animation-delay: 0.5s;
       &.move-left {
         margin-right: calc(30%);
         box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.5);
         &:hover {
-          transform: perspective(500px) rotate3d(0, 1, 0, 15deg);
+          transform: perspective(500px)  translate3d(0px, 0px, 10px) rotate3d(0, 1, 0, 15deg);
         }
         transition: transform 0.5s ease;
       }
@@ -91,7 +102,7 @@ export default defineComponent({
         margin-left: calc(30%);
         box-shadow: -1px 1px 1px 1px rgba(128, 128, 128, 0.5);
         &:hover {
-          transform: perspective(500px) rotate3d(0, 1, 0, -15deg);
+          transform: perspective(500px)  translate3d(0px, 0px, 10px) rotate3d(0, 1, 0, -15deg);
         }
         transition: transform 0.5s ease;
       }
@@ -170,20 +181,20 @@ export default defineComponent({
           // }
 
           .skilllinks {
-            margin-top: 20px;
+            margin-top: 0.8em;
             a {
               margin: 0px 5px;
               border: 1px dotted var(--primary);
-              padding: 0.5em;
+              padding: 0.3em 0.5em;
               border-radius: 0.5em;
-              background-color: var(--primary);
-              color: var(--secondary);
+              background-color: var(--secondary);
+              color: var(--primary);
               &:nth-child(1) {
                 margin-left: 0px;
               }
               &:hover {
-                background-color: var(--secondary);
-                color: var(--primary);
+                background-color: var(--primary);
+                color: var(--secondary);
               }
             }
           }
@@ -217,6 +228,15 @@ export default defineComponent({
             }
           }
         }
+      }
+    }
+
+    @keyframes project-fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
 </style>

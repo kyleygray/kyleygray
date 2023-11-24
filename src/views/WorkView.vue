@@ -157,7 +157,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .view-container {
-  .project-container {
+  .animation-wrapper {
+    .project-container {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -285,5 +286,7 @@ export default defineComponent({
       }
     }
   }
+  }
+  
 }
 </style>
