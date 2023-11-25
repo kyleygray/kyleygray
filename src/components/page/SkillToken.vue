@@ -59,10 +59,15 @@ export default defineComponent({
     color: var(--secondary);
     font-weight: 500;
     box-shadow: none;
+    padding: 0;
     // text-decoration: underline;
     // background-color: var(--primary);
     // color: var(--secondary);
     border-radius: 0 0.5em 0.5em 0;
+
+    a {
+      padding: 1.5em 0.8em;
+    }
 
     &::after {
       content: "▷";

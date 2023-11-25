@@ -72,7 +72,7 @@ export default defineComponent({
   display: block;
   position: relative;
   max-width: 100%;
-  height: 50vh;
+  height: 60svh;
   margin: 2em;
   margin-bottom: 2em;
   margin-top: -4em;
@@ -83,7 +83,7 @@ export default defineComponent({
   // background-size: cover;
   // opacity: 0.5;
   box-shadow: inset 0px 10svh 10svh 0px var(--secondary);
-  border-radius: 0em 0em 4em 4em;
+  border-radius: 0em 0em 2em 2em;
 
   animation: shifty-pulse 10s infinite ease, shifty-move 10s infinite linear;
 }
@@ -91,6 +91,7 @@ export default defineComponent({
 .shifty-screen {
   background: var(--accent);
   background-size: cover;
+  background-position: center;
 }
 
 @keyframes shifty-pulse {

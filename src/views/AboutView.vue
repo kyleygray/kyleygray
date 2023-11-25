@@ -1,21 +1,5 @@
 <template>
   <main class="view-container" ref="viewParent">
-    <!-- <div class="w-full object-cover relative">
-      <div class="mytitlecontainer">
-        <h1 ref="mytitle" class="mytitle rainbow text-4xl font-bold p-2 relative">
-          <TextFX text="Kyley Gray" type="fadein" speed="20" />
-        </h1>
-        <p class="mydesc md:text-2xl sm:text-base font-normal p-2">
-          <TextFX text="Multimedia Design &amp; Development" type="fadein" speed="20" />
-        </p>
-      </div>
-      <img
-        class="mybackyard w-full object-cover rounded-lg"
-        src="@/assets/design/design0.jpg"
-        alt=""
-      />
-    </div> -->
-    <!-- <ShiftyGallery :images="[img1, img2, img3, img4, img5, img6]" /> -->
     <article class="about-title-container mt-20 mb-10 ml-5">
       <h1 class="about-title text-6xl font-bold">Who am I?</h1>
       <h2 class="about-subtitle text-4xl pl-5">That's a good question...</h2>
@@ -53,41 +37,29 @@
       <h2 class="about-subtitle text-4xl pl-5">I create things...</h2>
       <p class="md:text-2xl sm:text-xl mt-5 mx-10">
         I never stop creating and innovating. I'm always iterating and improving on my
-        existing skillset. Technology is an extension of my brain.
+        existing skillset. Technology is an extension of my body.
       </p>
     </article>
-    <ShiftyGallery :images="[img1, img2, img3, img4, img5, img6]" />
+    <div
+      :class="{
+        'linkwrap-about': true,
+        'dogzone-link': true,
+        'accessible-mix': state.animationsOff,
+      }"
+    >
+      <a target="_blank" href="https://bodyfractal.dog">Visit The Dogzone</a>
+    </div>
+    <ShiftyGallery :images="[img2, img3, img4, img5, img6, img7]" />
     <article class="about-title-container mt-20 mb-10 ml-5">
       <div class="linkwrap-outer">
         <h2 class="about-subtitle text-4xl pl-5 text-center">Let's get in touch...</h2>
         <div class="linkwrap-about">
           <router-link to="/contact">Contact Me</router-link>
+          <a target="_blank" href="https://linkedin.com/in/kyley-gray"
+            >Network on LinkedIn</a
+          >
         </div>
       </div>
-    </article>
-    <article class="p2">
-      <!-- <p class="md:text-2xl sm:text-xl my-5">
-        Hello! I am a digital multimedia designer and developer from Seattle, Washington.
-        I have been producing multimedia design for 20+ years and have 8+ years of
-        professional experience developing digital applications. View my
-        <router-link to="/experience">experience</router-link> for more information!<br /><br />
-
-        I am especially passionate for creating bold user experiences that change the way
-        you think. I am an experimenter, a playful manipulator, a bit of a mad scientist.
-        I tackle new design challenges head-on without fear without compromizing
-        usability. For a more in-depth look at what I create, check out my
-        <router-link to="/skills">skills</router-link> to learn more. <br /><br />
-
-        I intend my web designs to be accessible to all and viewable on all devices. I'm
-        very careful to incorporate snappy and legible responsive design into everything I
-        do. If you are interested in a comprehensive list of relevant skills and
-        experience, please reference
-        <a :href="resume" target="_blank" class="">my resumé</a>.<br /><br />
-
-        Want to get in touch? <router-link to="/contact">contact me</router-link>!
-      </p> -->
-      <!-- <GalleryComponent class="" :images="[img1, img2, img3]" />
-      <GalleryComponent class="" :images="[img4, img5, img6]" /> -->
     </article>
   </main>
 </template>
@@ -106,12 +78,15 @@ import WorkBox from "@/components/WorkBox.vue";
 
 import resume from "@/assets/KyleyGrayResume.pdf";
 
-import img1 from "@/assets/design/design2.jpg";
-import img2 from "@/assets/design/design3.jpg";
-import img3 from "@/assets/design/design1.jpg";
-import img4 from "@/assets/nature/psychoflower.jpg";
-import img5 from "@/assets/nature/fullbackyard.jpg";
-import img6 from "@/assets/nature/dogmoeba.jpg";
+import img1 from "@/assets/design/design3.jpg";
+import img2 from "@/assets/design/zendog.jpg";
+import img3 from "@/assets/design/doggod.jpg";
+import img4 from "@/assets/nature/dogmoeba.jpg";
+import img5 from "@/assets/design/interbayhemoth.jpg";
+import img6 from "@/assets/design/planthead.jpg";
+import img7 from "@/assets/design/abstractlick.jpg";
+
+import useState from "@/services/store.ts";
 
 export default defineComponent({
   components: {
@@ -133,6 +108,7 @@ export default defineComponent({
     const viewParent = ref(null);
     provide("viewParent", viewParent);
     const mytitle = ref(null);
+    const { state } = useState();
 
     const experienceList = [
       {
@@ -223,14 +199,15 @@ export default defineComponent({
     return {
       viewParent,
       mytitle,
-      img1,
       img2,
       img3,
       img4,
       img5,
       img6,
+      img7,
       resume,
       experienceList,
+      state,
     };
   },
 });
@@ -252,7 +229,7 @@ export default defineComponent({
     animation: abouttitlefade 2s forwards ease;
     z-index: 100;
     .about-title {
-      text-shadow: 0px 0px 3px var(--primary);
+      // text-shadow: 0px 0px 3px var(--primary);
     }
   }
 
@@ -294,36 +271,65 @@ export default defineComponent({
   a {
     // border: 1px dashed var(--primary);
   }
+}
 
-  .linkwrap-about {
+.linkwrap-about {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  // margin-top: 1em;
+  // max-width: 50vw;
+  // min-width: 10rem;
+  width: 100%;
+  padding: 2em 0;
+  justify-content: center;
+
+  a {
+    max-width: 40%;
+    min-width: 6em;
+    margin: 0 10px;
     position: relative;
-    display: flex;
-    margin: 0 auto;
-    // margin-top: 1em;
-    // max-width: 50vw;
-    // min-width: 10rem;
-    width: 100%;
-    padding: 2em 0;
-    justify-content: center;
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    // border: 1px dotted var(--primary);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--primary);
+    color: var(--secondary);
 
+    &::after {
+      content: "▷";
+      margin-left: 0.5em;
+    }
+  }
+}
+.dogzone-link {
+  position: absolute;
+  mix-blend-mode: difference;
+  a {
+    transform: translate3d(0, 0, 0);
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Rubik";
+    font-weight: bold;
+    max-width: 60%;
+
+    &::after {
+      background-image: url("@/assets/dogzonesticker.png");
+      background-size: cover;
+      display: inline-block;
+      vertical-align: middle;
+      width: 2em;
+      height: 2em;
+      content: "";
+    }
+  }
+  &.accessible-mix {
+    mix-blend-mode: normal;
     a {
-      max-width: 40%;
-      min-width: 6em;
-      margin: 0 10px;
-      position: relative;
-      display: block;
-      font-size: 1.5rem;
-      text-align: center;
-      // border: 1px dotted var(--primary);
-      padding: 0.5em;
-      border-radius: 0.5em;
-      background-color: var(--primary);
-      color: var(--secondary);
-
-      &::after {
-        content: "▷";
-        margin-left: 0.5em;
-      }
+      background-color: var(--secondary);
+      color: var(--primary);
     }
   }
 }

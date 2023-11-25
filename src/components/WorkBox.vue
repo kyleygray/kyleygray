@@ -68,6 +68,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
   .project {
+      font-size: 16px;
       width: 100%;
       max-width: 500px;
       margin: 1em;
@@ -78,13 +79,13 @@ export default defineComponent({
       // transition: background-color 0.5s ease, color 0.5s ease;
       // border-radius: 0 1em 1em 0;
       // padding: 1em;
-      border-radius: 0.5em;
+      border-radius: 1em;
       background: var(--secondary);
       // transform: perspective(500px) translate3d(0px, 0px, 10px) rotate3d(0, 0, 0, 0deg);
       animation-delay: 0.5s;
       &.move-left {
         margin-right: calc(30%);
-        box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.5);
+        box-shadow: 2px 2px 1px 1px rgba(128, 128, 128, 0.3);
         animation: project-fade-left 1s both ease;
         // &:hover {
         //   transform: perspective(500px)  translate3d(0px, 0px, 10px) rotate3d(0, 1, 0, 15deg);
@@ -94,7 +95,7 @@ export default defineComponent({
 
       &.move-right {
         margin-left: calc(30%);
-        box-shadow: -1px 1px 1px 1px rgba(128, 128, 128, 0.5);
+        box-shadow: -2px 2px 1px 1px rgba(128, 128, 128, 0.3);
         animation: project-fade-right 1s both ease;
         // &:hover {
         //   transform: perspective(500px)  translate3d(0px, 0px, 10px) rotate3d(0, 1, 0, -15deg);
@@ -104,6 +105,7 @@ export default defineComponent({
 
       @media (max-width: 767px) {
         width: 100%;
+        font-size: 14px;
         &.move-left {
           margin-right: calc(20% - 1em);
         }
@@ -147,16 +149,19 @@ export default defineComponent({
           background-color: var(--primary);
           color: var(--secondary);
           position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
           h1 {
-            display: inline-block;
+            // display: inline-block;
             font-size: 1.5em;
             font-weight: normal;
           }
           h2 {
-            position: absolute;
-            right: 10px;
-            display: inline-block;
+            // position: absolute;
+            // right: 10px;
+            // display: inline-block;
             font-size: 1em;
             font-weight: normal;
           }
