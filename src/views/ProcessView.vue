@@ -1,5 +1,5 @@
 <template>
-  <div class="view-container" ref="viewParent">
+  <div class="view-container skill-view" ref="viewParent">
     <div class="skillselect">
       <div class="skillnav">
         <button
@@ -160,10 +160,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.view-container {
-  // height: 100svh; // to ensure the view-container takes full viewport height
+.skill-view {
   display: flex;
   flex-direction: column; // to stack skillselect and skillcontainer vertically
+}
+.view-container {
+  // height: 100svh; // to ensure the view-container takes full viewport height
 
   & * {
     transition: background-color 0.5s ease, box-shadow 0.5s ease;

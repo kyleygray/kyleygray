@@ -12,8 +12,8 @@
       <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/experience" active-class="router-link-active"
-          >experience</router-link
+        <router-link to="/portfolio" active-class="router-link-active"
+          >portfolio</router-link
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
@@ -52,7 +52,9 @@
       <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/experience" active-class="router-link-active">exp.</router-link>
+        <router-link to="/portfolio" active-class="router-link-active"
+          >portfolio</router-link
+        >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
       <!-- <nav v-show="isHome">

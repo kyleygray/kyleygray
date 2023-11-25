@@ -44,8 +44,8 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: "/experience",
-    name: "experience",
+    path: "/portfolio",
+    name: "portfolio",
     component: WorkView,
   },
   {

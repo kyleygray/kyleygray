@@ -19,6 +19,12 @@
     <article class="about-title-container mt-20 mb-10 ml-5">
       <h1 class="about-title text-6xl font-bold">Who am I?</h1>
       <h2 class="about-subtitle text-4xl pl-5">That's a good question...</h2>
+      <p class="md:text-2xl sm:text-xl my-5 mx-10">
+        <TextFX
+          text="I've worn many faces in my life, so my experience is varied and my mind is always
+        curious. Here are the jobs I've held that are worth highlighting."
+        />
+      </p>
     </article>
     <article class="project-container">
       <template v-for="(item, index) in experienceList" :key="index">
@@ -34,6 +40,30 @@
           }"
         />
       </template>
+    </article>
+    <div class="linkwrap-outer">
+      <h2 class="about-subtitle text-4xl text-center">Learn more about me.</h2>
+      <div class="linkwrap-about">
+        <router-link to="/skills">Explore Skills</router-link>
+        <a :href="resume" target="_blank">View My Resumé</a>
+      </div>
+    </div>
+    <article class="about-title-container mt-20 mb-10 ml-5">
+      <h1 class="about-title text-6xl font-bold">What am I doing?</h1>
+      <h2 class="about-subtitle text-4xl pl-5">I create things...</h2>
+      <p class="md:text-2xl sm:text-xl mt-5 mx-10">
+        I never stop creating and innovating. I'm always iterating and improving on my
+        existing skillset. Technology is an extension of my brain.
+      </p>
+    </article>
+    <ShiftyGallery :images="[img1, img2, img3, img4, img5, img6]" />
+    <article class="about-title-container mt-20 mb-10 ml-5">
+      <div class="linkwrap-outer">
+        <h2 class="about-subtitle text-4xl pl-5 text-center">Let's get in touch...</h2>
+        <div class="linkwrap-about">
+          <router-link to="/contact">Contact Me</router-link>
+        </div>
+      </div>
     </article>
     <article class="p2">
       <!-- <p class="md:text-2xl sm:text-xl my-5">
@@ -104,52 +134,47 @@ export default defineComponent({
     provide("viewParent", viewParent);
     const mytitle = ref(null);
 
-    const myLinks = ["webdev", "ui"];
-    const myList = ["list 1", "list 2"];
-
     const experienceList = [
       {
         title: "UX Designer/Protyper",
         company: "BP3 Global",
         period: "2022 - 2023",
-        links: ["webdev", "ux", "design"],
+        links: [
+          "JavaScript",
+          "TypeScript",
+          "HTML",
+          "CSS",
+          "AngularJS",
+          "UI/UX Design",
+          "Collaboration",
+          "Wireframing",
+          "Consulting",
+        ],
         list: [
-          "UX consultant for large national clients.",
-          "Designer and prototyper in Angular.",
-          "Wireframes, presentations, reports, interviews.",
-          "Highly-collaborative workplace, clear communication with team members.",
+          "Designed, developed, and tested prototype UI and UX flows for a large next-gen construction application.",
+          "Became a leader in design ownership. Client saw a 200% increase in productivity due to increase in design and technical communication.",
         ],
       },
       {
         title: "Full Stack Developer",
         company: "Boeing",
         period: "2020 - 2022",
-        links: ["webdev", "ux", "design", "os"],
-        list: [
-          "Designer, developer, and owner of several front-end UIs for interfacing with consumer databases.",
-          "Developed in Angular with a Java Springboot backend.",
-          "Managed hosting in GitLabs and Cloud Foundry.",
+        links: [
+          "JavaScript",
+          "TypeScript",
+          "HTML",
+          "CSS",
+          "AngularJS",
+          "UI/UX Design",
+          "Java",
+          "API Development",
+          "Technical Analyst",
+          "Full-Stack",
+          "Cloud Computing",
         ],
-      },
-      {
-        title: "Automation Tester",
-        company: "WorkBoard",
-        period: "2022",
-        links: ["webdev", "os"],
         list: [
-          "Developed and maintained several scripts for test automation in Cypress.",
-          "Reported and presented bugs in the application to developers.",
-        ],
-      },
-      {
-        title: "C.S. Teacher & Mentor",
-        company: "King's High School",
-        period: "2018-2020",
-        links: ["audio", "os", "webdev"],
-        list: [
-          "Designed, managed, and taught 8 semesters of computer science courses.",
-          "Managed over 500 student Microsoft Surface laptops.",
-          "Supervised and mentored a student-lead IT helpdesk.",
+          "Researched and developed groundbreaking solutions for reducing tech debt, halfing deployment time.",
+          "Designer, developer, and owner of several front-end UIs for interfacing with consumer databases and internal APIs.",
         ],
       },
       {
@@ -158,8 +183,40 @@ export default defineComponent({
         period: "2016 - present",
         links: ["webdev", "design", "audio", "os", "ai"],
         list: [
-          "Designed, developed, and deployed several client and personal websites.",
-          "Managed and advised hosting solutions for clients.",
+          "My own registered business for freelancing web development and media production services. Served 10+ clients with projects lasting mutliple months.",
+          "Designed, developed, and deployed several web applications for personal use and clientele. Every aspect of production under my ownership, control, and responsibility.",
+          "Rich digitial illustration for local production events, clients, and personal. Self-taught digital illustrator since 2018.",
+          "Produced, mix, and mastered several electronic albums. Sound Design Certification from Berklee School of Music.",
+        ],
+      },
+      {
+        title: "Automation Tester",
+        company: "WorkBoard",
+        period: "2022",
+        links: [
+          "Javascript",
+          "React",
+          "HTML",
+          "Automation Testing",
+          "Cypress.io",
+          "Script Management",
+          "Knowledge Leader",
+          "Communication",
+          "Collaboration",
+        ],
+        list: [
+          "Developed and maintained several scripts for test automation in Cypress, successfully catching hundreds of bugs and proposing reasonable fixes.",
+          "Communicating bugs to developers and contributing to the knowledge of best practices in the context of automation development.",
+        ],
+      },
+      {
+        title: "C.S. Teacher & Mentor",
+        company: "King's High School",
+        period: "2018-2020",
+        links: ["audio", "os", "webdev"],
+        list: [
+          "Designed, managed, and taught 8 semesters of computer science courses. Classes of 10 to 24 students each, developed custom curriculum for new learning technologies such as Minecraft for Education.",
+          "Managed over 500 student and teacher Microsoft Surface laptops, managing the Active Directory and software licenses. On-call support for computer issues across multiple campuses.",
         ],
       },
     ];
@@ -173,9 +230,6 @@ export default defineComponent({
       img5,
       img6,
       resume,
-
-      myLinks,
-      myList,
       experienceList,
     };
   },
@@ -197,9 +251,8 @@ export default defineComponent({
   .about-title-container {
     animation: abouttitlefade 2s forwards ease;
     z-index: 100;
-    .about-title,
-    .about-subtitle {
-      text-shadow: 0px 0px 10px var(--secondary);
+    .about-title {
+      text-shadow: 0px 0px 3px var(--primary);
     }
   }
 
@@ -213,85 +266,6 @@ export default defineComponent({
       opacity: 1;
     }
   }
-  // padding: 1.5em;
-  // .mytitlecontainer {
-  //   position: absolute;
-  //   top: 2em;
-  //   left: 1.5em;
-  //   max-width: 70vw;
-  //   border: 2px dotted var(--primary);
-  //   border-radius: 0.5rem;
-
-  //   & * {
-  //     // transition: background-color 0.5s ease;
-  //   }
-  //   .mytitle {
-  //     // text-shadow: 2px 2px 0px var(--accent);
-  //     border-radius: 0.5rem 0.5rem 0 0;
-  //     color: var(--primary);
-  //     background-color: var(--secondary);
-  //     &.rainbow {
-  //       color: #ff8888;
-  //       .fx {
-  //         .fadein {
-  //           animation: colorcycle 10s linear infinite;
-  //           filter: hue-rotate(0deg);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   .mydesc {
-  //     border-radius: 0 0 0.5rem 0.5rem;
-  //     color: var(--primary);
-  //     background-color: var(--secondary);
-  //   }
-  //   .rainbow-btn {
-  //     // display: block;
-  //     width: 25px;
-  //     height: 25px;
-  //     border-radius: 5px;
-  //     background: linear-gradient(
-  //       45deg,
-  //       rgba(255, 0, 0, 1) 0%,
-  //       rgba(255, 154, 0, 1) 10%,
-  //       rgba(208, 222, 33, 1) 20%,
-  //       rgba(79, 220, 74, 1) 30%,
-  //       rgba(63, 218, 216, 1) 40%,
-  //       rgba(47, 201, 226, 1) 50%,
-  //       rgba(28, 127, 238, 1) 60%,
-  //       rgba(95, 21, 242, 1) 70%,
-  //       rgba(186, 12, 248, 1) 80%,
-  //       rgba(251, 7, 217, 1) 90%,
-  //       rgba(255, 0, 0, 1) 100%
-  //     );
-  //     opacity: 0.2;
-  //     &:hover {
-  //       opacity: 1;
-  //     }
-
-  //     font-size: 1rem;
-  //   }
-  // }
-  .mybackyard {
-    border: 2px dotted var(--primary);
-    height: 35svh;
-  }
-
-  [class^="fade1-"] {
-    transition: opacity 0.5s ease;
-  }
-  .fade1-default: {
-    opacity: 1;
-  }
-  .fade1-0 {
-    opacity: 0;
-  }
-  .fade1-1 {
-    opacity: 1;
-  }
-
-  .gallery-component-image-wrapper > .image {
-  }
 
   @keyframes colorcycle {
     0% {
@@ -299,6 +273,57 @@ export default defineComponent({
     }
     100% {
       filter: hue-rotate(360deg);
+    }
+  }
+}
+.linkwrap-outer {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  // background-color: var(--primary);
+  // padding: 1em;
+  // border-top: 2px dotted var(--accent);
+  // border-bottom: 2px dotted var(--accent);
+  // border-radius: 1em;
+  // box-shadow: inset 0px 50px 50px -50px var(--secondary);
+  h1,
+  h2 {
+    color: var(--primary);
+  }
+  a {
+    // border: 1px dashed var(--primary);
+  }
+
+  .linkwrap-about {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    // margin-top: 1em;
+    // max-width: 50vw;
+    // min-width: 10rem;
+    width: 100%;
+    padding: 2em 0;
+    justify-content: center;
+
+    a {
+      max-width: 40%;
+      min-width: 6em;
+      margin: 0 10px;
+      position: relative;
+      display: block;
+      font-size: 1.5rem;
+      text-align: center;
+      // border: 1px dotted var(--primary);
+      padding: 0.5em;
+      border-radius: 0.5em;
+      background-color: var(--primary);
+      color: var(--secondary);
+
+      &::after {
+        content: "▷";
+        margin-left: 0.5em;
+      }
     }
   }
 }

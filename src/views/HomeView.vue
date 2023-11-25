@@ -146,9 +146,11 @@ export default defineComponent({
     margin-top: 2em;
     max-width: 50vw;
     min-width: 10rem;
+    justify-content: center;
 
     a {
       max-width: 40%;
+      min-width: 6em;
       margin: 0 10px;
       position: relative;
       display: block;
