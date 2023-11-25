@@ -1,5 +1,6 @@
 <template>
   <!-- <AnimatedFX provider="viewParent" name="move-in" :steps="['30']"> -->
+  <transition :name="props.slideRight ? 'workslideright' : 'workslideleft'">
   <article class="project">
     <div class="info">
       <div class="title">
@@ -21,6 +22,7 @@
       </div>
     </div>
   </article>
+  </transition>
   <!-- </AnimatedFX> -->
 </template>
 
@@ -57,6 +59,10 @@ export default defineComponent({
       type: Array,
       required: false,
     },
+    slideRight: {
+      type: Boolean,
+      default: true
+    }
   },
   setup(props) {
     return {
@@ -69,10 +75,12 @@ export default defineComponent({
 <style lang="scss" scoped>
   .project {
       font-size: 16px;
-      width: 100%;
-      max-width: 500px;
+      max-width: 600px;
+      // max-height: 50svh;
+      z-index: -1;
       margin: 1em;
       user-select: none;
+      transform: translateX(0%);
       // border-right: 1px dotted var(--primary);
       // border-bottom: 1px dotted var(--primary);
       // box-shadow: 10px 10px 0px 0px var(--accent);
@@ -103,17 +111,17 @@ export default defineComponent({
         transition: transform 0.5s ease;
       }
 
-      @media (max-width: 767px) {
-        width: 100%;
-        font-size: 14px;
-        &.move-left {
-          margin-right: calc(20% - 1em);
-        }
+      // @media (max-width: 767px) {
+      //   width: 100%;
+      //   font-size: 14px;
+      //   &.move-left {
+      //     margin-right: calc(20% - 1em);
+      //   }
 
-        &.move-right {
-          margin-left: calc(20% - 1em);
-        }
-      }
+      //   &.move-right {
+      //     margin-left: calc(20% - 1em);
+      //   }
+      // }
 
 
       .info {
@@ -138,6 +146,10 @@ export default defineComponent({
             color: var(--secondary);
             background-color: var(--primary);
             transition: background-color 0.5s ease, color 0.5s ease;
+
+            @media (max-width: 480px) {
+              font-size: 1.3em;
+            }
             
           }
         }
@@ -164,6 +176,14 @@ export default defineComponent({
             // display: inline-block;
             font-size: 1em;
             font-weight: normal;
+          }
+          @media (max-width: 480px) {
+            h1 {
+              font-size: 1em;
+            }
+            h2 {
+              font-size: 0.8em;
+            }
           }
         }
 
@@ -258,5 +278,42 @@ export default defineComponent({
         opacity: 1;
         transform: perspective(300px)  translate3d(0px, 0px, 0px) rotate3d(0, 1, 0, 0deg);
       }
+    }
+
+    .workslideright-enter-active,
+    .workslideright-leave-active {
+      // position: absolute;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .workslideright-enter-from {
+      opacity: 0;
+      transform: translateX(-20%);
+    }
+    .workslideright-enter-to,
+    .workslideright-leave-from {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    .workslideright-leave-to {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+
+    .workslideleft-enter-active,
+    .workslideleft-leave-active {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .workslideleft-enter-from {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    .workslideleft-enter-to,
+    .workslideleft-leave-from {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    .workslideleft-leave-to {
+      opacity: 0;
+      transform: translateX(-20%);
     }
 </style>

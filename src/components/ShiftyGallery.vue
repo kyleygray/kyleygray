@@ -2,7 +2,7 @@
   <div
     v-if="state.animationsOff"
     class="shifty-screen"
-    :style="{ backgroundImage: `url(${props.images[0]})` }"
+    :style="{ background: `url(${props.images[0]})` }"
   ></div>
   <div v-if="!state.animationsOff" class="shifty-gallery" :style="shiftyStyle"></div>
   <!-- <div v-if="state.animationsOff" class="shifty-gallery-static"></div> -->
@@ -90,8 +90,8 @@ export default defineComponent({
 
 .shifty-screen {
   background: var(--accent);
-  background-size: cover;
-  background-position: center;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 @keyframes shifty-pulse {

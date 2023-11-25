@@ -11,24 +11,12 @@
       </p>
     </article>
     <article class="project-container">
-      <template v-for="(item, index) in experienceList" :key="index">
-        <WorkBox
-          :title="item.title"
-          :company="item.company"
-          :period="item.period"
-          :list="item.list"
-          :links="item.links"
-          :class="{
-            'move-right': index % 2 === 0,
-            'move-left': index % 2 !== 0,
-          }"
-        />
-      </template>
+      <WorkCarousel />
     </article>
     <div class="linkwrap-outer">
       <h2 class="about-subtitle text-4xl text-center">Learn more about me.</h2>
       <div class="linkwrap-about">
-        <router-link to="/skills">Explore Skills</router-link>
+        <router-link to="/skills/webdev">Explore Skills</router-link>
         <a :href="resume" target="_blank">View My Resumé</a>
       </div>
     </div>
@@ -47,7 +35,7 @@
         'accessible-mix': state.animationsOff,
       }"
     >
-      <a target="_blank" href="https://bodyfractal.dog">Visit The Dogzone</a>
+      <a target="_blank" href="https://bodyfractal.dog"></a>
     </div>
     <ShiftyGallery :images="[img2, img3, img4, img5, img6, img7]" />
     <article class="about-title-container mt-20 mb-10 ml-5">
@@ -75,6 +63,7 @@ import ResumeBtn from "@/components/page/ResumeBtn.vue";
 import ShiftyGallery from "@/components/ShiftyGallery.vue";
 
 import WorkBox from "@/components/WorkBox.vue";
+import WorkCarousel from "@/components/WorkCarousel.vue";
 
 import resume from "@/assets/KyleyGrayResume.pdf";
 
@@ -92,7 +81,8 @@ export default defineComponent({
   components: {
     TextFX,
     ShiftyGallery,
-    WorkBox,
+    // WorkBox,
+    WorkCarousel,
   },
   methods: {
     makeRainbow() {
@@ -110,92 +100,6 @@ export default defineComponent({
     const mytitle = ref(null);
     const { state } = useState();
 
-    const experienceList = [
-      {
-        title: "UX Designer/Protyper",
-        company: "BP3 Global",
-        period: "2022 - 2023",
-        links: [
-          "JavaScript",
-          "TypeScript",
-          "HTML",
-          "CSS",
-          "AngularJS",
-          "UI/UX Design",
-          "Collaboration",
-          "Wireframing",
-          "Consulting",
-        ],
-        list: [
-          "Designed, developed, and tested prototype UI and UX flows for a large next-gen construction application.",
-          "Became a leader in design ownership. Client saw a 200% increase in productivity due to increase in design and technical communication.",
-        ],
-      },
-      {
-        title: "Full Stack Developer",
-        company: "Boeing",
-        period: "2020 - 2022",
-        links: [
-          "JavaScript",
-          "TypeScript",
-          "HTML",
-          "CSS",
-          "AngularJS",
-          "UI/UX Design",
-          "Java",
-          "API Development",
-          "Technical Analyst",
-          "Full-Stack",
-          "Cloud Computing",
-        ],
-        list: [
-          "Researched and developed groundbreaking solutions for reducing tech debt, halfing deployment time.",
-          "Designer, developer, and owner of several front-end UIs for interfacing with consumer databases and internal APIs.",
-        ],
-      },
-      {
-        title: "Freelance Producer",
-        company: "Bodyfractal Creative",
-        period: "2016 - present",
-        links: ["webdev", "design", "audio", "os", "ai"],
-        list: [
-          "My own registered business for freelancing web development and media production services. Served 10+ clients with projects lasting mutliple months.",
-          "Designed, developed, and deployed several web applications for personal use and clientele. Every aspect of production under my ownership, control, and responsibility.",
-          "Rich digitial illustration for local production events, clients, and personal. Self-taught digital illustrator since 2018.",
-          "Produced, mix, and mastered several electronic albums. Sound Design Certification from Berklee School of Music.",
-        ],
-      },
-      {
-        title: "Automation Tester",
-        company: "WorkBoard",
-        period: "2022",
-        links: [
-          "Javascript",
-          "React",
-          "HTML",
-          "Automation Testing",
-          "Cypress.io",
-          "Script Management",
-          "Knowledge Leader",
-          "Communication",
-          "Collaboration",
-        ],
-        list: [
-          "Developed and maintained several scripts for test automation in Cypress, successfully catching hundreds of bugs and proposing reasonable fixes.",
-          "Communicating bugs to developers and contributing to the knowledge of best practices in the context of automation development.",
-        ],
-      },
-      {
-        title: "C.S. Teacher & Mentor",
-        company: "King's High School",
-        period: "2018-2020",
-        links: ["audio", "os", "webdev"],
-        list: [
-          "Designed, managed, and taught 8 semesters of computer science courses. Classes of 10 to 24 students each, developed custom curriculum for new learning technologies such as Minecraft for Education.",
-          "Managed over 500 student and teacher Microsoft Surface laptops, managing the Active Directory and software licenses. On-call support for computer issues across multiple campuses.",
-        ],
-      },
-    ];
     return {
       viewParent,
       mytitle,
@@ -206,7 +110,7 @@ export default defineComponent({
       img6,
       img7,
       resume,
-      experienceList,
+      // experienceList,
       state,
     };
   },
@@ -306,28 +210,40 @@ export default defineComponent({
 }
 .dogzone-link {
   position: absolute;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
+  justify-content: unset;
+  margin-left: 5em;
+  padding: 0;
   a {
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 10px 10px var(--white);
+    font-size: 1.2em;
     transform: translate3d(0, 0, 0);
     background-color: var(--white);
     color: var(--black);
     font-family: "Rubik";
     font-weight: bold;
     max-width: 60%;
+    border-radius: 5em;
+    min-width: 0;
 
     &::after {
       background-image: url("@/assets/dogzonesticker.png");
       background-size: cover;
       display: inline-block;
+      transform: translateX(-5px);
       vertical-align: middle;
-      width: 2em;
-      height: 2em;
+      width: 3em;
+      height: 3em;
       content: "";
     }
   }
   &.accessible-mix {
     mix-blend-mode: normal;
     a {
+      box-shadow: 0px 0px 10px 10px var(--secondary);
+      // padding: 0.5em;
       background-color: var(--secondary);
       color: var(--primary);
     }

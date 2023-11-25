@@ -166,10 +166,12 @@ export default defineComponent({
     height: 100px;
     filter: invert(0);
     transition: filter 0.5s ease, transform 0.5s ease;
-  }
-  .the-k.inverted {
     filter: invert(1);
+    mix-blend-mode: difference;
   }
+  // .the-k.inverted {
+  //   filter: invert(1);
+  // }
 
   nav {
     a {
