@@ -26,7 +26,7 @@
       <!-- Calan Image -->
       <div class="calan">
         <!-- <transition name="fade"> -->
-        <img src="@/assets/calan_dark.png" alt="" />
+        <img :class="{ inverted: !inverted }" src="@/assets/calan_dark.png" alt="" />
         <!-- </transition> -->
         <!-- <transition name="fade"> -->
         <!-- <img v-if="inverted" src="@/assets/calan_dark.png" alt="" /> -->
@@ -81,8 +81,12 @@ export default defineComponent({
   .calan {
     position: absolute;
     bottom: 0;
-    mix-blend-mode: difference;
     img {
+      mix-blend-mode: luminosity;
+      transition: filter 0.5s ease;
+      &.inverted {
+        filter: invert(1);
+      }
       user-select: none;
       pointer-events: none;
     }

@@ -1,5 +1,13 @@
 <template>
   <div class="component-wrap">
+    <div class="scroll-dots">
+      <div
+        v-on:click="itemIndex(index)"
+        v-for="(num, index) in listSize"
+        :key="index"
+        :class="{ 'scroll-dot': true, 'active-dot': index === currentItem }"
+      ></div>
+    </div>
     <div class="controls">
       <div v-on:click="nextItem" ref="arrowRight" class="arrow-control arrow-right"></div>
       <div v-on:click="prevItem" ref="arrowLeft" class="arrow-control arrow-left"></div>
@@ -25,13 +33,6 @@ import { defineComponent, ref } from "vue";
 import WorkBox from "@/components/WorkBox.vue";
 import experienceList from "@/services/experienceList.js";
 
-// :style="{ transform: `translateX(${(index % currentItem) * 100 + '%'})` }"
-
-// :class="{
-//       'move-right': index % 2 === 0,
-//       'move-left': index % 2 !== 0,
-//     }"
-
 export default defineComponent({
   name: "ExampleComponent",
   components: {
@@ -47,6 +48,10 @@ export default defineComponent({
       this.slideRight = false;
       this.currentItem =
         this.currentItem === 0 ? this.listSize - 1 : this.currentItem - 1;
+    },
+    itemIndex(index) {
+      this.slideRight = index > this.currentItem ? true : false;
+      this.currentItem = index;
     },
   },
   setup() {
@@ -82,17 +87,17 @@ export default defineComponent({
   //   display: flex;
   //   align-items: flex-start;
   //   flex-grow: 1;
-  height: 40svh;
+  height: 35svh;
   width: 100%;
   display: flex;
   justify-content: center;
 
   @media (max-width: 767px) {
-    height: 50svh;
+    height: 40svh;
   }
 
   @media (max-width: 480px) {
-    height: 60svh;
+    height: 50svh;
   }
 
   & > * {
@@ -100,6 +105,45 @@ export default defineComponent({
     position: absolute;
     margin: 0 auto;
   }
+}
+.scroll-dots {
+  display: flex;
+  justify-content: center;
+  .scroll-dot {
+    font-size: 1.5em;
+    margin: 0.3em;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    color: var(--primary);
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 1em;
+    background-color: var(--secondary);
+    box-shadow: 0px 0px 0px 2px var(--primary);
+
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+
+    &.active-dot {
+      box-shadow: 0px 0px 0px 0px var(--primary);
+      background-color: var(--primary);
+      transform: translateY(-10px);
+      // &::before {
+      //   text-shadow: 0px 0px 0px var(--primary);
+      //   color: var(--primary);
+      //   content: "▼";
+      //   position: absolute;
+      //   display: block;
+      //   width: 20px;
+      //   height: 20px;
+      //   top: -20px;
+      // }
+    }
+  }
+}
+.numbers {
+  text-align: center;
+  font-size: 1.2em;
 }
 .controls {
   position: absolute;

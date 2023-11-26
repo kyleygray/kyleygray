@@ -28,11 +28,13 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 // import ImageModal from "@/components/page/ImageModal.vue";
+import ImagePreload from "@/components/ImagePreload.vue";
 
 export default defineComponent({
   name: "GalleryComponent",
   components: {
     // ImageModal,
+    // ImagePreload,
   },
   props: {
     images: {

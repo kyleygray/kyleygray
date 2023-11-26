@@ -12,8 +12,8 @@
       <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/portfolio" active-class="router-link-active"
-          >portfolio</router-link
+        <router-link to="/projects" active-class="router-link-active"
+          >projects</router-link
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
@@ -52,8 +52,8 @@
       <nav>
         <router-link to="/about" active-class="router-link-active">about</router-link>
         <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/portfolio" active-class="router-link-active"
-          >portfolio</router-link
+        <router-link to="/projects" active-class="router-link-active"
+          >projects</router-link
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
@@ -164,14 +164,14 @@ export default defineComponent({
 
   .the-k {
     height: 100px;
-    filter: invert(0);
+    filter: invert(0) hsb();
     transition: filter 0.5s ease, transform 0.5s ease;
-    filter: invert(1);
-    mix-blend-mode: difference;
+    // filter: invert(1);
+    mix-blend-mode: luminosity;
   }
-  // .the-k.inverted {
-  //   filter: invert(1);
-  // }
+  .the-k.inverted {
+    filter: invert(1);
+  }
 
   nav {
     a {

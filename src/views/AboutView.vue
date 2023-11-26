@@ -17,7 +17,7 @@
       <h2 class="about-subtitle text-4xl text-center">Learn more about me.</h2>
       <div class="linkwrap-about">
         <router-link to="/skills/webdev">Explore Skills</router-link>
-        <a :href="resume" target="_blank">View My Resumé</a>
+        <router-link to="/skills/projects">View Projects</router-link>
       </div>
     </div>
     <article class="about-title-container mt-20 mb-10 ml-5">
@@ -28,19 +28,29 @@
         existing skillset. Technology is an extension of my body.
       </p>
     </article>
-    <div
-      :class="{
-        'linkwrap-about': true,
-        'dogzone-link': true,
-        'accessible-mix': state.animationsOff,
-      }"
-    >
-      <a target="_blank" href="https://bodyfractal.dog"></a>
+    <div class="display-card-wrap">
+      <DisplayCard :image="img7" title="Art and Illustration">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quas numquam
+        velit aspernatur sunt quibusdam voluptates necessitatibus, iusto eveniet! Vel
+        voluptatibus esse repellendus sunt porro harum totam sed odio similique?
+      </DisplayCard>
+      <DisplayCard :image="codescreenshot" title="Web Development">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repudiandae. Qui,
+        quas? Perferendis officia eos omnis amet harum nihil aperiam earum atque, eaque,
+        quae, qui voluptas possimus reiciendis ab explicabo.
+      </DisplayCard>
+      <DisplayCard :image="musicscreenshot" title="Music Production">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repudiandae. Qui,
+        quas? Perferendis officia eos omnis amet harum nihil aperiam earum atque, eaque,
+        quae, qui voluptas possimus reiciendis ab explicabo.
+      </DisplayCard>
     </div>
-    <ShiftyGallery :images="[img2, img3, img4, img5, img6, img7]" />
-    <article class="about-title-container mt-20 mb-10 ml-5">
+    <article class="about-title-container mt-10 mb-10 ml-5">
       <div class="linkwrap-outer">
         <h2 class="about-subtitle text-4xl pl-5 text-center">Let's get in touch...</h2>
+        <p class="md:text-2xl sm:text-xl mt-5 mx-10 text-center">
+          I am available for full-time employment or freelance!
+        </p>
         <div class="linkwrap-about">
           <router-link to="/contact">Contact Me</router-link>
           <a target="_blank" href="https://linkedin.com/in/kyley-gray"
@@ -64,6 +74,7 @@ import ShiftyGallery from "@/components/ShiftyGallery.vue";
 
 import WorkBox from "@/components/WorkBox.vue";
 import WorkCarousel from "@/components/WorkCarousel.vue";
+import DisplayCard from "@/components/DisplayCard.vue";
 
 import resume from "@/assets/KyleyGrayResume.pdf";
 
@@ -75,12 +86,16 @@ import img5 from "@/assets/design/interbayhemoth.jpg";
 import img6 from "@/assets/design/planthead.jpg";
 import img7 from "@/assets/design/abstractlick.jpg";
 
+import codescreenshot from "@/assets/design/codescreenshot.png";
+import musicscreenshot from "@/assets/design/musicscreenshot.png";
+
 import useState from "@/services/store.ts";
 
 export default defineComponent({
   components: {
     TextFX,
-    ShiftyGallery,
+    // ShiftyGallery,
+    DisplayCard,
     // WorkBox,
     WorkCarousel,
   },
@@ -112,6 +127,8 @@ export default defineComponent({
       resume,
       // experienceList,
       state,
+      codescreenshot,
+      musicscreenshot,
     };
   },
 });
@@ -127,6 +144,7 @@ export default defineComponent({
     flex-wrap: wrap;
     max-width: 767px;
     margin: 0 auto;
+    margin-top: 5em;
   }
 
   .about-title-container {
@@ -210,17 +228,20 @@ export default defineComponent({
 }
 .dogzone-link {
   position: absolute;
-  mix-blend-mode: exclusion;
+  mix-blend-mode: lighten;
   justify-content: unset;
-  margin-left: 5em;
-  padding: 0;
+  filter: grayscale(100%);
+  // margin-left: 5em;
+  padding: 0 5em;
+  justify-content: flex-end;
+  animation: colorblink 10s infinite ease;
   a {
     margin: 0;
     padding: 0;
-    box-shadow: 0px 0px 10px 10px var(--white);
+    // box-shadow: 0px 0px 10px 10px var(--white);
     font-size: 1.2em;
     transform: translate3d(0, 0, 0);
-    background-color: var(--white);
+    background: none;
     color: var(--black);
     font-family: "Rubik";
     font-weight: bold;
@@ -234,18 +255,67 @@ export default defineComponent({
       display: inline-block;
       transform: translateX(-5px);
       vertical-align: middle;
-      width: 3em;
-      height: 3em;
+      width: 10em;
+      height: 10em;
+      @media (max-width: 480px) {
+        width: 5em;
+        height: 5em;
+      }
       content: "";
+      animation: speen 10s infinite ease-in-out;
+    }
+  }
+  @keyframes speen {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes colorblink {
+    0% {
+      filter: grayscale(100%);
+    }
+    45% {
+      filter: grayscale(100%);
+    }
+    50% {
+      filter: grayscale(0%);
+    }
+    100% {
+      filter: grayscale(100%);
     }
   }
   &.accessible-mix {
     mix-blend-mode: normal;
+    filter: invert(0);
     a {
-      box-shadow: 0px 0px 10px 10px var(--secondary);
+      // box-shadow: 0px 0px 10px 10px var(--secondary);
       // padding: 0.5em;
-      background-color: var(--secondary);
+      // background-color: var(--secondary);
       color: var(--primary);
+      &::after {
+        animation: none;
+      }
+    }
+  }
+}
+
+.display-card-wrap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  // flex-basis: 300px;
+
+  & > * {
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
 }

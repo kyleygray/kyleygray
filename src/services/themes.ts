@@ -12,9 +12,9 @@ export interface Theme {
 
 const defaultTheme: Theme = {
   name: "light",
-  primary: "rgb(0, 0, 0)",
-  secondary: "rgb(255, 255, 255)",
-  accent: "rgb(238, 238, 238)",
+  primary: "rgb(40, 40, 40)",
+  secondary: "rgb(238, 238, 238)",
+  accent: "rgb(220, 220, 220)",
   compliment: "rgb(0, 0, 0)",
   background: "rgb(238, 238, 238)",
   black: "rgb(0, 0, 0)",
@@ -24,9 +24,9 @@ const defaultTheme: Theme = {
 
 const invertedTheme: Theme = {
   name: "dark",
-  primary: "rgb(255, 255, 255)",
-  secondary: "rgb(0, 0, 0)",
-  accent: "rgb(51, 51, 51)",
+  primary: "rgb(238, 238, 238)",
+  secondary: "rgb(40, 40, 40)",
+  accent: "rgb(60, 60, 60)",
   compliment: "rgb(255, 255, 255)",
   background: "rgb(34, 34, 34)",
   black: "rgb(0, 0, 0)",
