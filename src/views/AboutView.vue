@@ -17,7 +17,7 @@
       <h2 class="about-subtitle text-4xl text-center">Learn more about me.</h2>
       <div class="linkwrap-about">
         <router-link to="/skills/webdev">Explore Skills</router-link>
-        <router-link to="/skills/projects">View Projects</router-link>
+        <router-link to="/projects">View Projects</router-link>
       </div>
     </div>
     <article class="about-title-container mt-20 mb-10 ml-5">
@@ -30,19 +30,16 @@
     </article>
     <div class="display-card-wrap">
       <DisplayCard :image="img7" title="Art and Illustration">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quas numquam
-        velit aspernatur sunt quibusdam voluptates necessitatibus, iusto eveniet! Vel
-        voluptatibus esse repellendus sunt porro harum totam sed odio similique?
-      </DisplayCard>
+        Since 2018! Digital illustration using Procreate for iPad. Skilled in Adobe
+        products such as Photoshop, Illustrator, and After Effects.</DisplayCard
+      >
       <DisplayCard :image="codescreenshot" title="Web Development">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repudiandae. Qui,
-        quas? Perferendis officia eos omnis amet harum nihil aperiam earum atque, eaque,
-        quae, qui voluptas possimus reiciendis ab explicabo.
+        Since 2014! I've been crafted several custom websites, owning all areas of design
+        and production from concept, coding, and completion.
       </DisplayCard>
       <DisplayCard :image="musicscreenshot" title="Music Production">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repudiandae. Qui,
-        quas? Perferendis officia eos omnis amet harum nihil aperiam earum atque, eaque,
-        quae, qui voluptas possimus reiciendis ab explicabo.
+        Since 2004! Certified in Sound Design with Berklee School of Music. I produce
+        electronic styles, mix and master professional quality for production media.
       </DisplayCard>
     </div>
     <article class="about-title-container mt-10 mb-10 ml-5">
@@ -78,7 +75,7 @@ import DisplayCard from "@/components/DisplayCard.vue";
 
 import resume from "@/assets/KyleyGrayResume.pdf";
 
-import img1 from "@/assets/design/design3.jpg";
+// import img1 from "@/assets/design/design3.jpg";
 import img2 from "@/assets/design/zendog.jpg";
 import img3 from "@/assets/design/doggod.jpg";
 import img4 from "@/assets/nature/dogmoeba.jpg";
@@ -86,8 +83,8 @@ import img5 from "@/assets/design/interbayhemoth.jpg";
 import img6 from "@/assets/design/planthead.jpg";
 import img7 from "@/assets/design/abstractlick.jpg";
 
-import codescreenshot from "@/assets/design/codescreenshot.png";
-import musicscreenshot from "@/assets/design/musicscreenshot.png";
+import codescreenshot from "@/assets/design/codescreenshot.jpg";
+import musicscreenshot from "@/assets/design/musicscreenshot.jpg";
 
 import useState from "@/services/store.ts";
 

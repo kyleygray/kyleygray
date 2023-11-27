@@ -1,6 +1,7 @@
 <template>
-  <div ref="viewParent" class="view-container">
-    <h1 class="text-4xl font-bold mt-10 mb-10 ml-5">What I've been working on...</h1>
+  <div ref="viewParent" class="view-container pb-10">
+    <h1 class="about-title ml-5 mt-10 text-6xl font-bold">Projects</h1>
+    <h2 class="about-subtitle ml-5 text-4xl pl-5">What I've been working on...</h2>
     <!-- <div
       :class="{
         'linkwrap-about': true,
@@ -17,12 +18,11 @@
       link="Visit Gallery"
       url="https://bodyfractal.dog"
     >
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam molestiae vel
-      maiores odit quia eligendi delectus minus atque facilis in fuga neque, ullam
-      asperiores dolores quas, amet iste optio? Iste Lorem ipsum dolor, sit amet
-      consectetur adipisicing elit. Voluptatem iusto ab voluptas ratione veritatis cum
-      tenetur quas, eum quae maiores minus rerum rem! Debitis, voluptas quia. Nobis nulla
-      non eum!
+      A journey of self-exploration, spirituality, obsession, and artistic expression
+      under the alias Dogzone Bodyfractal. Over 200 pieces of art (and growing) in honor
+      of our almighty dog god! Occasional mature themes include body horror, sexuality,
+      and psychological horror. View gallery for landing pages to our art posting
+      channels.
     </ShiftyGallery>
     <ShiftyGallery
       :images="[music1, music2]"
@@ -31,14 +31,9 @@
       link="Listen"
       url="https://cubeshark.bandcamp.com"
     >
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam molestiae vel
-      maiores odit quia eligendi delectus minus atque facilis in fuga neque, ullam
-      asperiores dolores quas, amet iste optio? Iste Lorem ipsum dolor, sit amet
-      consectetur adipisicing elit. Voluptatem iusto ab voluptas ratione veritatis cum
-      tenetur quas, eum quae maiores minus rerum rem! Debitis, voluptas quia. Nobis nulla
-      non eum!
+      Completed albums under the alias Cubeshark. Produced in Reason Studios over the
+      course of several years from different time periods.
     </ShiftyGallery>
-    <!-- <ShiftyGallery :images="[img2, img3, img4, img5, img6, img7]" :cover="dogzonecover" /> -->
   </div>
 </template>
 
@@ -49,7 +44,7 @@ import useState from "@/services/store.ts";
 
 import ShiftyGallery from "@/components/ShiftyGallery.vue";
 
-import img1 from "@/assets/design/design3.jpg";
+// import img1 from "@/assets/design/design3.jpg";
 import img2 from "@/assets/design/zendog.jpg";
 import img3 from "@/assets/design/doggod.jpg";
 import img4 from "@/assets/nature/dogmoeba.jpg";
@@ -72,7 +67,7 @@ export default defineComponent({
     provide("viewParent", viewParent);
 
     return {
-      img1,
+      // img1,
       img2,
       img3,
       img4,

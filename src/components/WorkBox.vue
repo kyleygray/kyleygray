@@ -75,6 +75,10 @@ export default defineComponent({
 <style lang="scss" scoped>
   .project {
       font-size: 16px;
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+      }
       max-width: 600px;
       // max-height: 50svh;
       z-index: -1;

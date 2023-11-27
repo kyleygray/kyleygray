@@ -28,12 +28,12 @@ import useStore from "@/services/store";
 
 import resume from "@/assets/KyleyGrayResume.pdf";
 
-import design0 from "@/assets/design/design0.jpg";
-import design1 from "@/assets/design/design1.jpg";
-import design2 from "@/assets/design/design2.jpg";
-import design3 from "@/assets/design/design3.jpg";
-import backyard from "@/assets/nature/fullbackyard.jpg";
-import flower from "@/assets/nature/psychoflower.jpg";
+// import design0 from "@/assets/design/design0.jpg";
+// import design1 from "@/assets/design/design1.jpg";
+// import design2 from "@/assets/design/design2.jpg";
+// import design3 from "@/assets/design/design3.jpg";
+// import backyard from "@/assets/nature/fullbackyard.jpg";
+// import flower from "@/assets/nature/psychoflower.jpg";
 import dogmoeba from "@/assets/nature/dogmoeba.jpg";
 
 export default defineComponent({
@@ -117,12 +117,12 @@ export default defineComponent({
       state,
       methods,
       resume,
-      design0,
-      design1,
-      design2,
-      design3,
-      backyard,
-      flower,
+      // design0,
+      // design1,
+      // design2,
+      // design3,
+      // backyard,
+      // flower,
       dogmoeba,
     };
   },

@@ -3,7 +3,7 @@
     <h1 class="text-3xl pt-5 pb-0 mb-0 contact-title">
       <TextFX text="Contact Info" type="fadein" speed="30" />
     </h1>
-    <div class="">
+    <div class="contact-wrap">
       <!-- Contact Details -->
       <div class="text-2xl">
         <p class="my-7">
@@ -61,11 +61,19 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .view-container {
+  .contact-wrap {
+    // display: flex;
+    // height: 70svh;
+    // justify-content: center;
+    // align-items: center;
+  }
+
   .contact-title {
     border-bottom: 5px solid var(--accent);
     border-left: 2px solid var(--accent);
     padding: 0.5em;
     border-bottom-left-radius: 0.5em;
+    font-weight: bold;
   }
 
   .portrait {

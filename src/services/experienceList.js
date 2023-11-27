@@ -37,7 +37,7 @@ export default [
       "Cloud Computing",
     ],
     list: [
-      "Researched and developed groundbreaking solutions for reducing tech debt, halfing deployment time.",
+      "Researched and developed groundbreaking solutions for reducing tech debt, halving deployment time.",
       "Designer, developer, and owner of several front-end UIs for interfacing with consumer databases and internal APIs.",
     ],
   },
@@ -45,7 +45,7 @@ export default [
     title: "Freelance Producer",
     company: "Bodyfractal Creative",
     period: "2016 - present",
-    links: ["webdev", "design", "audio", "os", "ai"],
+    links: ["Web Development", "Audio Production", "Illustration", "Self-Employed", "Freelance"],
     list: [
       "Designed, developed, and deployed several web applications for personal use and clientele. Every aspect of production under my ownership, control, and responsibility.",
       "Rich digitial illustration for local production events, clients, and personal. Self-taught digital illustrator since 2018.",
@@ -55,17 +55,7 @@ export default [
     title: "Automation Tester",
     company: "WorkBoard",
     period: "2022",
-    links: [
-      "Javascript",
-      "React",
-      "HTML",
-      "Automation Testing",
-      "Cypress.io",
-      "Script Management",
-      "Knowledge Leader",
-      "Communication",
-      "Collaboration",
-    ],
+    links: ["Javascript", "React", "HTML", "Automation Testing", "Cypress.io", "Script Management"],
     list: [
       "Developed and maintained several scripts for test automation in Cypress, successfully catching hundreds of bugs and proposing reasonable fixes.",
       "Communicating bugs to developers and contributing to the knowledge of best practices in the context of automation development.",
@@ -75,9 +65,9 @@ export default [
     title: "C.S. Teacher & Mentor",
     company: "King's High School",
     period: "2018-2020",
-    links: ["audio", "os", "webdev"],
+    links: ["Javascript", "Python", "Sys Admin", "Teaching", "Mentoring", "Knowledge Leader"],
     list: [
-      "Designed, managed, and taught 8 semesters of computer science courses. Classes of 10 to 24 students each, developed custom curriculum for new learning technologies such as Minecraft for Education.",
+      "Designed, managed, and taught 8 semesters of computer science courses. Developed custom curriculum for new learning technologies such as Minecraft for Education.",
       "Managed over 500 student and teacher Microsoft Surface laptops, managing the Active Directory and software licenses. On-call support for computer issues across multiple campuses.",
     ],
   },

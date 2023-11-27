@@ -7,7 +7,7 @@
     <div class="shifty-header">
       <h1 class="shifty-title">{{ props.title }}</h1>
       <div class="shifty-link">
-        <a :href="props.url">{{ props.link }}</a>
+        <a target="_blank" :href="props.url">{{ props.link }}</a>
       </div>
     </div>
     <div class="shifty-description">
@@ -184,7 +184,7 @@ export default defineComponent({
     }
   }
   .shifty-description {
-    font-size: 1.2em;
+    font-size: 1.5em;
     padding: 0.5em;
   }
 }
