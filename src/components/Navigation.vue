@@ -1,5 +1,5 @@
 <template>
-  <div v-show="!isMobile" class="container">
+  <!-- <div v-show="!isMobile" class="container">
     <div class="small-nav navbox">
       <router-link class="my-K" to="/">
         <img
@@ -17,10 +17,10 @@
         >
         <router-link to="/contact" active-class="router-link-active">contact</router-link>
       </nav>
-      <!-- <nav>
+      <nav>
         <div class="homeheadline"></div>
         <router-link class="biglink" to="/about">enter site</router-link>
-      </nav> -->
+      </nav>
       <div class="controls">
         <div class="themes">
           <ThemeButton :theme="themes.defaultTheme" />
@@ -38,8 +38,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div v-show="isMobile" class="container">
+  </div> -->
+  <div class="container">
     <div class="small-nav-mobile navbox-mobile">
       <router-link class="my-K" to="/">
         <img
@@ -102,7 +102,8 @@ export default defineComponent({
     const { state, methods } = useStore();
     const themes = useThemes();
     const isHome = ref(true);
-    const { isMobile } = inject("mobileHelper");
+    // const { isMobile } = inject("mobileHelper");
+    const isMobile = true;
     const theK = ref(null);
     const inverted = ref(false);
 
@@ -336,7 +337,7 @@ export default defineComponent({
 
   &.small-nav-mobile {
     width: 100vw;
-    transform: translateY(calc(100svh - 120px));
+    // transform: translateY(calc(100svh - 120px));
 
     & > nav {
     }

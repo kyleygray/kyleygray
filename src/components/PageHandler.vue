@@ -11,7 +11,7 @@
       /> -->
       <component
         :class="{
-          'mobile-view': isMobile,
+          'mobile-view': true,
           'page-view': true,
         }"
         :is="Component"
@@ -77,6 +77,7 @@ export default defineComponent({
   &.mobile-view {
     width: 100%;
     margin: 0;
+    margin-top: 120px;
     height: calc(100svh - 120px);
 
     transform: translate(0%, -100%);
