@@ -1,25 +1,29 @@
 <template>
   <main class="view-container" ref="viewParent">
-    <article class="about-title-container mt-20 mb-10 ml-5">
-      <h1 class="about-title text-6xl font-bold">Who am I?</h1>
-      <h2 class="about-subtitle text-4xl pl-5">That's a good question...</h2>
-      <p class="md:text-2xl sm:text-xl my-5 mx-10">
+    <article class="about-title-container intro-animate mt-20 mb-10 ml-5">
+      <h1 class="about-title text-6xl font-bold">Hello!</h1>
+      <h2 class="about-subtitle text-3xl pl-5">
+        My name is Kyley Gray and I am a web developer/designer from Seattle, Washington.
+      </h2>
+      <p class="text-2xl my-5 mx-10">
         <TextFX
-          text="I've worn many faces in my life, so my experience is varied and my mind is always
-        curious. Here are the jobs I've held that are worth highlighting."
+          text="I am an expert in HTML, CSS, JavaScript, UI and UX design. I'm always curious, always learning, since 2016."
         />
       </p>
     </article>
     <article class="project-container">
       <WorkCarousel />
     </article>
-    <div class="linkwrap-outer">
-      <h2 class="about-subtitle text-4xl text-center">Learn more about me.</h2>
-      <div class="linkwrap-about">
-        <router-link to="/skills/webdev">Explore Skills</router-link>
-        <router-link to="/projects">View Projects</router-link>
+    <article class="about-title-container inverted-container mt-10 mb-10 ml-5">
+      <div class="linkwrap-outer">
+        <h2 class="about-subtitle text-4xl pl-5 text-center">Learn more about me.</h2>
+        <p class="md:text-2xl sm:text-xl mt-5 mx-10 text-center">See what I can do!</p>
+        <div class="linkwrap-about">
+          <router-link to="/skills/webdev">Explore Skills</router-link>
+          <router-link to="/projects">View Projects</router-link>
+        </div>
       </div>
-    </div>
+    </article>
     <article class="about-title-container mt-20 mb-10 ml-5">
       <h1 class="about-title text-6xl font-bold">What am I doing?</h1>
       <h2 class="about-subtitle text-4xl pl-5">I create things...</h2>
@@ -42,7 +46,7 @@
         electronic styles, mix and master professional quality for production media.
       </DisplayCard>
     </div>
-    <article class="about-title-container mt-10 mb-10 ml-5">
+    <article class="about-title-container inverted-container mt-10 mb-10 ml-5">
       <div class="linkwrap-outer">
         <h2 class="about-subtitle text-4xl pl-5 text-center">Let's get in touch...</h2>
         <p class="md:text-2xl sm:text-xl mt-5 mx-10 text-center">
@@ -73,6 +77,8 @@ import WorkBox from "@/components/WorkBox.vue";
 import WorkCarousel from "@/components/WorkCarousel.vue";
 import DisplayCard from "@/components/DisplayCard.vue";
 
+import HomeView from "@/views/HomeView.vue";
+
 import resume from "@/assets/KyleyGrayResume.pdf";
 
 // import img1 from "@/assets/design/design3.jpg";
@@ -95,6 +101,7 @@ export default defineComponent({
     DisplayCard,
     // WorkBox,
     WorkCarousel,
+    // HomeView,
   },
   methods: {
     makeRainbow() {
@@ -144,11 +151,27 @@ export default defineComponent({
     margin-top: 5em;
   }
 
-  .about-title-container {
+  .intro-animate {
     animation: abouttitlefade 2s forwards ease;
-    z-index: 100;
+  }
+
+  .about-title-container {
+    // z-index: 100;
+
     .about-title {
       // text-shadow: 0px 0px 3px var(--primary);
+    }
+
+    &.inverted-container {
+      margin: 0;
+      background-color: var(--primary);
+      color: var(--secondary) !important;
+      // filter: invert(1);
+
+      a {
+        background-color: var(--secondary);
+        color: var(--primary);
+      }
     }
   }
 
@@ -185,7 +208,7 @@ export default defineComponent({
   // box-shadow: inset 0px 50px 50px -50px var(--secondary);
   h1,
   h2 {
-    color: var(--primary);
+    // color: var(--primary);
   }
   a {
     // border: 1px dashed var(--primary);

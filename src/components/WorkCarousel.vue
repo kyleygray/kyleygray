@@ -9,8 +9,16 @@
       ></div>
     </div>
     <div class="controls">
-      <div v-on:click="nextItem" ref="arrowRight" class="arrow-control arrow-right"></div>
-      <div v-on:click="prevItem" ref="arrowLeft" class="arrow-control arrow-left"></div>
+      <div
+        v-on:click="handleClickRight"
+        ref="arrowRight"
+        class="arrow-control arrow-right"
+      ></div>
+      <div
+        v-on:click="handleClickLeft"
+        ref="arrowLeft"
+        class="arrow-control arrow-left"
+      ></div>
     </div>
     <div ref="carouselWrap" class="carousel-wrap">
       <WorkBox
@@ -29,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 import WorkBox from "@/components/WorkBox.vue";
 import experienceList from "@/services/experienceList.js";
 
@@ -39,6 +47,14 @@ export default defineComponent({
     WorkBox,
   },
   methods: {
+    handleClickRight() {
+      this.nextItem();
+      clearInterval(this.interval);
+    },
+    handleClickLeft() {
+      this.prevItem();
+      clearInterval(this.interval);
+    },
     nextItem() {
       this.slideRight = true;
       this.currentItem =
@@ -52,6 +68,7 @@ export default defineComponent({
     itemIndex(index) {
       this.slideRight = index > this.currentItem ? true : false;
       this.currentItem = index;
+      clearInterval(this.interval);
     },
   },
   setup() {
@@ -61,6 +78,7 @@ export default defineComponent({
     const arrowLeft = ref(null);
     const listSize = experienceList.length;
     const slideRight = ref(true);
+    const interval = ref(null);
 
     return {
       experienceList,
@@ -71,6 +89,11 @@ export default defineComponent({
       listSize,
       slideRight,
     };
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.nextItem();
+    }, 3000);
   },
 });
 </script>

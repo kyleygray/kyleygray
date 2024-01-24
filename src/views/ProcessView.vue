@@ -32,40 +32,40 @@
         >
           os
         </button>
-        <button
+        <!-- <button
           @click="changeView('ai', viewParent)"
           :class="{ activebtn: activeView === 'ai', hidebtn: true }"
         >
           ai
-        </button>
+        </button> -->
       </div>
       <div class="skillheader">
         <div v-if="activeView === 'default'">
-          <h1 class="md:text-2xl sm:text-xl font-thin">
+          <h1 class="md:text-3xl sm:text-xl font-thin">
             <TextFX text="(select a skillset)" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'webdev'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX text="Web Development &amp; Design" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'design'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX text="Design &amp; Illustration" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'audio'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX text="Audio &amp; Music Production" type="fadein" speed="30" />
           </h1>
         </div>
 
         <div v-if="activeView === 'ux'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX
               text="User Experience Design &amp; Prototyping"
               type="fadein"
@@ -75,7 +75,7 @@
         </div>
 
         <div v-if="activeView === 'os'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX
               text="Operating Systems &amp; Information Technology"
               type="fadein"
@@ -85,7 +85,7 @@
         </div>
 
         <div v-if="activeView === 'ai'">
-          <h1 class="md:text-2xl sm:text-xl pb-0">
+          <h1 class="md:text-3xl sm:text-xl pb-0">
             <TextFX text="Artificial Intelligence" type="fadein" speed="30" />
           </h1>
         </div>
@@ -163,6 +163,7 @@ export default defineComponent({
 .skill-view {
   display: flex;
   flex-direction: column; // to stack skillselect and skillcontainer vertically
+  padding: 1em;
 }
 .view-container {
   // height: 100svh; // to ensure the view-container takes full viewport height
@@ -183,7 +184,7 @@ export default defineComponent({
     // padding: 1em;
     padding-left: 0;
     margin-left: 0;
-    margin-top: 10px;
+    // margin-top: 10px;
     box-shadow: -11px 2px 0px 2px var(--accent);
     border-left: 1px dotted var(--primary);
     border-bottom: 1px dotted var(--primary);
@@ -194,13 +195,17 @@ export default defineComponent({
     .skillnav {
       display: flex;
       width: 100%;
-      max-width: 767px;
+      // max-width: 767px;
+      justify-content: center;
+      // background-color: var(--accent);
+      padding-top: 5px;
+      padding-bottom: 5px;
 
       button {
-        width: calc(100% / 6 - 5px);
-        font-size: 0.8rem;
+        width: calc(80% / 5 - 5px);
+        font-size: 1em;
         min-width: 2em;
-        padding: 0.8em;
+        padding: 0.6em;
         margin: 0em 0.2em;
         border: 1px dotted var(--primary);
         background-color: var(--primary);
@@ -222,6 +227,11 @@ export default defineComponent({
           background-color: var(--accent);
           opacity: 1;
         }
+
+        @media (max-width: 480px) {
+          font-size: 12px;
+          width: calc(100% / 5 - 5px);
+        }
       }
     }
     .skillheader {
@@ -233,6 +243,7 @@ export default defineComponent({
     position: relative;
     flex-basis: 100%; // to allocate 90% of the height to skillcontainer
     overflow-x: hidden; // to enable scroll if content height exceeds the container height
+    // padding: 1em;
     // overflow-y: scroll;
     // max-width: 767px;
 

@@ -198,9 +198,10 @@ main {
 
   a {
     position: absolute;
-    // border: 1px solid var(--primary);
-    color: var(--secondary);
-    background-color: var(--primary);
+    border-top: 1px dotted var(--primary);
+    border-right: 1px dotted var(--primary);
+    color: var(--primary);
+    background-color: var(--secondary);
     border-radius: 0em 1em 0em 0em;
     // font-weight: bold;
     font-size: 0.8em;

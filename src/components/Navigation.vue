@@ -41,21 +41,38 @@
   </div> -->
   <div class="container">
     <div class="small-nav-mobile navbox-mobile">
-      <router-link class="my-K" to="/">
-        <img
-          ref="theK"
-          :class="{ 'the-k': true, inverted: inverted }"
-          src="@/assets/kline.png"
-          alt="K"
-        />
+      <router-link
+        :class="{ 'my-K': true, inverted: inverted }"
+        to="/"
+        active-class="router-link-active"
+      >
+        <img ref="theK" class="the-k" src="@/assets/kline.png" alt="K" />
       </router-link>
       <nav>
-        <router-link to="/about" active-class="router-link-active">about</router-link>
-        <router-link to="/skills" active-class="router-link-active">skills</router-link>
-        <router-link to="/projects" active-class="router-link-active"
-          >projects</router-link
-        >
-        <router-link to="/contact" active-class="router-link-active">contact</router-link>
+        <router-link
+          to="/"
+          data-name="about"
+          data-icon="?"
+          active-class="router-link-active"
+        ></router-link>
+        <router-link
+          to="/skills"
+          data-name="skills"
+          data-icon="</>"
+          active-class="router-link-active"
+        ></router-link>
+        <router-link
+          to="/projects"
+          data-name="projects"
+          data-icon="!"
+          active-class="router-link-active"
+        ></router-link>
+        <router-link
+          to="/contact"
+          data-name="contact"
+          data-icon="@"
+          active-class="router-link-active"
+        ></router-link>
       </nav>
       <!-- <nav v-show="isHome">
         <div class="homeheadline"></div>
@@ -288,28 +305,41 @@ export default defineComponent({
   font-size: 14px;
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  padding: 0px 20px;
-  height: 120px;
+  padding: 0em 0.5em;
+  height: 7em;
   transition-property: transform, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+  // background-color: var(--accent);
+  // justify-items: center;
+  align-items: center;
 
   .my-K {
+    display: flex;
     text-decoration: none;
     color: inherit;
     transition: color 0.5s ease;
-    align-self: center;
+    // align-self: center;
+    // height: 100px !important;
     transform: translate(0%, 0%);
     transition: transform 0.5s ease;
 
     .the-k {
-      height: auto;
-      width: 100%;
-      max-width: 5em;
+      align-self: center;
+      // height: auto;
+      // width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      max-height: 6em;
+      // border-radius: 5em;
       filter: invert(0);
-      transition: filter 0.5s ease;
-
-      &.inverted {
+      transition: all 0.5s ease;
+      // padding: 0.5em;
+      // border: 1px dotted var(--accent);
+      // background-color: var(--secondary);
+    }
+    &.inverted {
+      .the-k {
         filter: invert(1);
       }
     }
@@ -343,32 +373,54 @@ export default defineComponent({
     }
 
     .my-K {
-      transform: scale(80%) translateY(-20px);
+      // transform: scale(80%) translateY(-20px);
     }
   }
 
   nav {
     align-self: center;
     display: flex;
-    flex-wrap: wrap;
-    min-width: 150px;
+    // flex-wrap: wrap;
+    min-width: 100px;
     a {
       text-align: center;
       width: 42.5%;
-      height: 2.2em;
+      height: 3em;
       margin-left: 2.5%;
       margin-right: 2.5%;
       margin-top: 0.1em;
-      color: var(--primary);
-      transition: color 0.5s ease, background-color 0.5s ease;
-      padding-top: 0.2em;
-      font-size: 1em;
+      color: var(--secondary);
+      background-color: var(--primary);
+      transition: color 0.5s ease, background-color 0.5s ease, width 0.5s ease;
+      padding-top: 0.6em;
+      font-size: 1.2em;
       border: 1px dotted var(--primary);
-      border-radius: 1em;
-      &.router-link-active {
-        background-color: var(--accent);
-        color: var(--compliment);
+      border-radius: 0.5em;
+
+      &::after {
+        content: attr(data-icon);
+        // display: block;
+        font-size: 1em;
+        // height: 100px;
+        // width: 100px;
       }
+
+      &.router-link-active {
+        background-color: var(--secondary);
+        color: var(--compliment);
+        width: 100%;
+        &::after {
+          content: attr(data-name);
+          // display: block;
+          // font-size: 1em;
+          // height: 100px;
+          // width: 100px;
+        }
+      }
+
+      &:not(.router-link-active) {
+      }
+
       &.biglink {
         width: 100%;
         font-size: 1.5em;
@@ -431,6 +483,12 @@ export default defineComponent({
       border-radius: 1em;
       background-color: var(--primary);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbox-mobile {
+    font-size: 12px;
   }
 }
 

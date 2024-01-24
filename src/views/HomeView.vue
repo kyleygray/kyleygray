@@ -36,7 +36,7 @@ export default defineComponent({
 }
 
 .toilets {
-  // position: absolute;
+  position: absolute;
   // display: flex;
   background: url("@/assets/toilets.png");
   mix-blend-mode: exclusion;
@@ -94,7 +94,7 @@ export default defineComponent({
 }
 
 .mytitlecontainer {
-  position: absolute;
+  // position: relative;
   top: 50svh;
   transform: translateY(-50%);
   right: 0;

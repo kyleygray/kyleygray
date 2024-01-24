@@ -24,6 +24,8 @@
 import { defineComponent, computed, ref, inject } from "vue";
 import useStore from "@/services/store";
 
+import router from "./router";
+
 export default defineComponent({
   name: "PageHandler",
   setup() {
@@ -31,17 +33,24 @@ export default defineComponent({
     const activeTransition = ref("page");
     const { isMobile } = inject("mobileHelper");
 
+    enum navcount {
+      home = 1,
+      skills = 2,
+      projects = 3,
+      contact = 4,
+    }
+
     activeTransition.value = computed(() => {
       if (state.animationsOff) {
         return "";
       }
-      if (state.activeComponent === "home") {
-        return "fade";
-      }
+      // if (state.activeComponent === "home") {
+      //   return "fade";
+      // }
       // if (isMobile.value) {
       //   return "uppage";
       // }
-      return "page";
+      return "fade";
     });
 
     return {
@@ -77,10 +86,14 @@ export default defineComponent({
   &.mobile-view {
     width: 100%;
     margin: 0;
-    margin-top: 120px;
-    height: calc(100svh - 120px);
+    margin-top: 100px;
+    height: calc(100svh - 100px);
 
     transform: translate(0%, -100%);
+    @media (max-width: 480px) {
+      margin-top: 86px;
+      height: calc(100svh - 86px);
+    }
   }
 
   &.page-view {
@@ -107,10 +120,29 @@ export default defineComponent({
   background-color: var(--background);
 }
 
+.repage-enter-active,
+.repage-leave-active {
+  // position: absolute;
+  transition: transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+}
+.repage-enter-from {
+  transform: translate(-100%, 0%) !important;
+  background-color: var(--secondary);
+}
+.repage-enter-to,
+.repage-leave-from {
+  transform: translate(0%, 0%) !important;
+  background-color: var(--secondary);
+}
+.repage-leave-to {
+  transform: translate(0%, 0%) !important;
+  background-color: var(--background);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   // position: absolute;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
 }
 .fade-enter-from {
   opacity: 0 !important;

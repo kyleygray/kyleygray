@@ -1,11 +1,7 @@
 <template>
   <div class="toiletsskill">
     <div>
-      <TextFX
-        text="I have many skills, some of them are marketable."
-        type="fadein"
-        speed="20"
-      />
+      <TextFX text="(select a skillset)" type="fadein" speed="20" />
     </div>
   </div>
 </template>
